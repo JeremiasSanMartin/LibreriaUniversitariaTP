@@ -83,3 +83,21 @@ TestResults/
 Generated_Code/
 ipch/
 *.dbmdl
+
+# Build folders
+bin/
+obj/
+TestResults/
+
+# Visual Studio user-specific files
+.vs/
+*.user
+*.suo
+
+# NuGet
+*.nupkg
+packages/
+
+# Logs and temp
+*.log
+*.cache
