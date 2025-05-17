@@ -11,9 +11,9 @@ using Presentacion;
 
 namespace Presentacion
 {
-    public partial class MenuPrincipal : Form
+    public partial class LoginForm : Form
     {
-        public MenuPrincipal()
+        public LoginForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -96,5 +96,59 @@ namespace Presentacion
                 MessageBox.Show("El usuario, la contraseña o el tipo de rol es incorrecto");
             }
         }
+
+
+    //Eventos de UX, para que al presionar los txtbox se borren los placeholder y si el usuario no escribe nada vuelvan a aparecer
+        private void textBox_usuario_Enter(object sender, EventArgs e)
+        {
+            if (textBox_usuario.Text == "Usuario")
+            {
+                textBox_usuario.Text = "";
+                textBox_usuario.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox_usuario_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_usuario.Text))
+            {
+                textBox_usuario.Text = "Usuario";
+                textBox_usuario.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textBox_clave_Enter(object sender, EventArgs e)
+        {
+
+            if (textBox_clave.Text == "Contraseña")
+            {
+                textBox_clave.Text = "";
+                textBox_clave.ForeColor = Color.Black;
+                textBox_clave.PasswordChar = '●';
+            }
+        }
+
+        private void textBox_clave_Leave(object sender, EventArgs e)
+        {
+           
+            if (string.IsNullOrWhiteSpace(textBox_clave.Text))
+            {
+                textBox_clave.PasswordChar = '\0';
+                textBox_clave.Text = "Contraseña";
+                textBox_clave.ForeColor = Color.Gray;
+            }
+        }
+
+     //Eventos de UX, para agregarle un efecto de click al boton de iniciar sesion
+        private void btn_iniciarSesion_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_iniciarSesion.Location = new Point(btn_iniciarSesion.Location.X + 1, btn_iniciarSesion.Location.Y + 1);
+        }
+
+        private void btn_iniciarSesion_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_iniciarSesion.Location = new Point(btn_iniciarSesion.Location.X - 1, btn_iniciarSesion.Location.Y - 1);
+        }
+
     }
 }
