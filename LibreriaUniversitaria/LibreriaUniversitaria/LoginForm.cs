@@ -17,12 +17,15 @@ namespace Presentacion
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             CargarRoles();
+           
         }
+
 
         private void CargarRoles()
         {

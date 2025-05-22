@@ -63,9 +63,9 @@ namespace LibreriaUniversitaria.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dia_de_las_bibliotecas {
+        internal static System.Drawing.Bitmap agg__1_ {
             get {
-                object obj = ResourceManager.GetObject("dia-de-las-bibliotecas", resourceCulture);
+                object obj = ResourceManager.GetObject("agg (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,109 @@ namespace LibreriaUniversitaria.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Simple_Login_Page_Website_Desktop_Prototype {
+        internal static System.Drawing.Bitmap agregar {
             get {
-                object obj = ResourceManager.GetObject("Simple Login Page Website Desktop Prototype", resourceCulture);
+                object obj = ResourceManager.GetObject("agregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap avatar {
+            get {
+                object obj = ResourceManager.GetObject("avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carrusel1 {
+            get {
+                object obj = ResourceManager.GetObject("carrusel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carrusel2 {
+            get {
+                object obj = ResourceManager.GetObject("carrusel2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cierrasesion {
+            get {
+                object obj = ResourceManager.GetObject("cierrasesion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap desplegar__4_ {
+            get {
+                object obj = ResourceManager.GetObject("desplegar (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inactivar {
+            get {
+                object obj = ResourceManager.GetObject("inactivar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inicio__2_ {
+            get {
+                object obj = ResourceManager.GetObject("inicio (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap libreria {
+            get {
+                object obj = ResourceManager.GetObject("libreria", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap linea_blanca {
+            get {
+                object obj = ResourceManager.GetObject("linea-blanca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout__1_ {
+            get {
+                object obj = ResourceManager.GetObject("logout (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +186,16 @@ namespace LibreriaUniversitaria.Properties {
         internal static System.Drawing.Bitmap Simple_Login_Page_Website_Desktop_Prototype__1_ {
             get {
                 object obj = ResourceManager.GetObject("Simple Login Page Website Desktop Prototype (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Simple_Login_Page_Website_Desktop_Prototype__16_ {
+            get {
+                object obj = ResourceManager.GetObject("Simple Login Page Website Desktop Prototype (16)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +226,26 @@ namespace LibreriaUniversitaria.Properties {
         internal static System.Drawing.Bitmap Simple_Login_Page_Website_Desktop_Prototype__4_ {
             get {
                 object obj = ResourceManager.GetObject("Simple Login Page Website Desktop Prototype (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuarios__2_ {
+            get {
+                object obj = ResourceManager.GetObject("usuarios (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuarios__4_ {
+            get {
+                object obj = ResourceManager.GetObject("usuarios (4)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

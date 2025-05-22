@@ -33,20 +33,20 @@
             this.textBox_usuario = new System.Windows.Forms.TextBox();
             this.textBox_clave = new System.Windows.Forms.TextBox();
             this.comboBox_tipoUsuario = new System.Windows.Forms.ComboBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pctBox_linea2 = new System.Windows.Forms.PictureBox();
+            this.pctBox_linea = new System.Windows.Forms.PictureBox();
+            this.pctBox_usuario = new System.Windows.Forms.PictureBox();
             this.btn_iniciarSesion = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pctBox_logo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_linea2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_linea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_usuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(827, 619);
+            this.btn_salir.Location = new System.Drawing.Point(765, 619);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(109, 33);
             this.btn_salir.TabIndex = 4;
@@ -57,7 +57,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(496, 443);
+            this.label3.Location = new System.Drawing.Point(472, 443);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 8;
@@ -65,11 +65,14 @@
             // 
             // textBox_usuario
             // 
+            this.textBox_usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_usuario.BackColor = System.Drawing.Color.White;
             this.textBox_usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_usuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_usuario.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_usuario.Location = new System.Drawing.Point(498, 315);
+            this.textBox_usuario.Location = new System.Drawing.Point(474, 315);
             this.textBox_usuario.Name = "textBox_usuario";
             this.textBox_usuario.Size = new System.Drawing.Size(376, 19);
             this.textBox_usuario.TabIndex = 9;
@@ -83,7 +86,7 @@
             this.textBox_clave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_clave.Font = new System.Drawing.Font("Arial", 12F);
             this.textBox_clave.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_clave.Location = new System.Drawing.Point(498, 383);
+            this.textBox_clave.Location = new System.Drawing.Point(474, 383);
             this.textBox_clave.Name = "textBox_clave";
             this.textBox_clave.Size = new System.Drawing.Size(376, 19);
             this.textBox_clave.TabIndex = 10;
@@ -95,40 +98,40 @@
             // 
             this.comboBox_tipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_tipoUsuario.FormattingEnabled = true;
-            this.comboBox_tipoUsuario.Location = new System.Drawing.Point(569, 440);
+            this.comboBox_tipoUsuario.Location = new System.Drawing.Point(545, 440);
             this.comboBox_tipoUsuario.Name = "comboBox_tipoUsuario";
             this.comboBox_tipoUsuario.Size = new System.Drawing.Size(128, 21);
             this.comboBox_tipoUsuario.TabIndex = 11;
             // 
-            // pictureBox4
+            // pctBox_linea2
             // 
-            this.pictureBox4.Image = global::LibreriaUniversitaria.Properties.Resources.Simple_Login_Page_Website_Desktop_Prototype__3_;
-            this.pictureBox4.Location = new System.Drawing.Point(496, 408);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(378, 10);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
+            this.pctBox_linea2.Image = global::LibreriaUniversitaria.Properties.Resources.Simple_Login_Page_Website_Desktop_Prototype__3_;
+            this.pctBox_linea2.Location = new System.Drawing.Point(472, 408);
+            this.pctBox_linea2.Name = "pctBox_linea2";
+            this.pctBox_linea2.Size = new System.Drawing.Size(378, 10);
+            this.pctBox_linea2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox_linea2.TabIndex = 15;
+            this.pctBox_linea2.TabStop = false;
             // 
-            // pictureBox3
+            // pctBox_linea
             // 
-            this.pictureBox3.Image = global::LibreriaUniversitaria.Properties.Resources.Simple_Login_Page_Website_Desktop_Prototype__3_;
-            this.pictureBox3.Location = new System.Drawing.Point(499, 340);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(377, 10);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
+            this.pctBox_linea.Image = global::LibreriaUniversitaria.Properties.Resources.Simple_Login_Page_Website_Desktop_Prototype__3_;
+            this.pctBox_linea.Location = new System.Drawing.Point(475, 340);
+            this.pctBox_linea.Name = "pctBox_linea";
+            this.pctBox_linea.Size = new System.Drawing.Size(377, 10);
+            this.pctBox_linea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox_linea.TabIndex = 14;
+            this.pctBox_linea.TabStop = false;
             // 
-            // pictureBox2
+            // pctBox_usuario
             // 
-            this.pictureBox2.Image = global::LibreriaUniversitaria.Properties.Resources.Simple_Login_Page_Website_Desktop_Prototype__2_;
-            this.pictureBox2.Location = new System.Drawing.Point(564, 131);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(251, 165);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.pctBox_usuario.Image = global::LibreriaUniversitaria.Properties.Resources.Simple_Login_Page_Website_Desktop_Prototype__2_;
+            this.pctBox_usuario.Location = new System.Drawing.Point(540, 131);
+            this.pctBox_usuario.Name = "pctBox_usuario";
+            this.pctBox_usuario.Size = new System.Drawing.Size(251, 165);
+            this.pctBox_usuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox_usuario.TabIndex = 13;
+            this.pctBox_usuario.TabStop = false;
             // 
             // btn_iniciarSesion
             // 
@@ -140,7 +143,7 @@
             this.btn_iniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_iniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_iniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.btn_iniciarSesion.Location = new System.Drawing.Point(584, 494);
+            this.btn_iniciarSesion.Location = new System.Drawing.Point(560, 494);
             this.btn_iniciarSesion.Name = "btn_iniciarSesion";
             this.btn_iniciarSesion.Size = new System.Drawing.Size(212, 55);
             this.btn_iniciarSesion.TabIndex = 5;
@@ -149,41 +152,43 @@
             this.btn_iniciarSesion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_iniciarSesion_MouseDown);
             this.btn_iniciarSesion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_iniciarSesion_MouseUp);
             // 
-            // pictureBox1
+            // pctBox_logo
             // 
-            this.pictureBox1.Image = global::LibreriaUniversitaria.Properties.Resources.Simple_Login_Page_Website_Desktop_Prototype__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(-136, -20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(623, 732);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pctBox_logo.Image = global::LibreriaUniversitaria.Properties.Resources.Simple_Login_Page_Website_Desktop_Prototype__1_;
+            this.pctBox_logo.Location = new System.Drawing.Point(-136, -20);
+            this.pctBox_logo.Name = "pctBox_logo";
+            this.pctBox_logo.Size = new System.Drawing.Size(623, 732);
+            this.pctBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox_logo.TabIndex = 12;
+            this.pctBox_logo.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(948, 664);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.ClientSize = new System.Drawing.Size(887, 664);
+            this.Controls.Add(this.pctBox_linea2);
+            this.Controls.Add(this.pctBox_linea);
+            this.Controls.Add(this.pctBox_usuario);
             this.Controls.Add(this.textBox_clave);
             this.Controls.Add(this.textBox_usuario);
-            this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_iniciarSesion);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox_tipoUsuario);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_salir);
+            this.Controls.Add(this.pctBox_logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_linea2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_linea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_usuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,9 +201,9 @@
         private System.Windows.Forms.TextBox textBox_usuario;
         private System.Windows.Forms.TextBox textBox_clave;
         private System.Windows.Forms.ComboBox comboBox_tipoUsuario;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pctBox_logo;
+        private System.Windows.Forms.PictureBox pctBox_usuario;
+        private System.Windows.Forms.PictureBox pctBox_linea;
+        private System.Windows.Forms.PictureBox pctBox_linea2;
     }
 }

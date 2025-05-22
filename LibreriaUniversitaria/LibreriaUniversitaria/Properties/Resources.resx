@@ -118,22 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Simple Login Page Website Desktop Prototype (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Simple Login Page Website Desktop Prototype (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Simple Login Page Website Desktop Prototype (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Simple Login Page Website Desktop Prototype (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dia-de-las-bibliotecas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dia-de-las-bibliotecas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="desplegar (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\desplegar (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carrusel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carrusel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inactivar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inactivar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuarios (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuarios (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agg (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agg (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Simple Login Page Website Desktop Prototype (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Simple Login Page Website Desktop Prototype (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Simple Login Page Website Desktop Prototype" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Simple Login Page Website Desktop Prototype.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cierrasesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cierrasesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carrusel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carrusel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="libreria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\libreria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Simple Login Page Website Desktop Prototype (16)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Simple Login Page Website Desktop Prototype (16).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Simple Login Page Website Desktop Prototype (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Simple Login Page Website Desktop Prototype (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuarios (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuarios (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Simple Login Page Website Desktop Prototype (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Simple Login Page Website Desktop Prototype (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicio (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicio (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="linea-blanca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\linea-blanca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

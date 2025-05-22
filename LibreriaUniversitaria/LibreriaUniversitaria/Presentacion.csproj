@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GumroadLicensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GumroadLicensing.1.0.3\lib\net40\GumroadLicensing.dll</HintPath>
+    </Reference>
+    <Reference Include="NavigationMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kimtoo.NavigationMenu.1.0.2\lib\net40\NavigationMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -72,6 +81,11 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="VendedorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,17 +106,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="VendedorForm.resx">
       <DependentUpon>VendedorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,12 +137,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dia-de-las-bibliotecas.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Simple Login Page Website Desktop Prototype.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Simple Login Page Website Desktop Prototype %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +147,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Simple Login Page Website Desktop Prototype %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple Login Page Website Desktop Prototype %2816%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desplegar %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactivar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agg %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cierrasesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicio %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrusel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrusel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\libreria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linea-blanca.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
