@@ -220,5 +220,29 @@
   <ItemGroup>
     <None Include="Resources\addverde.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editorial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\librostock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

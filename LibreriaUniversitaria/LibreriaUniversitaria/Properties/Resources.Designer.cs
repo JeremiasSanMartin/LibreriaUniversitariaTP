@@ -123,6 +123,46 @@ namespace LibreriaUniversitaria.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alerta {
+            get {
+                object obj = ResourceManager.GetObject("alerta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alerta__1_ {
+            get {
+                object obj = ResourceManager.GetObject("alerta (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alerta__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("alerta (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alerta__2_ {
+            get {
+                object obj = ResourceManager.GetObject("alerta (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatar {
             get {
                 object obj = ResourceManager.GetObject("avatar", resourceCulture);
@@ -193,6 +233,16 @@ namespace LibreriaUniversitaria.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap editorial {
+            get {
+                object obj = ResourceManager.GetObject("editorial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap inactivar {
             get {
                 object obj = ResourceManager.GetObject("inactivar", resourceCulture);
@@ -243,6 +293,16 @@ namespace LibreriaUniversitaria.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap librostock {
+            get {
+                object obj = ResourceManager.GetObject("librostock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap linea_blanca {
             get {
                 object obj = ResourceManager.GetObject("linea-blanca", resourceCulture);
@@ -256,6 +316,16 @@ namespace LibreriaUniversitaria.Properties {
         internal static System.Drawing.Bitmap logout__1_ {
             get {
                 object obj = ResourceManager.GetObject("logout (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reportes {
+            get {
+                object obj = ResourceManager.GetObject("reportes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +376,16 @@ namespace LibreriaUniversitaria.Properties {
         internal static System.Drawing.Bitmap Simple_Login_Page_Website_Desktop_Prototype__4_ {
             get {
                 object obj = ResourceManager.GetObject("Simple Login Page Website Desktop Prototype (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stock__1_ {
+            get {
+                object obj = ResourceManager.GetObject("stock (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
