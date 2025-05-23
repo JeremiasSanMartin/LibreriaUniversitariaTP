@@ -9,19 +9,120 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
 
+
 namespace Presentacion
 {
+   
     public partial class AdminForm : Form
     {
+        private bool colapsado = true;
+        private int menu_abierto = 175;
+        private int menu_cerrado = 60;
+        //diccionario con mensajes para mostrar en cada seccion 
+        Dictionary<string, string> mensajes = new Dictionary<string, string>
+        {
+         { "Inicio", "¡Bienvenido/a, (nombre y apellido)!" },
+         { "Usuarios", "Usuarios del Sistema" },
+         { "NuevoUsuario", " " },
+        };
+
+
+
+
         public AdminForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            dataGrid_usuarios.Rows.Add("1", "miardg", "Mia", "Rodriguez", "123", "Gerente");
+            panel_menu.Width = menu_cerrado;
+            dataGrid_usuarios.Location = new Point(173, 87);
+            dataGrid_usuarios.Hide();
+            panel_crearUsuario.Hide();
+
+
         }
 
-        private void btn_salir_Click(object sender, EventArgs e)
+        private void btn_cerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show("¿Está seguro de que desea cerrar sesión?","Confirmar cierre de sesión",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+
+        //usamos un timer para simular una animacion al abrir y cerrar el menu desplegable
+        private void timer_animacionMenu_Tick(object sender, EventArgs e)
+        {
+            if(colapsado)
+            {
+               
+                dataGrid_usuarios.Location = new Point(232, 87);
+                panel_menu.Width += 5;
+             
+                if (panel_menu.Width >= menu_abierto)
+                {
+                    timer_animacionMenu.Stop();
+                    colapsado = false;
+                    
+                }
+            }
+            else
+            {
+                dataGrid_usuarios.Location = new Point(173, 87);
+                panel_menu.Width -= 5;
+               
+                if (panel_menu.Width <= menu_cerrado)
+                {
+                    timer_animacionMenu.Stop();
+                    colapsado = true;
+                }
+
+            }
+        }
+
+        private void btn_desplegar_Click(object sender, EventArgs e)
+        {
+            timer_animacionMenu.Start();
+           
+            
+        }
+
+        private void btn_usuarios_Click(object sender, EventArgs e)
+        {
+            lbl_bienvenida.Text = mensajes["Usuarios"];
+            panel_crearUsuario.Hide();
+            dataGrid_usuarios.Show();
+           
+            
+        }
+
+        private void btn_nuevoUsuario_Click(object sender, EventArgs e)
+        {
+            lbl_bienvenida.Text = mensajes["NuevoUsuario"];
+            panel_crearUsuario.Show();
+            panel_crearUsuario.Location = new Point(303, 128);
+            dataGrid_usuarios.Hide();
+
+
+        }
+
+        private void pctBox_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pctBox_minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_Inicio_Click(object sender, EventArgs e)
+        {
+            lbl_bienvenida.Text = mensajes["Inicio"];
+            dataGrid_usuarios.Hide();
+            panel_crearUsuario.Hide();
         }
     }
 }
