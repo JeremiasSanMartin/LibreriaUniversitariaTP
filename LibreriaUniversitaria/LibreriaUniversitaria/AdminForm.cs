@@ -18,10 +18,16 @@ namespace Presentacion
         private bool colapsado = true;
         private int menu_abierto = 175;
         private int menu_cerrado = 60;
-    
-       
+        //diccionario con mensajes para mostrar en cada seccion 
+        Dictionary<string, string> mensajes = new Dictionary<string, string>
+        {
+         { "Inicio", "¡Bienvenido/a, (nombre y apellido)!" },
+         { "Usuarios", "Usuarios del Sistema" },
+         { "NuevoUsuario", " " },
+        };
 
-        
+
+
 
         public AdminForm()
         {
@@ -45,6 +51,7 @@ namespace Presentacion
         }
 
 
+        //usamos un timer para simular una animacion al abrir y cerrar el menu desplegable
         private void timer_animacionMenu_Tick(object sender, EventArgs e)
         {
             if(colapsado)
@@ -83,6 +90,7 @@ namespace Presentacion
 
         private void btn_usuarios_Click(object sender, EventArgs e)
         {
+            lbl_bienvenida.Text = mensajes["Usuarios"];
             panel_crearUsuario.Hide();
             dataGrid_usuarios.Show();
            
@@ -91,11 +99,29 @@ namespace Presentacion
 
         private void btn_nuevoUsuario_Click(object sender, EventArgs e)
         {
+            lbl_bienvenida.Text = mensajes["NuevoUsuario"];
             panel_crearUsuario.Show();
             panel_crearUsuario.Location = new Point(303, 128);
             dataGrid_usuarios.Hide();
 
 
+        }
+
+        private void pctBox_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pctBox_minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_Inicio_Click(object sender, EventArgs e)
+        {
+            lbl_bienvenida.Text = mensajes["Inicio"];
+            dataGrid_usuarios.Hide();
+            panel_crearUsuario.Hide();
         }
     }
 }

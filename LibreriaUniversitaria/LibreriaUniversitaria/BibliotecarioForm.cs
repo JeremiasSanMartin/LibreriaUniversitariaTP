@@ -120,5 +120,16 @@ namespace Presentacion
             btn_alertasStockBajo.Hide();
 
         }
+
+        private void pctBox_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+ 
+        }
+
+        private void pctBox_minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

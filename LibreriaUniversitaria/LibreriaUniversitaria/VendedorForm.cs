@@ -122,5 +122,15 @@ namespace Presentacion
             panel_nuevaVenta.Hide();
             btn_nuevoCliente.Hide();
         }
+
+        private void pctBox_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pctBox_minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
