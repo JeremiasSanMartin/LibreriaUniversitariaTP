@@ -12,27 +12,10 @@ namespace Persistencia
 {
     public class Usuario
     {
-        public List<Entidades.Usuario> Listar()
+        public void metodo()
         {
-            Conexion conexion = new Conexion();
-
-            List<Entidades.Usuario> usuarios = new List<Entidades.Usuario>();
-
-            DataTable datatable = conexion.LeerPorComando("COLOCAR PROCEDIMIENTO ALMACENADO");
-
-            foreach (DataRow fila in datatable.Rows) 
-            {
-                Entidades.Usuario unUsuario = new Entidades.Usuario();
-
-                unUsuario.Clave = fila["clave"].ToString();
-                unUsuario.UserName = fila["usuario"].ToString();
-
-                usuarios.Add(unUsuario);
-            }
-
-            return usuarios;
+            throw new NotImplementedException("El metodo o la operacion todavia no ha sido implementada");
         }
     }
 
-    
 }

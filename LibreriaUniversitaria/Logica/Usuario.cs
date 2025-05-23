@@ -10,11 +10,11 @@ namespace Logica
 {
     public class Usuario
     {
-        public bool CrearUsuario(string Usuario, string clave) 
+        public bool crearUsuario(string Usuario, string clave) 
         {
             return true;
         }
-		public bool Loguearse(string Usuario, string clave, string rolSeleccionado)
+		public bool loguearse(string Usuario, string clave, string rolSeleccionado)
         {
             if (Usuario == "admin" && clave == "1234" && rolSeleccionado == "Administrador")
             {
@@ -37,19 +37,6 @@ namespace Logica
             }
 
             return false;
-            //Persistencia.Usuario dalUsuario = new Persistencia.Usuario();
-
-            //List<Entidades.Usuario> usuarios = dalUsuario.Listar();
-
-            //         foreach (Entidades.Usuario unUsuario in usuarios) 
-            //         {
-            //             if (unUsuario.Clave == clave.Trim() && unUsuario.UserName == Usuario.Trim()) 
-            //             {
-            //                 return true;
-            //             }
-            //         }
-
-            //         return false;
         }
     }
 }

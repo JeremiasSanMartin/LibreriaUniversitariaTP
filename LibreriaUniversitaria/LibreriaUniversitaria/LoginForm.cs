@@ -69,7 +69,7 @@ namespace Presentacion
 
             Logica.Usuario unLogin = new Logica.Usuario();
 
-            if (unLogin.Loguearse(usuario, clave, rolSeleccionado))
+            if (unLogin.loguearse(usuario, clave, rolSeleccionado))
             {
                 MessageBox.Show($"Inicio sesión correctamente como {rolSeleccionado}");
 

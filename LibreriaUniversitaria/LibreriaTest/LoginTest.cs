@@ -12,7 +12,7 @@ namespace UnitTestProject1
         public void TestAdmin()
         {
             var usuario = new Usuario();
-            bool resultado = usuario.Loguearse("admin", "1234", "Administrador");
+            bool resultado = usuario.loguearse("admin", "1234", "Administrador");
 
             Debug.WriteLine(resultado);
             Assert.IsTrue(resultado);
@@ -22,7 +22,7 @@ namespace UnitTestProject1
         public void TestBiblotecario()
         {
             var usuario = new Usuario();
-            bool resultado = usuario.Loguearse("bibliotecario", "1234", "Bibliotecario");
+            bool resultado = usuario.loguearse("bibliotecario", "1234", "Bibliotecario");
 
             Debug.WriteLine(resultado);
             Assert.IsTrue(resultado);
@@ -32,7 +32,7 @@ namespace UnitTestProject1
         public void TestInvalido()
         {
             var usuario = new Usuario();
-            bool resultado = usuario.Loguearse("fakeuser", "wrong", "Administrador");
+            bool resultado = usuario.loguearse("fakeuser", "wrong", "Administrador");
 
             Debug.WriteLine(resultado);
             Assert.IsFalse(resultado);
@@ -42,7 +42,7 @@ namespace UnitTestProject1
         public void TestRolErroneo()
         {
             var usuario = new Usuario();
-            bool resultado = usuario.Loguearse("admin", "1234", "Gerente");
+            bool resultado = usuario.loguearse("admin", "1234", "Gerente");
 
             Debug.WriteLine(resultado);
             Assert.IsFalse(resultado);
