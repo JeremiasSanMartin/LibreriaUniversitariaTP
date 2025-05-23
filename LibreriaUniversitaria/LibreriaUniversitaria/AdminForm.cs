@@ -18,7 +18,7 @@ namespace Presentacion
         private bool colapsado = true;
         private int menu_abierto = 175;
         private int menu_cerrado = 60;
-        int imagenActual = 0;
+    
        
 
         
@@ -31,7 +31,6 @@ namespace Presentacion
             panel_menu.Width = menu_cerrado;
             dataGrid_usuarios.Hide();
             panel_crearUsuario.Hide();
-            timer_carrusel.Start();
 
 
         }

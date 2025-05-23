@@ -193,5 +193,32 @@
   <ItemGroup>
     <None Include="Resources\linea-blanca.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactivar-rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactivar-rojo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addverde.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
