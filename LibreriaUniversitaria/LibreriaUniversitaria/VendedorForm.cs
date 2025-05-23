@@ -132,5 +132,10 @@ namespace Presentacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

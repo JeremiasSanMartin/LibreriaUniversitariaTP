@@ -35,6 +35,7 @@ namespace Presentacion
             this.StartPosition = FormStartPosition.CenterScreen;
             dataGrid_usuarios.Rows.Add("1", "miardg", "Mia", "Rodriguez", "123", "Gerente");
             panel_menu.Width = menu_cerrado;
+            dataGrid_usuarios.Location = new Point(173, 87);
             dataGrid_usuarios.Hide();
             panel_crearUsuario.Hide();
 
