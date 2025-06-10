@@ -8,22 +8,6 @@ namespace Entidades
 {
     public class Usuario
     {
-        private string nombre_usuario;
-
-        public string Nombre_Usuario
-        {
-            get { return nombre_usuario; }
-            set { nombre_usuario = value; }
-        }
-
-        private string contraseña;
-
-        public string Contraseña
-        {
-            get { return contraseña; }
-            set { contraseña = value; }
-        }
-
         private string nombre;
 
         public string Nombre
@@ -48,12 +32,28 @@ namespace Entidades
             set { dni = value; }
         }
 
-        private string tipo_usuario;
+        private string nombre_usuario;
 
-        public string Tipo_usuario
+        public string Nombre_usuario
         {
-            get { return tipo_usuario; }
-            set { tipo_usuario = value; }
+            get { return nombre_usuario; }
+            set { nombre_usuario = value; }
+        }
+
+        private string contraseña;
+
+        public string Contraseña
+        {
+            get { return contraseña; }
+            set { contraseña = value; }
+        }
+
+        private string rol;
+
+        public string Rol
+        {
+            get { return rol; }
+            set { rol = value; }
         }
 
         private bool activo;
@@ -63,38 +63,5 @@ namespace Entidades
             get { return activo; }
             set { activo = value; }
         }
-
-        private string direccion;
-
-        public string Direccion
-        {
-            get { return direccion; }
-            set { direccion = value; }
-        }
-
-        private int telefono;
-
-        public int Telefono
-        {
-            get { return telefono; }
-            set { telefono = value; }
-        }
-
-        private string email;
-
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-
-        private string tipo_cliente;
-
-        public string Tipo_cliente
-        {
-            get { return tipo_cliente; }
-            set { tipo_cliente = value; }
-        }
-
     }
 }

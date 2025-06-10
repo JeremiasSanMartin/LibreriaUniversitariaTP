@@ -11,41 +11,41 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestAdmin()
         {
-            var usuario = new Usuario();
-            bool resultado = usuario.loguearse("admin", "1234", "Administrador");
+            var usuario = new UsuarioLogica();
+            string resultado = usuario.loguearse("miardg", "1234");
 
             Debug.WriteLine(resultado);
-            Assert.IsTrue(resultado);
+            Assert.AreEqual("Administrador", resultado);
         }
 
         [TestMethod]
         public void TestBiblotecario()
         {
-            var usuario = new Usuario();
-            bool resultado = usuario.loguearse("bibliotecario", "1234", "Bibliotecario");
+            var usuario = new UsuarioLogica();
+            string resultado = usuario.loguearse("Bibliotecario", "1234");
 
             Debug.WriteLine(resultado);
-            Assert.IsTrue(resultado);
+            Assert.AreEqual("Bibliotecario", resultado);
         }
 
         [TestMethod]
         public void TestInvalido()
         {
-            var usuario = new Usuario();
-            bool resultado = usuario.loguearse("fakeuser", "wrong", "Administrador");
+            var usuario = new UsuarioLogica();
+            string resultado = usuario.loguearse("fakeuser", "wrong");
 
             Debug.WriteLine(resultado);
-            Assert.IsFalse(resultado);
+            Assert.IsNull(resultado); // Si no existe, debe ser null
         }
 
         [TestMethod]
         public void TestRolErroneo()
         {
-            var usuario = new Usuario();
-            bool resultado = usuario.loguearse("admin", "1234", "Gerente");
+            var usuario = new UsuarioLogica();
+            string resultado = usuario.loguearse("admin", "1234");
 
             Debug.WriteLine(resultado);
-            Assert.IsFalse(resultado);
+            Assert.IsNull(resultado);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
+using Logica;
 
 namespace Presentacion
 {
@@ -23,23 +25,7 @@ namespace Presentacion
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            cargarRoles();
             cargarPlaceholders();
-
-
-        }
-
-
-        private void cargarRoles()
-        {
-
-            comboBox_tipoUsuario.Items.Clear();
-            comboBox_tipoUsuario.Items.Add("Administrador");
-            comboBox_tipoUsuario.Items.Add("Bibliotecario");
-            comboBox_tipoUsuario.Items.Add("Vendedor");
-            comboBox_tipoUsuario.Items.Add("Gerente");
-            comboBox_tipoUsuario.SelectedIndex = -1; //para que en combo box no aparezca nada seleccionado primero
-
         }
 
         private void cargarPlaceholders()
@@ -65,15 +51,15 @@ namespace Presentacion
         {
             string usuario = textBox_usuario.Text;
             string clave = textBox_clave.Text;
-            string rolSeleccionado = comboBox_tipoUsuario.SelectedItem?.ToString(); //selectedItem es por si agrega nada
+            string rol; // Variable para almacenar el rol del usuario
 
-            Logica.Usuario unLogin = new Logica.Usuario();
+            Logica.UsuarioLogica unLogin = new Logica.UsuarioLogica();
 
-            if (unLogin.loguearse(usuario, clave, rolSeleccionado))
+            if (unLogin.loguearse(usuario, clave, out rol))
             {
-                MessageBox.Show($"Inicio sesión correctamente como {rolSeleccionado}");
+                MessageBox.Show($"Inicio sesión correctamente");
 
-                if (rolSeleccionado == "Administrador")
+                if (rol == "Administrador")
                 {
 
                     AdminForm adminForm = new AdminForm();
@@ -84,7 +70,7 @@ namespace Presentacion
 
 
                 }
-                else if (rolSeleccionado == "Bibliotecario")
+                else if (rol == "Bibliotecario")
                 {
 
                     BibliotecarioForm bibliotecarioForm = new BibliotecarioForm();
@@ -94,7 +80,15 @@ namespace Presentacion
                     cargarPlaceholders();   
 
                 }
-                else if (rolSeleccionado == "Vendedor")
+                else if (rol == "Gerente")
+                {
+                    GerenteForm gerenteForm = new GerenteForm();
+                    this.Hide();
+                    gerenteForm.ShowDialog();
+                    this.Show();
+                    cargarPlaceholders();
+                }
+                else if (rol == "Vendedor")
                 {
                     VendedorForm vendedorForm = new VendedorForm();
                     this.Hide();
@@ -102,14 +96,6 @@ namespace Presentacion
                     this.Show();
                     cargarPlaceholders();
 
-                }
-                else if (rolSeleccionado == "Gerente")
-                {
-                    GerenteForm gerenteForm = new GerenteForm();
-                    this.Hide();
-                    gerenteForm.ShowDialog();
-                    this.Show();
-                    cargarPlaceholders();
                 }
                 else
                 {
@@ -189,7 +175,7 @@ namespace Presentacion
         {
             if (e.KeyCode == Keys.Enter)
             {
-               comboBox_tipoUsuario.Focus();
+               btn_iniciarSesion.Focus();
                 e.SuppressKeyPress = true; 
             }
         }
