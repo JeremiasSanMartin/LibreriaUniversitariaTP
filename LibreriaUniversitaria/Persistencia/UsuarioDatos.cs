@@ -1,22 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DAL;
 using Entidades;
 using Persistencia;
-using DAL;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Persistencia
 {
     public class UsuarioDatos
     {
-        public DataTable ObtenerDatos()
+        public DataTable ObtenerDatosUsuarioLogin(string nombreUsuario, string contraseña)
         {
             Conexion conexion = new Conexion();
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                conexion.crearParametro("@nombre_usuario", nombreUsuario),
+                conexion.crearParametro("@contrasena", contraseña)
+            };
+            DataTable dt = conexion.LeerPorStoreProcedure("obtenerUsuarioLogin", parametros);
+            return dt;
+        }
 
-            DataTable dt = conexion.LeerPorComando("SELECT u.nombre_usuario, u.contrasena, r.nombre AS rol " + "FROM [BibliotecaDB].[dbo].[Usuarios] u " + "INNER JOIN [BibliotecaDB].[dbo].[Roles] r ON u.id_rol = r.id");
+        public int InsertarUsuario(string nombreUsuario, string contraseña, string nombre, string apellido, int idRol)
+        {
+            Conexion conexion = new Conexion();
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                conexion.crearParametro("@nombre_usuario", nombreUsuario),
+                conexion.crearParametro("@contrasena", contraseña),
+                conexion.crearParametro("@nombre", nombre),
+                conexion.crearParametro("@apellido", apellido),
+                conexion.crearParametro("@dni", ""),
+                conexion.crearParametro("@id_rol", idRol),
+                conexion.crearParametro("@activo", 1)//Si el usuario se crea, por defecto estará activo
+            };
+
+            int filasAfectadas = conexion.EscribirPorStoreProcedure("insertarUsuario", parametros);
+            return filasAfectadas;
+        }
+
+        public DataTable ObtenerDatosUsuario()
+        {
+            //RETORNAR UN DATATABLE CON LOS DATOS DEL USUARIO DEL SP obtenerUsuarios
+            Conexion conexion = new Conexion();
+            DataTable dt = conexion.LeerPorStoreProcedure("obtenerUsuarios");
             return dt;
         }
     }

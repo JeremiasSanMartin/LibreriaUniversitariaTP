@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Entidades;
+using Logica;
+using Presentacion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Presentacion;
 
 
 namespace Presentacion
@@ -26,20 +28,14 @@ namespace Presentacion
          { "NuevoUsuario", " " },
         };
 
-
-
-
         public AdminForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            dataGrid_usuarios.Rows.Add("1", "miardg", "Mia", "Rodriguez", "123", "Gerente");
             panel_menu.Width = menu_cerrado;
             dataGrid_usuarios.Location = new Point(173, 87);
             dataGrid_usuarios.Hide();
             panel_crearUsuario.Hide();
-
-
         }
 
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
@@ -94,8 +90,27 @@ namespace Presentacion
             lbl_bienvenida.Text = mensajes["Usuarios"];
             panel_crearUsuario.Hide();
             dataGrid_usuarios.Show();
-           
-            
+
+            // Instancia la lógica de administración
+            AdminLogica adminLogica = new AdminLogica();
+
+            // Obtener los usuarios
+            DataTable dt = adminLogica.buscarUsuario();
+
+            // Limpia el DataGridView antes de cargar nuevos datos
+            dataGrid_usuarios.Rows.Clear();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dataGrid_usuarios.Rows.Add(
+                    row["id"],
+                    row["nombre_usuario"],
+                    row["nombre"],
+                    row["apellido"],
+                    row["contrasena"],
+                    row["rol"]
+                );
+            }
         }
 
         private void btn_nuevoUsuario_Click(object sender, EventArgs e)

@@ -16,17 +16,17 @@ namespace Entidades
             set { nombre = value; }
         }
 
-        private int apellido;
+        private string apellido;
 
-        public int Apellido
+        public string Apellido
         {
             get { return apellido; }
             set { apellido = value; }
         }
 
-        private int dni;
+        private string dni;
 
-        public int DNI
+        public string DNI
         {
             get { return dni; }
             set { dni = value; }

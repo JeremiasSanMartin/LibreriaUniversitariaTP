@@ -8,20 +8,20 @@ namespace Entidades
 {
     public class Editorial
     {
-		private int nombre_editorial;
+		private string nombre;
 
-		public int Nombre_editorial
+		public string Nombre
 		{
-			get { return nombre_editorial; }
-			set { nombre_editorial = value; }
+			get { return nombre; }
+			set { nombre = value; }
 		}
 
-		private string contacto_editorial;
+		private string contacto;
 
-		public string Contacto_editorial
+		public string Contacto
 		{
-			get { return contacto_editorial; }
-			set { contacto_editorial = value; }
+			get { return contacto; }
+			set { contacto = value; }
 		}
 
 	}

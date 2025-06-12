@@ -111,7 +111,7 @@
             this.dataGrid_usuarios.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
             this.dataGrid_usuarios.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dataGrid_usuarios.RowTemplate.Height = 40;
-            this.dataGrid_usuarios.Size = new System.Drawing.Size(600, 499);
+            this.dataGrid_usuarios.Size = new System.Drawing.Size(601, 499);
             this.dataGrid_usuarios.TabIndex = 5;
             // 
             // panel_menu
@@ -245,7 +245,7 @@
             this.panel1.Controls.Add(this.lbl_bienvenida);
             this.panel1.Location = new System.Drawing.Point(59, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(818, 55);
+            this.panel1.Size = new System.Drawing.Size(813, 55);
             this.panel1.TabIndex = 8;
             // 
             // flowLayoutPanel1
@@ -253,7 +253,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pctBox_minimizar);
             this.flowLayoutPanel1.Controls.Add(this.pctBox_salir);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(725, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(93, 31);
             this.flowLayoutPanel1.TabIndex = 14;
@@ -262,7 +262,7 @@
             // 
             this.pctBox_minimizar.Image = global::LibreriaUniversitaria.Properties.Resources.minimizar;
             this.pctBox_minimizar.Location = new System.Drawing.Point(2, 2);
-            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2);
             this.pctBox_minimizar.Name = "pctBox_minimizar";
             this.pctBox_minimizar.Size = new System.Drawing.Size(41, 29);
             this.pctBox_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -274,7 +274,7 @@
             // 
             this.pctBox_salir.Image = global::LibreriaUniversitaria.Properties.Resources.cerrar;
             this.pctBox_salir.Location = new System.Drawing.Point(47, 2);
-            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2);
             this.pctBox_salir.Name = "pctBox_salir";
             this.pctBox_salir.Size = new System.Drawing.Size(41, 32);
             this.pctBox_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -430,7 +430,7 @@
             this.pictureBox1.Image = global::LibreriaUniversitaria.Properties.Resources.libreria;
             this.pictureBox1.Location = new System.Drawing.Point(62, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(815, 581);
+            this.pictureBox1.Size = new System.Drawing.Size(810, 581);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 

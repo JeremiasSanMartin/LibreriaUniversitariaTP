@@ -16,68 +16,68 @@ namespace Entidades
             set { activo = value; }
         }
 
-        private string nombre_cliente;
+        private string nombre;
 
-        public string Nombre_cliente
+        public string Nombre
         {
-            get { return nombre_cliente; }
-            set { nombre_cliente = value; }
+            get { return nombre; }
+            set { nombre = value; }
         }
 
-        private string apellido_cliente;
+        private string apellido;
 
-        public string Apellido_cliente
+        public string Apellido
         {
-            get { return apellido_cliente; }
-            set { apellido_cliente = value; }
+            get { return apellido; }
+            set { apellido = value; }
         }
 
-        private string dni_cliente;
+        private string dni;
 
-        public string DNI_cliente
+        public string DNI
         {
-            get { return dni_cliente; }
-            set { dni_cliente = value; }
+            get { return dni; }
+            set { dni = value; }
         }
 
-        private string direccion_cliente;
+        private string direccion;
 
-        public string Direccion_cliente
+        public string Direccion
         {
-            get { return direccion_cliente; }
-            set { direccion_cliente = value; }
+            get { return direccion; }
+            set { direccion = value; }
         }
 
-        private string telefono_cliente;
+        private string telefono;
 
-        public string Telefono_cliente
+        public string Telefono
         {
-            get { return telefono_cliente; }
-            set { telefono_cliente = value; }
+            get { return telefono; }
+            set { telefono = value; }
         }
 
-        private string email_cliente;
+        private string email;
 
-        public string Email_cliente
+        public string Email
         {
-            get { return email_cliente; }
-            set { email_cliente = value; }
+            get { return email; }
+            set { email = value; }
         }
 
-        private string tipo_cliente;
+        private string tipo;
 
-        public string Tipo_cliente
+        public string Tipo
         {
-            get { return tipo_cliente; }
-            set { tipo_cliente = value; }
+            get { return tipo; }
+            set { tipo = value; }
         }
 
-        private float descuento_cliente;
+        private float descuento;
 
-        public float Descuento_cliente
+        public float Descuento
         {
-            get { return descuento_cliente; }
-            set { descuento_cliente = value; }
+            get { return descuento; }
+            set { descuento = value; }
         }
     }
 }
