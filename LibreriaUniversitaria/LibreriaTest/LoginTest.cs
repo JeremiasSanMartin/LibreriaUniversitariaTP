@@ -12,40 +12,48 @@ namespace UnitTestProject1
         public void TestAdmin()
         {
             var usuario = new UsuarioLogica();
-            string resultado = usuario.loguearse("miardg", "1234");
+            string rol;
+            bool resultado = usuario.loguearse("miardg", "1234", out rol);
 
-            Debug.WriteLine(resultado);
-            Assert.AreEqual("Administrador", resultado);
+            Debug.WriteLine(rol);
+            Assert.IsTrue(resultado);
+            Assert.AreEqual("Administrador", rol);
         }
 
         [TestMethod]
         public void TestBiblotecario()
         {
             var usuario = new UsuarioLogica();
-            string resultado = usuario.loguearse("Bibliotecario", "1234");
+            string rol;
+            bool resultado = usuario.loguearse("Bibliotecario", "1234", out rol);
 
-            Debug.WriteLine(resultado);
-            Assert.AreEqual("Bibliotecario", resultado);
+            Debug.WriteLine(rol);
+            Assert.IsTrue(resultado);
+            Assert.AreEqual("Bibliotecario", rol);
         }
 
         [TestMethod]
         public void TestInvalido()
         {
             var usuario = new UsuarioLogica();
-            string resultado = usuario.loguearse("fakeuser", "wrong");
+            string rol;
+            bool resultado = usuario.loguearse("fakeuser", "wrong", out rol);
 
-            Debug.WriteLine(resultado);
-            Assert.IsNull(resultado); // Si no existe, debe ser null
+            Debug.WriteLine(rol);
+            Assert.IsFalse(resultado);
+            Assert.IsNull(rol); // Si no existe, debe ser null  
         }
 
         [TestMethod]
         public void TestRolErroneo()
         {
             var usuario = new UsuarioLogica();
-            string resultado = usuario.loguearse("admin", "1234");
+            string rol;
+            bool resultado = usuario.loguearse("admin", "1234", out rol);
 
-            Debug.WriteLine(resultado);
-            Assert.IsNull(resultado);
+            Debug.WriteLine(rol);
+            Assert.IsFalse(resultado);
+            Assert.IsNull(rol);
         }
     }
 }
