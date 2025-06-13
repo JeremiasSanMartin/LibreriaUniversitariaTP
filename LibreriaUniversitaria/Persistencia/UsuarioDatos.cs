@@ -42,6 +42,7 @@ namespace Persistencia
             };
 
             int filasAfectadas = conexion.EscribirPorStoreProcedure("insertarUsuario", parametros);
+            
             return filasAfectadas;
         }
 

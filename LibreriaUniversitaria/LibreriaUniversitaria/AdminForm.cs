@@ -207,5 +207,50 @@ namespace Presentacion
                 MessageBox.Show("Error al crear el usuario. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //Eventos para que al presionar enter envie datos al crear usuario
+        private void txtBox_nombreCrear_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;//Evitar que se envíe el Enter al botón predeterminado
+                txtBox_apellidoCrear.Focus();//Pasa al siguiente foco
+            }
+        }
+
+        private void txtBox_apellidoCrear_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; 
+                txtBox_usuarioCrear.Focus();
+            }
+        }
+
+        private void txtBox_usuarioCrear_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; 
+                txtBox_contrasenaCrear.Focus(); 
+            }
+        }
+
+        private void txtBox_contrasenaCrear_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; 
+                txtBox_DNI.Focus(); 
+            }
+        }
+
+        private void txtBox_DNI_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; 
+            }
+        }
     }
 }
