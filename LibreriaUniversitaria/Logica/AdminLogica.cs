@@ -14,9 +14,16 @@ namespace Logica
         public bool crearUsuario(string nombre, string apellido, string nombreUsuario, string contraseña, string dni, string rol) 
         {
             //Llamo al método de la capa de persistencia para insertar un nuevo usuario
-            int filasAfectadas = usuario.InsertarUsuario(nombreUsuario, contraseña, nombre, apellido, rol, dni);
+            int resultado = usuario.InsertarUsuario(nombreUsuario, contraseña, nombre, apellido, rol, dni);
 
-            return filasAfectadas > 0; // Retorna true si se insertó correctamente, false en caso contrario
+            if(resultado > 0)
+            {
+                return true; //Si se insertó correctamente, retorno true
+            }
+            else
+            {
+                return false; //Si no se insertó, retorno false
+            }
         }
 
         public DataTable buscarUsuario()

@@ -30,6 +30,13 @@ namespace Persistencia
         public int InsertarUsuario(string nombreUsuario, string contraseña, string nombre, string apellido, string rol, string dni)
         {
             Conexion conexion = new Conexion();
+
+            //Crea el parámetro de salida para el resultado de la inserción
+            SqlParameter resultadoParam = new SqlParameter("@resultado", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Output
+            };
+
             SqlParameter[] parametros = new SqlParameter[]
             {
                 conexion.crearParametro("@nombre_usuario", nombreUsuario),
@@ -38,12 +45,14 @@ namespace Persistencia
                 conexion.crearParametro("@apellido", apellido),
                 conexion.crearParametro("@dni", dni),
                 conexion.crearParametro("@nombre_rol", rol),
-                conexion.crearParametro("@activo", 1)//Si el usuario se crea, por defecto estará activo
+                conexion.crearParametro("@activo", 1),//Si el usuario se crea, por defecto estará activo
+                resultadoParam
             };
 
-            int filasAfectadas = conexion.EscribirPorStoreProcedure("insertarUsuario", parametros);
-            
-            return filasAfectadas;
+            conexion.EscribirPorStoreProcedure("insertarUsuario", parametros);
+
+            //Devuelve el parametro de salida que en este caso es el resultado de la inserción
+            return (int)resultadoParam.Value;
         }
 
         public DataTable ObtenerDatosUsuario()

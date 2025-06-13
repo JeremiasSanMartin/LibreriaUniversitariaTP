@@ -204,7 +204,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("Error al crear el usuario. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El nombre de usuario ya existe. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
