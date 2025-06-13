@@ -178,5 +178,34 @@ namespace Presentacion
             dataGrid_usuarios.Hide();
             panel_crearUsuario.Hide();
         }
+
+        private void btn_crearUsuario_Click(object sender, EventArgs e)
+        {
+            string nombre = txtBox_nombreCrear.Text.Trim();
+            string apellido = txtBox_apellidoCrear.Text.Trim();
+            string nombreUsuario = txtBox_usuarioCrear.Text.Trim();
+            string contrasena = txtBox_contrasenaCrear.Text.Trim();
+            string dni = txtBox_DNI.Text.Trim();
+            string rolSeleccionado = cBox_rolCrear.SelectedItem?.ToString();
+
+            Logica.AdminLogica adminLogica = new Logica.AdminLogica();
+
+            if (adminLogica.crearUsuario(nombre, apellido, nombreUsuario, contrasena, dni, rolSeleccionado))
+            {
+                MessageBox.Show("Usuario creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar campos
+                txtBox_nombreCrear.Clear();
+                txtBox_apellidoCrear.Clear();
+                txtBox_usuarioCrear.Clear();
+                txtBox_contrasenaCrear.Clear();
+                txtBox_DNI.Clear();
+                cBox_rolCrear.SelectedIndex = -1;
+            }
+            else
+            {
+                MessageBox.Show("Error al crear el usuario. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
