@@ -11,10 +11,10 @@ namespace Logica
     public class AdminLogica
     {
         Persistencia.UsuarioDatos usuario = new Persistencia.UsuarioDatos();
-        public bool crearUsuario(string nombre, string apellido, string nombreUsuario, string contraseña, int idRol) 
+        public bool crearUsuario(string nombre, string apellido, string nombreUsuario, string contraseña, string dni, string rol) 
         {
             //Llamo al método de la capa de persistencia para insertar un nuevo usuario
-            int filasAfectadas = usuario.InsertarUsuario(nombreUsuario, contraseña, nombre, apellido, idRol);
+            int filasAfectadas = usuario.InsertarUsuario(nombreUsuario, contraseña, nombre, apellido, rol, dni);
 
             return filasAfectadas > 0; // Retorna true si se insertó correctamente, false en caso contrario
         }

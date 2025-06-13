@@ -29,11 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid_usuarios = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inactivar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.btn_usuarios = new System.Windows.Forms.Button();
@@ -49,7 +56,7 @@
             this.timer_carrusel = new System.Windows.Forms.Timer(this.components);
             this.panel_crearUsuario = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_crearUsuario = new System.Windows.Forms.Button();
             this.cBox_rolCrear = new System.Windows.Forms.ComboBox();
             this.txtBox_contrasenaCrear = new System.Windows.Forms.TextBox();
             this.txtBox_usuarioCrear = new System.Windows.Forms.TextBox();
@@ -59,13 +66,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inactivar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtBox_DNI = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_usuarios)).BeginInit();
             this.panel_menu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,14 +82,14 @@
             this.dataGrid_usuarios.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGrid_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -113,6 +114,72 @@
             this.dataGrid_usuarios.RowTemplate.Height = 40;
             this.dataGrid_usuarios.Size = new System.Drawing.Size(601, 499);
             this.dataGrid_usuarios.TabIndex = 5;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // nombreUsuario
+            // 
+            this.nombreUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nombreUsuario.HeaderText = "Nombre de Usuario";
+            this.nombreUsuario.MinimumWidth = 6;
+            this.nombreUsuario.Name = "nombreUsuario";
+            this.nombreUsuario.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // password
+            // 
+            this.password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.password.HeaderText = "Contraseña";
+            this.password.MinimumWidth = 6;
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            // 
+            // rol
+            // 
+            this.rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.rol.HeaderText = "Rol";
+            this.rol.MinimumWidth = 6;
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            // 
+            // inactivar
+            // 
+            this.inactivar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.inactivar.DefaultCellStyle = dataGridViewCellStyle6;
+            this.inactivar.HeaderText = "";
+            this.inactivar.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar;
+            this.inactivar.MinimumWidth = 6;
+            this.inactivar.Name = "inactivar";
+            this.inactivar.ReadOnly = true;
+            this.inactivar.Width = 50;
             // 
             // panel_menu
             // 
@@ -289,15 +356,16 @@
             // panel_crearUsuario
             // 
             this.panel_crearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(55)))), ((int)(((byte)(125)))));
+            this.panel_crearUsuario.Controls.Add(this.txtBox_DNI);
             this.panel_crearUsuario.Controls.Add(this.label1);
-            this.panel_crearUsuario.Controls.Add(this.button1);
+            this.panel_crearUsuario.Controls.Add(this.btn_crearUsuario);
             this.panel_crearUsuario.Controls.Add(this.cBox_rolCrear);
             this.panel_crearUsuario.Controls.Add(this.txtBox_contrasenaCrear);
             this.panel_crearUsuario.Controls.Add(this.txtBox_usuarioCrear);
             this.panel_crearUsuario.Controls.Add(this.txtBox_apellidoCrear);
             this.panel_crearUsuario.Controls.Add(this.lbl_creaUsuario);
             this.panel_crearUsuario.Controls.Add(this.txtBox_nombreCrear);
-            this.panel_crearUsuario.Location = new System.Drawing.Point(2000, 2000);
+            this.panel_crearUsuario.Location = new System.Drawing.Point(303, 128);
             this.panel_crearUsuario.Name = "panel_crearUsuario";
             this.panel_crearUsuario.Size = new System.Drawing.Size(445, 423);
             this.panel_crearUsuario.TabIndex = 12;
@@ -313,30 +381,31 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "SOLO VISTA";
             // 
-            // button1
+            // btn_crearUsuario
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(116, 335);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 42);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Crear usuario";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_crearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
+            this.btn_crearUsuario.FlatAppearance.BorderSize = 0;
+            this.btn_crearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_crearUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_crearUsuario.ForeColor = System.Drawing.Color.White;
+            this.btn_crearUsuario.Location = new System.Drawing.Point(116, 335);
+            this.btn_crearUsuario.Name = "btn_crearUsuario";
+            this.btn_crearUsuario.Size = new System.Drawing.Size(212, 42);
+            this.btn_crearUsuario.TabIndex = 18;
+            this.btn_crearUsuario.Text = "Crear usuario";
+            this.btn_crearUsuario.UseVisualStyleBackColor = false;
+            this.btn_crearUsuario.Click += new System.EventHandler(this.btn_crearUsuario_Click);
             // 
             // cBox_rolCrear
             // 
+            this.cBox_rolCrear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_rolCrear.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.cBox_rolCrear.ForeColor = System.Drawing.Color.Gray;
             this.cBox_rolCrear.FormattingEnabled = true;
-            this.cBox_rolCrear.Location = new System.Drawing.Point(129, 265);
+            this.cBox_rolCrear.Location = new System.Drawing.Point(234, 265);
             this.cBox_rolCrear.Name = "cBox_rolCrear";
-            this.cBox_rolCrear.Size = new System.Drawing.Size(183, 28);
+            this.cBox_rolCrear.Size = new System.Drawing.Size(177, 28);
             this.cBox_rolCrear.TabIndex = 17;
-            this.cBox_rolCrear.Text = "Rol";
             // 
             // txtBox_contrasenaCrear
             // 
@@ -409,13 +478,13 @@
             // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::LibreriaUniversitaria.Properties.Resources.usuarios__2_;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -436,13 +505,13 @@
             // 
             // dataGridViewImageColumn2
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.NullValue = null;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewImageColumn2.HeaderText = "";
             this.dataGridViewImageColumn2.Image = global::LibreriaUniversitaria.Properties.Resources.usuarios__2_;
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -451,71 +520,19 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 25;
             // 
-            // ID
+            // txtBox_DNI
             // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // nombreUsuario
-            // 
-            this.nombreUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nombreUsuario.HeaderText = "Nombre de Usuario";
-            this.nombreUsuario.MinimumWidth = 6;
-            this.nombreUsuario.Name = "nombreUsuario";
-            this.nombreUsuario.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.MinimumWidth = 6;
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // password
-            // 
-            this.password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.password.HeaderText = "Contraseña";
-            this.password.MinimumWidth = 6;
-            this.password.Name = "password";
-            this.password.ReadOnly = true;
-            // 
-            // rol
-            // 
-            this.rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            // 
-            // inactivar
-            // 
-            this.inactivar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.inactivar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.inactivar.HeaderText = "";
-            this.inactivar.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar;
-            this.inactivar.MinimumWidth = 6;
-            this.inactivar.Name = "inactivar";
-            this.inactivar.ReadOnly = true;
-            this.inactivar.Width = 50;
+            this.txtBox_DNI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBox_DNI.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_DNI.ForeColor = System.Drawing.Color.Gray;
+            this.txtBox_DNI.Location = new System.Drawing.Point(40, 253);
+            this.txtBox_DNI.Multiline = true;
+            this.txtBox_DNI.Name = "txtBox_DNI";
+            this.txtBox_DNI.Size = new System.Drawing.Size(177, 40);
+            this.txtBox_DNI.TabIndex = 19;
+            this.txtBox_DNI.Text = "DNI de usuario";
             // 
             // AdminForm
             // 
@@ -525,8 +542,8 @@
             this.ClientSize = new System.Drawing.Size(876, 631);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_menu);
-            this.Controls.Add(this.dataGrid_usuarios);
             this.Controls.Add(this.panel_crearUsuario);
+            this.Controls.Add(this.dataGrid_usuarios);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminForm";
@@ -568,7 +585,7 @@
         private System.Windows.Forms.TextBox txtBox_apellidoCrear;
         private System.Windows.Forms.Label lbl_creaUsuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_crearUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pctBox_minimizar;
@@ -580,6 +597,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn rol;
         private System.Windows.Forms.DataGridViewImageColumn inactivar;
+        private System.Windows.Forms.TextBox txtBox_DNI;
     }
 }
 

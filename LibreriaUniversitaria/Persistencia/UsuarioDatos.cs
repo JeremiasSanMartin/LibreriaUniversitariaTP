@@ -27,7 +27,7 @@ namespace Persistencia
             return dt;
         }
 
-        public int InsertarUsuario(string nombreUsuario, string contraseña, string nombre, string apellido, int idRol)
+        public int InsertarUsuario(string nombreUsuario, string contraseña, string nombre, string apellido, string rol, string dni)
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
@@ -36,8 +36,8 @@ namespace Persistencia
                 conexion.crearParametro("@contrasena", contraseña),
                 conexion.crearParametro("@nombre", nombre),
                 conexion.crearParametro("@apellido", apellido),
-                conexion.crearParametro("@dni", ""),
-                conexion.crearParametro("@id_rol", idRol),
+                conexion.crearParametro("@dni", dni),
+                conexion.crearParametro("@nombre_rol", rol),
                 conexion.crearParametro("@activo", 1)//Si el usuario se crea, por defecto estará activo
             };
 

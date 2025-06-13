@@ -36,6 +36,46 @@ namespace Presentacion
             dataGrid_usuarios.Location = new Point(173, 87);
             dataGrid_usuarios.Hide();
             panel_crearUsuario.Hide();
+            this.Load += AdminForm_Load;
+        }
+
+        public void AdminForm_Load(object sender, EventArgs e)
+        {
+            cBox_rolCrear.Items.Clear();
+            cBox_rolCrear.Items.Add("Administrador");
+            cBox_rolCrear.Items.Add("Bibliotecario");
+            cBox_rolCrear.Items.Add("Gerente");
+            cBox_rolCrear.Items.Add("Vendedor");
+
+            SetPlaceholder(txtBox_nombreCrear, "Nombre");
+            SetPlaceholder(txtBox_apellidoCrear, "Apellido");
+            SetPlaceholder(txtBox_usuarioCrear, "Nombre de usuario");
+            SetPlaceholder(txtBox_contrasenaCrear, "Contraseña");
+            SetPlaceholder(txtBox_DNI, "DNI de usuario");
+        }
+
+        private void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = Color.Gray;
+
+            textBox.Enter += (s, e) =>
+            {
+                if (textBox.Text == placeholder)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = Color.Black;
+                }
+            };
+
+            textBox.Leave += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholder;
+                    textBox.ForeColor = Color.Gray;
+                }
+            };
         }
 
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
@@ -119,7 +159,6 @@ namespace Presentacion
             panel_crearUsuario.Show();
             panel_crearUsuario.Location = new Point(303, 128);
             dataGrid_usuarios.Hide();
-
 
         }
 
