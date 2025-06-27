@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logica;
+using Presentacion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Presentacion;
 
 namespace Presentacion
 {
@@ -28,7 +29,6 @@ namespace Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             panel_menu.Width = menu_cerrado;
-            dataGrid_stock.Rows.Add("1", "UML en 24 horas", "Joseph Schmuller", "Prentice Hall", "5", "3",  "10000");
             dataGrid_editoriales.Rows.Add("Prentice Hall", "(011) 4309-6100");
             dataGrid_stock.Location = new Point(154, 70);
             dataGrid_stock.Size = new Size(662, 508);
@@ -100,6 +100,28 @@ namespace Presentacion
             btn_agregarStock.Show();
             btn_alertasStockBajo.Show();
             dataGrid_editoriales.Hide();
+
+            // Instancia la lógica de administración
+            StockLibrosLogica stockLogica = new StockLibrosLogica();
+
+            // Obtener los usuarios
+            DataTable dt = stockLogica.obtenerStockLibros();
+
+            // Limpia el DataGridView antes de cargar nuevos datos
+            dataGrid_stock.Rows.Clear();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dataGrid_stock.Rows.Add(
+                    row["id"],
+                    row["titulo"],
+                    row["autor"],
+                    row["editorial"],
+                    row["stock_actual"],
+                    row["stock_minimo"],
+                    row["precio"]
+                );
+            }
         }
 
         private void btn_Inicio_Click(object sender, EventArgs e)
