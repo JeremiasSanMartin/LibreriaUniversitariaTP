@@ -29,7 +29,6 @@ namespace Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             panel_menu.Width = menu_cerrado;
-            dataGrid_editoriales.Rows.Add("Prentice Hall", "(011) 4309-6100");
             dataGrid_stock.Location = new Point(154, 70);
             dataGrid_stock.Size = new Size(662, 508);
             btn_agregarStock.Location = new Point(154, 584);
@@ -101,10 +100,10 @@ namespace Presentacion
             btn_alertasStockBajo.Show();
             dataGrid_editoriales.Hide();
 
-            // Instancia la lógica de administración
+            // Instancia la lógica de stock de libros
             StockLibrosLogica stockLogica = new StockLibrosLogica();
 
-            // Obtener los usuarios
+            // Obtener los libros en stock
             DataTable dt = stockLogica.obtenerStockLibros();
 
             // Limpia el DataGridView antes de cargar nuevos datos
@@ -140,6 +139,23 @@ namespace Presentacion
             dataGrid_stock.Hide();
             btn_agregarStock.Hide();
             btn_alertasStockBajo.Hide();
+
+            // Instancia la lógica de editoriales
+            EditorialesLogica editorialesLogica = new EditorialesLogica();
+
+            // Obtener las editoriales
+            DataTable dt = editorialesLogica.obtenerEditoriales();
+
+            // Limpia el DataGridView antes de cargar nuevos datos
+            dataGrid_editoriales.Rows.Clear();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dataGrid_editoriales.Rows.Add(
+                    row["nombre"],
+                    row["contacto"]
+                );
+            }
 
         }
 

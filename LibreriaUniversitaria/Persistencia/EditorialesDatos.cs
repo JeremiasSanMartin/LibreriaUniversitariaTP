@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    public class StockLibrosDatos
+    public class EditorialesDatos
     {
-        public DataTable ObtenerDatosStockLibros()
+        public DataTable ObtenerDatosEditoriales()
         {
-            //RETORNAR UN DATATABLE CON LOS DATOS DEL LIBRO DEL SP obtenerStockLibros
+            // Llama al método de la capa de persistencia para obtener los datos de las editoriales
             Conexion conexion = new Conexion();
-            DataTable dt = conexion.LeerPorStoreProcedure("obtenerStockLibros");
+            DataTable dt = conexion.LeerPorStoreProcedure("obtenerEditoriales");
             return dt;
         }
     }
