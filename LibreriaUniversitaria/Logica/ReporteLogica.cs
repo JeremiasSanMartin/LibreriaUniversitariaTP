@@ -17,5 +17,10 @@ namespace Logica
         {
             return _reporteDatos.RecuperarDetallesPorVendedor(vendedor);
         }
+        public List<ReporteVendedor> RecuperarPorFechas(DateTime desde, DateTime hasta)
+        {
+            ReporteDatos datos = new ReporteDatos();
+            return datos.RecuperarVentasPorFechas(desde, hasta);
+        }
     }
 }

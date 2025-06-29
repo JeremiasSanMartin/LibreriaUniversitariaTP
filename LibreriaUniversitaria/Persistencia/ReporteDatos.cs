@@ -43,5 +43,33 @@ namespace Persistencia
 
             return lista;
         }
+        public List<ReporteVendedor> RecuperarVentasPorFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<ReporteVendedor> lista = new List<ReporteVendedor>();
+            Conexion conexion = new Conexion();
+
+            var parametros = new SqlParameter[]
+            {
+        conexion.crearParametro("@fecha_inicio", fechaInicio),
+        conexion.crearParametro("@fecha_fin", fechaFin)
+            };
+
+            DataTable tabla = conexion.LeerPorStoreProcedure("obtenerVentasPorFecha", parametros);
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                string vendedor = fila["vendedor"].ToString();
+                string cliente = fila["cliente"].ToString();
+                DateTime fecha = Convert.ToDateTime(fila["fecha"]);
+                string producto = fila["producto"].ToString();
+                int cantidad = Convert.ToInt32(fila["cantidad"]);
+                decimal precioUnitario = Convert.ToDecimal(fila["precio_unitario"]);
+                decimal subtotal = Convert.ToDecimal(fila["subtotal"]);
+
+                lista.Add(new ReporteVendedor(vendedor, cliente, fecha, producto, cantidad, precioUnitario, subtotal));
+            }
+
+            return lista;
+        }
     }
 }

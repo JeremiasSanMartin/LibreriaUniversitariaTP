@@ -29,12 +29,17 @@ namespace Presentacion
             this.StartPosition = FormStartPosition.CenterScreen;
             panel_menu.Width = menu_cerrado;
             dataGrid_reportes.Location = new Point(155, 111);
-            dateTimePicker_mes.Location = new Point(635, 78);
             txtBox_busquedaReporte.Location = new Point(155, 78);
             dataGrid_reportes.Hide();
             txtBox_busquedaReporte.Hide();
-            dateTimePicker_mes.Hide();
             pictureBoxBuscar.Hide();
+            pictureBoxBuscarFecha.Hide();
+            label1.Hide();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+            dtpInicio.Hide();
+            dtpFinal.Hide();
             txtBox_busquedaReporte.Click += txtBox_busquedaReporte_Click;
             txtBox_busquedaReporte.KeyDown += txtBox_busquedaReporte_KeyDown;
 
@@ -58,7 +63,6 @@ namespace Presentacion
 
                 panel_menu.Width += 5;
                 dataGrid_reportes.Location = new Point(210, 111);
-                dateTimePicker_mes.Location = new Point(690, 78); 
                 txtBox_busquedaReporte.Location = new Point(210, 78);
 
                 if (panel_menu.Width >= menu_abierto)
@@ -76,7 +80,6 @@ namespace Presentacion
                 if (panel_menu.Width <= menu_cerrado)
                 {
                     dataGrid_reportes.Location = new Point(155, 111);
-                    dateTimePicker_mes.Location = new Point(635, 78);
                     txtBox_busquedaReporte.Location = new Point(155, 78);
                     timer_animacionMenu.Stop();
                     colapsado = true;
@@ -98,8 +101,14 @@ namespace Presentacion
             lbl_bienvenida.Text = mensajes["Reportes"];
             dataGrid_reportes.Show();
             txtBox_busquedaReporte.Show();
-            dateTimePicker_mes.Show();
             pictureBoxBuscar.Show();
+            pictureBoxBuscarFecha.Show();
+            label1.Show();
+            label2.Show();
+            label3.Show();
+            label4.Show();
+            dtpInicio.Show();
+            dtpFinal.Show();
 
             //utiliza RecupearDetalles sin pasar parametros para obtener los datos de los reportes
             var lista = _reporteLogica.RecuperarDetalles();
@@ -114,7 +123,14 @@ namespace Presentacion
             lbl_bienvenida.Text = mensajes["Inicio"];
             dataGrid_reportes.Hide();
             txtBox_busquedaReporte.Hide();
-            dateTimePicker_mes.Hide();
+            pictureBoxBuscar.Hide();
+            pictureBoxBuscarFecha.Hide();
+            label1.Hide();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+            dtpInicio.Hide();
+            dtpFinal.Hide();
         }
 
         private void pctBox_salir_Click(object sender, EventArgs e)
@@ -171,6 +187,26 @@ namespace Presentacion
         private void pictureBoxBuscar_Click(object sender, EventArgs e)
         {
             RealizarBusqueda();
+        }
+
+        private void pictureBoxBuscarFecha_Click(object sender, EventArgs e)
+        {
+            DateTime desde = dtpInicio.Value.Date;
+            DateTime hasta = dtpFinal.Value.Date;
+
+            if (desde > hasta)
+            {
+                MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha final.");
+                return;
+            }
+
+            var lista = _reporteLogica.RecuperarPorFechas(desde, hasta);
+            dataGrid_reportes.Columns.Clear();
+            dataGrid_reportes.AutoGenerateColumns = true;
+            dataGrid_reportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGrid_reportes.DataSource = lista;
+            dataGrid_reportes.Refresh();
+
         }
     }
 }
