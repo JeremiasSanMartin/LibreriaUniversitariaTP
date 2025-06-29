@@ -12,15 +12,36 @@ namespace Logica
     {
         private ReporteDatos _reporteDatos = new ReporteDatos();
 
-        //permite null porque si no se pasa parametro obtiene todos los reportes   
+        //permite null porque si no se pasa parametro obtiene todos los reportes, y si se pasa un vendedor, obtiene los reportes de ese vendedor   
         public List<ReporteDetalleVenta> RecuperarDetalles(string vendedor = null)
         {
-            return _reporteDatos.RecuperarDetallesPorVendedor(vendedor);
+            try { 
+                return _reporteDatos.RecuperarDetallesPorVendedor(vendedor);
+            }
+            catch (Exception ex)
+            {
+                //maneja la exepcion diferenciando si se busco un reporte por vendedor o solo se queria recuperar todos los reportes
+                string contexto = string.IsNullOrWhiteSpace(vendedor)
+                    ? "al recuperar todos los reportes."
+                    : $"al recuperar los reportes del vendedor \"{vendedor}\".";
+
+
+                throw new Exception($"Error {contexto}", ex);
+            }
         }
+
+        //obtiene los reportes por fecha, desde y hasta
         public List<ReporteVendedor> RecuperarPorFechas(DateTime desde, DateTime hasta)
         {
-            ReporteDatos datos = new ReporteDatos();
-            return datos.RecuperarVentasPorFechas(desde, hasta);
+            try
+            {
+                ReporteDatos datos = new ReporteDatos();
+                return datos.RecuperarVentasPorFechas(desde, hasta);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al recuperar reportes por fecha.", ex);
+            }
         }
     }
 }
