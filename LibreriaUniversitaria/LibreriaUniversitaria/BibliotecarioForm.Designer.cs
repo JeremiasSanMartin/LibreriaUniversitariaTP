@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.btn_Inicio = new System.Windows.Forms.Button();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
@@ -59,6 +59,7 @@
             this.btn_agregarStock = new System.Windows.Forms.Button();
             this.btn_alertasStockBajo = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_verLibros = new System.Windows.Forms.Button();
             this.panel_menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -192,7 +193,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pctBox_minimizar);
             this.flowLayoutPanel1.Controls.Add(this.pctBox_salir);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(723, 2);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(93, 31);
             this.flowLayoutPanel1.TabIndex = 30;
@@ -201,7 +202,7 @@
             // 
             this.pctBox_minimizar.Image = global::LibreriaUniversitaria.Properties.Resources.minimizar;
             this.pctBox_minimizar.Location = new System.Drawing.Point(2, 2);
-            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2);
             this.pctBox_minimizar.Name = "pctBox_minimizar";
             this.pctBox_minimizar.Size = new System.Drawing.Size(41, 29);
             this.pctBox_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -213,7 +214,7 @@
             // 
             this.pctBox_salir.Image = global::LibreriaUniversitaria.Properties.Resources.cerrar;
             this.pctBox_salir.Location = new System.Drawing.Point(47, 2);
-            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2);
             this.pctBox_salir.Name = "pctBox_salir";
             this.pctBox_salir.Size = new System.Drawing.Size(41, 32);
             this.pctBox_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -247,14 +248,14 @@
             this.dataGrid_stock.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGrid_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -369,14 +370,14 @@
             this.dataGrid_editoriales.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_editoriales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_editoriales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_editoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_editoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGrid_editoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_editoriales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
@@ -458,6 +459,7 @@
             this.btn_alertasStockBajo.Text = "Ver alertas de stock bajo";
             this.btn_alertasStockBajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_alertasStockBajo.UseVisualStyleBackColor = false;
+            this.btn_alertasStockBajo.Click += new System.EventHandler(this.btn_alertasStockBajo_Click);
             // 
             // pictureBox1
             // 
@@ -468,12 +470,30 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_verLibros
+            // 
+            this.btn_verLibros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
+            this.btn_verLibros.FlatAppearance.BorderSize = 0;
+            this.btn_verLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_verLibros.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_verLibros.ForeColor = System.Drawing.Color.White;
+            this.btn_verLibros.Image = global::LibreriaUniversitaria.Properties.Resources.add_blanco;
+            this.btn_verLibros.Location = new System.Drawing.Point(383, 584);
+            this.btn_verLibros.Name = "btn_verLibros";
+            this.btn_verLibros.Size = new System.Drawing.Size(164, 37);
+            this.btn_verLibros.TabIndex = 30;
+            this.btn_verLibros.Text = "Ver libros";
+            this.btn_verLibros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_verLibros.UseVisualStyleBackColor = false;
+            this.btn_verLibros.Click += new System.EventHandler(this.btn_verLibros_Click);
+            // 
             // BibliotecarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(876, 631);
+            this.Controls.Add(this.btn_verLibros);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_menu);
             this.Controls.Add(this.dataGrid_stock);
@@ -526,5 +546,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pctBox_minimizar;
         private System.Windows.Forms.PictureBox pctBox_salir;
+        private System.Windows.Forms.Button btn_verLibros;
     }
 }

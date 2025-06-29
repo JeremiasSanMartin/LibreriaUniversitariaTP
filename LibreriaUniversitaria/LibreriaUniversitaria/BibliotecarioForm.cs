@@ -38,6 +38,7 @@ namespace Presentacion
             btn_agregarStock.Hide();
             btn_alertasStockBajo.Hide();
             dataGrid_editoriales.Hide();
+            btn_verLibros.Hide();
         }
 
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
@@ -98,6 +99,7 @@ namespace Presentacion
             dataGrid_stock.Show();
             btn_agregarStock.Show();
             btn_alertasStockBajo.Show();
+            btn_verLibros.Show();
             dataGrid_editoriales.Hide();
 
             // Instancia la lógica de stock de libros
@@ -129,6 +131,7 @@ namespace Presentacion
             dataGrid_stock.Hide();
             btn_agregarStock.Hide();
             btn_alertasStockBajo.Hide();
+            btn_verLibros.Hide();
             dataGrid_editoriales.Hide();
         }
 
@@ -138,6 +141,7 @@ namespace Presentacion
             dataGrid_editoriales.Show();
             dataGrid_stock.Hide();
             btn_agregarStock.Hide();
+            btn_verLibros.Hide();
             btn_alertasStockBajo.Hide();
 
             // Instancia la lógica de editoriales
@@ -168,6 +172,70 @@ namespace Presentacion
         private void pctBox_minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_alertasStockBajo_Click(object sender, EventArgs e)
+        {
+            lbl_bienvenida.Text = "Libros con stock bajo";
+            dataGrid_stock.Show();
+            btn_agregarStock.Show();
+            btn_alertasStockBajo.Show();
+            btn_verLibros.Show();
+            dataGrid_editoriales.Hide();
+
+            // Instancia la lógica de stock de libros
+            StockLibrosLogica stockLogica = new StockLibrosLogica();
+
+            // Obtener los libros con stock bajo
+            DataTable dt = stockLogica.obtenerLibrosStockBajo();
+
+            // Limpia el DataGridView antes de cargar nuevos datos
+            dataGrid_stock.Rows.Clear();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dataGrid_stock.Rows.Add(
+                    row["id"],
+                    row["titulo"],
+                    row["autor"],
+                    row["editorial"],
+                    row["stock_actual"],
+                    row["stock_minimo"],
+                    row["precio"]
+                );
+            }
+        }
+
+        private void btn_verLibros_Click(object sender, EventArgs e)
+        {
+            lbl_bienvenida.Text = mensajes["Stock"];
+            dataGrid_stock.Show();
+            btn_agregarStock.Show();
+            btn_alertasStockBajo.Show();
+            btn_verLibros.Show();
+            dataGrid_editoriales.Hide();
+
+            // Instancia la lógica de stock de libros
+            StockLibrosLogica stockLogica = new StockLibrosLogica();
+
+            // Obtener los libros en stock
+            DataTable dt = stockLogica.obtenerStockLibros();
+
+            // Limpia el DataGridView antes de cargar nuevos datos
+            dataGrid_stock.Rows.Clear();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dataGrid_stock.Rows.Add(
+                    row["id"],
+                    row["titulo"],
+                    row["autor"],
+                    row["editorial"],
+                    row["stock_actual"],
+                    row["stock_minimo"],
+                    row["precio"]
+                );
+            }
         }
     }
 }

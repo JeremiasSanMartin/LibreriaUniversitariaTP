@@ -17,5 +17,12 @@ namespace Logica
             // Llama al método de la capa de persistencia para obtener el stock de libros
             return stockLibrosDatos.ObtenerDatosStockLibros();
         }
+
+        public DataTable obtenerLibrosStockBajo()
+        {
+            // Llama al método de la capa de persistencia para obtener los libros con stock bajo
+            return stockLibrosDatos.ObtenerLibrosStockBajo();
+
+        }
     }
 }
