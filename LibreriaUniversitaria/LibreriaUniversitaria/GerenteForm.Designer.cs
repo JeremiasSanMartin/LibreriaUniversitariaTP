@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pctBox_minimizar = new System.Windows.Forms.PictureBox();
@@ -52,8 +52,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBoxBuscarFecha = new System.Windows.Forms.PictureBox();
@@ -221,14 +219,14 @@
             this.dataGrid_reportes.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_reportes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_reportes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_reportes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_reportes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGrid_reportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_reportes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fecha,
@@ -310,7 +308,7 @@
             this.txtBox_busquedaReporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBox_busquedaReporte.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_busquedaReporte.ForeColor = System.Drawing.Color.Gray;
-            this.txtBox_busquedaReporte.Location = new System.Drawing.Point(210, 78);
+            this.txtBox_busquedaReporte.Location = new System.Drawing.Point(210, 80);
             this.txtBox_busquedaReporte.Multiline = true;
             this.txtBox_busquedaReporte.Name = "txtBox_busquedaReporte";
             this.txtBox_busquedaReporte.Size = new System.Drawing.Size(174, 27);
@@ -324,7 +322,7 @@
             // 
             this.pictureBoxBuscar.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxBuscar.Image = global::LibreriaUniversitaria.Properties.Resources.buscar;
-            this.pictureBoxBuscar.Location = new System.Drawing.Point(160, 60);
+            this.pictureBoxBuscar.Location = new System.Drawing.Point(340, 62);
             this.pictureBoxBuscar.Name = "pictureBoxBuscar";
             this.pictureBoxBuscar.Size = new System.Drawing.Size(44, 45);
             this.pictureBoxBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -354,26 +352,6 @@
             this.dtpFinal.Name = "dtpFinal";
             this.dtpFinal.Size = new System.Drawing.Size(200, 20);
             this.dtpFinal.TabIndex = 34;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(390, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Busqueda por lapso de tiempo";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(431, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 13);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "seleccione las fechas";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label3
             // 
@@ -416,9 +394,7 @@
             this.Controls.Add(this.pictureBoxBuscarFecha);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBoxBuscar);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFinal);
             this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.txtBox_busquedaReporte);
@@ -467,8 +443,6 @@
         private System.Windows.Forms.PictureBox pictureBoxBuscar;
         private System.Windows.Forms.DateTimePicker dtpInicio;
         private System.Windows.Forms.DateTimePicker dtpFinal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBoxBuscarFecha;
