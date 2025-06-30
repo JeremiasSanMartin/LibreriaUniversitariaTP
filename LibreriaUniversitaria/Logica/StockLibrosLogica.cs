@@ -24,5 +24,11 @@ namespace Logica
             return stockLibrosDatos.ObtenerLibrosStockBajo();
 
         }
+
+        public int agregarLibro(string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
+        {
+            // Llama al método de la capa de persistencia para insertar un nuevo libro
+            return stockLibrosDatos.InsertarLibro(titulo, autor, editorialId, stockActual, stockMinimo, precio);
+        }
     }
 }

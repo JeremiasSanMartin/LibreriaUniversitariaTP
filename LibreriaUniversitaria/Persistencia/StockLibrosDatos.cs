@@ -1,7 +1,9 @@
 ﻿using DAL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,5 +27,23 @@ namespace Persistencia
             DataTable dt = conexion.LeerPorStoreProcedure("obtenerLibrosStockBajo");
             return dt;
         }
+
+        public int InsertarLibro(string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
+        {
+            Conexion conexion = new Conexion();
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                conexion.crearParametro("@titulo", titulo),
+                conexion.crearParametro("@autor", autor),
+                conexion.crearParametro("@editorial_id", editorialId),
+                conexion.crearParametro("@stock_actual", stockActual),
+                conexion.crearParametro("@stock_minimo", stockMinimo),
+                conexion.crearParametro("@precio", precio)
+            };
+
+            int filasAfectadas = conexion.EscribirPorStoreProcedure("agregarLibro", parametros);
+            return filasAfectadas;
+        }
+
     }
 }

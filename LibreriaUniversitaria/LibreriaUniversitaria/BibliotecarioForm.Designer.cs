@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.btn_Inicio = new System.Windows.Forms.Button();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
@@ -56,10 +56,24 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contacto_editoral = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_agregarStock = new System.Windows.Forms.Button();
+            this.btn_agregarLibroMenu = new System.Windows.Forms.Button();
             this.btn_alertasStockBajo = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_verLibros = new System.Windows.Forms.Button();
+            this.panel_agregarStock = new System.Windows.Forms.Panel();
+            this.btn_agregarLibro = new System.Windows.Forms.Button();
+            this.label_precio = new System.Windows.Forms.Label();
+            this.txtBox_precio = new System.Windows.Forms.TextBox();
+            this.textBox_StockMinimo = new System.Windows.Forms.TextBox();
+            this.label_Editorial = new System.Windows.Forms.Label();
+            this.label_Autor = new System.Windows.Forms.Label();
+            this.txtBox_stockActual = new System.Windows.Forms.TextBox();
+            this.txtBox_autor = new System.Windows.Forms.TextBox();
+            this.txtBox_titulo = new System.Windows.Forms.TextBox();
+            this.label_titulo = new System.Windows.Forms.Label();
+            this.label_stockActual = new System.Windows.Forms.Label();
+            this.label_stockMinimo = new System.Windows.Forms.Label();
+            this.comboBox_editoriales = new System.Windows.Forms.ComboBox();
             this.panel_menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -68,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_editoriales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_agregarStock.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_menu
@@ -248,14 +263,14 @@
             this.dataGrid_stock.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -281,6 +296,7 @@
             this.dataGrid_stock.RowTemplate.Height = 40;
             this.dataGrid_stock.Size = new System.Drawing.Size(709, 508);
             this.dataGrid_stock.TabIndex = 26;
+            this.dataGrid_stock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_stock_CellContentClick);
             // 
             // id
             // 
@@ -370,14 +386,14 @@
             this.dataGrid_editoriales.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_editoriales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_editoriales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_editoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_editoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid_editoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_editoriales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
@@ -428,21 +444,22 @@
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 50;
             // 
-            // btn_agregarStock
+            // btn_agregarLibroMenu
             // 
-            this.btn_agregarStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_agregarStock.FlatAppearance.BorderSize = 0;
-            this.btn_agregarStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_agregarStock.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btn_agregarStock.ForeColor = System.Drawing.Color.White;
-            this.btn_agregarStock.Image = global::LibreriaUniversitaria.Properties.Resources.add_blanco;
-            this.btn_agregarStock.Location = new System.Drawing.Point(197, 584);
-            this.btn_agregarStock.Name = "btn_agregarStock";
-            this.btn_agregarStock.Size = new System.Drawing.Size(164, 37);
-            this.btn_agregarStock.TabIndex = 27;
-            this.btn_agregarStock.Text = "Agregar stock";
-            this.btn_agregarStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_agregarStock.UseVisualStyleBackColor = false;
+            this.btn_agregarLibroMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_agregarLibroMenu.FlatAppearance.BorderSize = 0;
+            this.btn_agregarLibroMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_agregarLibroMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_agregarLibroMenu.ForeColor = System.Drawing.Color.White;
+            this.btn_agregarLibroMenu.Image = global::LibreriaUniversitaria.Properties.Resources.add_blanco;
+            this.btn_agregarLibroMenu.Location = new System.Drawing.Point(197, 584);
+            this.btn_agregarLibroMenu.Name = "btn_agregarLibroMenu";
+            this.btn_agregarLibroMenu.Size = new System.Drawing.Size(164, 37);
+            this.btn_agregarLibroMenu.TabIndex = 27;
+            this.btn_agregarLibroMenu.Text = "Agregar libro";
+            this.btn_agregarLibroMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_agregarLibroMenu.UseVisualStyleBackColor = false;
+            this.btn_agregarLibroMenu.Click += new System.EventHandler(this.btn_agregarLibroMenu_Click);
             // 
             // btn_alertasStockBajo
             // 
@@ -487,17 +504,146 @@
             this.btn_verLibros.UseVisualStyleBackColor = false;
             this.btn_verLibros.Click += new System.EventHandler(this.btn_verLibros_Click);
             // 
+            // panel_agregarStock
+            // 
+            this.panel_agregarStock.BackColor = System.Drawing.Color.Silver;
+            this.panel_agregarStock.Controls.Add(this.comboBox_editoriales);
+            this.panel_agregarStock.Controls.Add(this.btn_agregarLibro);
+            this.panel_agregarStock.Controls.Add(this.label_precio);
+            this.panel_agregarStock.Controls.Add(this.txtBox_precio);
+            this.panel_agregarStock.Controls.Add(this.textBox_StockMinimo);
+            this.panel_agregarStock.Controls.Add(this.label_Editorial);
+            this.panel_agregarStock.Controls.Add(this.label_Autor);
+            this.panel_agregarStock.Controls.Add(this.txtBox_stockActual);
+            this.panel_agregarStock.Controls.Add(this.txtBox_autor);
+            this.panel_agregarStock.Controls.Add(this.txtBox_titulo);
+            this.panel_agregarStock.Controls.Add(this.label_titulo);
+            this.panel_agregarStock.Controls.Add(this.label_stockActual);
+            this.panel_agregarStock.Controls.Add(this.label_stockMinimo);
+            this.panel_agregarStock.Location = new System.Drawing.Point(304, 152);
+            this.panel_agregarStock.Name = "panel_agregarStock";
+            this.panel_agregarStock.Size = new System.Drawing.Size(393, 335);
+            this.panel_agregarStock.TabIndex = 31;
+            // 
+            // btn_agregarLibro
+            // 
+            this.btn_agregarLibro.Location = new System.Drawing.Point(136, 268);
+            this.btn_agregarLibro.Name = "btn_agregarLibro";
+            this.btn_agregarLibro.Size = new System.Drawing.Size(107, 30);
+            this.btn_agregarLibro.TabIndex = 12;
+            this.btn_agregarLibro.Text = "Agregar libro";
+            this.btn_agregarLibro.UseVisualStyleBackColor = true;
+            this.btn_agregarLibro.Click += new System.EventHandler(this.btn_agregarLibro_Click);
+            // 
+            // label_precio
+            // 
+            this.label_precio.AutoSize = true;
+            this.label_precio.Location = new System.Drawing.Point(195, 118);
+            this.label_precio.Name = "label_precio";
+            this.label_precio.Size = new System.Drawing.Size(37, 13);
+            this.label_precio.TabIndex = 11;
+            this.label_precio.Text = "Precio";
+            // 
+            // txtBox_precio
+            // 
+            this.txtBox_precio.Location = new System.Drawing.Point(198, 134);
+            this.txtBox_precio.Name = "txtBox_precio";
+            this.txtBox_precio.Size = new System.Drawing.Size(112, 20);
+            this.txtBox_precio.TabIndex = 10;
+            // 
+            // textBox_StockMinimo
+            // 
+            this.textBox_StockMinimo.Location = new System.Drawing.Point(198, 88);
+            this.textBox_StockMinimo.Name = "textBox_StockMinimo";
+            this.textBox_StockMinimo.Size = new System.Drawing.Size(112, 20);
+            this.textBox_StockMinimo.TabIndex = 9;
+            // 
+            // label_Editorial
+            // 
+            this.label_Editorial.AutoSize = true;
+            this.label_Editorial.Location = new System.Drawing.Point(44, 177);
+            this.label_Editorial.Name = "label_Editorial";
+            this.label_Editorial.Size = new System.Drawing.Size(44, 13);
+            this.label_Editorial.TabIndex = 8;
+            this.label_Editorial.Text = "Editorial";
+            // 
+            // label_Autor
+            // 
+            this.label_Autor.AutoSize = true;
+            this.label_Autor.Location = new System.Drawing.Point(44, 118);
+            this.label_Autor.Name = "label_Autor";
+            this.label_Autor.Size = new System.Drawing.Size(32, 13);
+            this.label_Autor.TabIndex = 7;
+            this.label_Autor.Text = "Autor";
+            // 
+            // txtBox_stockActual
+            // 
+            this.txtBox_stockActual.Location = new System.Drawing.Point(198, 195);
+            this.txtBox_stockActual.Name = "txtBox_stockActual";
+            this.txtBox_stockActual.Size = new System.Drawing.Size(112, 20);
+            this.txtBox_stockActual.TabIndex = 6;
+            // 
+            // txtBox_autor
+            // 
+            this.txtBox_autor.Location = new System.Drawing.Point(47, 134);
+            this.txtBox_autor.Name = "txtBox_autor";
+            this.txtBox_autor.Size = new System.Drawing.Size(112, 20);
+            this.txtBox_autor.TabIndex = 4;
+            // 
+            // txtBox_titulo
+            // 
+            this.txtBox_titulo.Location = new System.Drawing.Point(47, 88);
+            this.txtBox_titulo.Name = "txtBox_titulo";
+            this.txtBox_titulo.Size = new System.Drawing.Size(112, 20);
+            this.txtBox_titulo.TabIndex = 3;
+            // 
+            // label_titulo
+            // 
+            this.label_titulo.AutoSize = true;
+            this.label_titulo.Location = new System.Drawing.Point(47, 72);
+            this.label_titulo.Name = "label_titulo";
+            this.label_titulo.Size = new System.Drawing.Size(33, 13);
+            this.label_titulo.TabIndex = 2;
+            this.label_titulo.Text = "Titulo";
+            // 
+            // label_stockActual
+            // 
+            this.label_stockActual.AutoSize = true;
+            this.label_stockActual.Location = new System.Drawing.Point(198, 177);
+            this.label_stockActual.Name = "label_stockActual";
+            this.label_stockActual.Size = new System.Drawing.Size(67, 13);
+            this.label_stockActual.TabIndex = 1;
+            this.label_stockActual.Text = "Stock actual";
+            // 
+            // label_stockMinimo
+            // 
+            this.label_stockMinimo.AutoSize = true;
+            this.label_stockMinimo.Location = new System.Drawing.Point(195, 72);
+            this.label_stockMinimo.Name = "label_stockMinimo";
+            this.label_stockMinimo.Size = new System.Drawing.Size(70, 13);
+            this.label_stockMinimo.TabIndex = 0;
+            this.label_stockMinimo.Text = "Stock minimo";
+            // 
+            // comboBox_editoriales
+            // 
+            this.comboBox_editoriales.FormattingEnabled = true;
+            this.comboBox_editoriales.Location = new System.Drawing.Point(47, 195);
+            this.comboBox_editoriales.Name = "comboBox_editoriales";
+            this.comboBox_editoriales.Size = new System.Drawing.Size(112, 21);
+            this.comboBox_editoriales.TabIndex = 13;
+            // 
             // BibliotecarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(876, 631);
+            this.Controls.Add(this.panel_agregarStock);
             this.Controls.Add(this.btn_verLibros);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_menu);
             this.Controls.Add(this.dataGrid_stock);
-            this.Controls.Add(this.btn_agregarStock);
+            this.Controls.Add(this.btn_agregarLibroMenu);
             this.Controls.Add(this.btn_alertasStockBajo);
             this.Controls.Add(this.dataGrid_editoriales);
             this.Controls.Add(this.pictureBox1);
@@ -513,6 +659,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_editoriales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_agregarStock.ResumeLayout(false);
+            this.panel_agregarStock.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -528,7 +676,7 @@
         private System.Windows.Forms.Label lbl_bienvenida;
         private System.Windows.Forms.Timer timer_animacionMenu;
         private System.Windows.Forms.DataGridView dataGrid_stock;
-        private System.Windows.Forms.Button btn_agregarStock;
+        private System.Windows.Forms.Button btn_agregarLibroMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn autor;
@@ -547,5 +695,19 @@
         private System.Windows.Forms.PictureBox pctBox_minimizar;
         private System.Windows.Forms.PictureBox pctBox_salir;
         private System.Windows.Forms.Button btn_verLibros;
+        private System.Windows.Forms.Panel panel_agregarStock;
+        private System.Windows.Forms.Label label_stockMinimo;
+        private System.Windows.Forms.Label label_titulo;
+        private System.Windows.Forms.Label label_stockActual;
+        private System.Windows.Forms.TextBox txtBox_precio;
+        private System.Windows.Forms.TextBox textBox_StockMinimo;
+        private System.Windows.Forms.Label label_Editorial;
+        private System.Windows.Forms.Label label_Autor;
+        private System.Windows.Forms.TextBox txtBox_stockActual;
+        private System.Windows.Forms.TextBox txtBox_autor;
+        private System.Windows.Forms.TextBox txtBox_titulo;
+        private System.Windows.Forms.Label label_precio;
+        private System.Windows.Forms.Button btn_agregarLibro;
+        private System.Windows.Forms.ComboBox comboBox_editoriales;
     }
 }

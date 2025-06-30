@@ -27,18 +27,40 @@ namespace Presentacion
         public BibliotecarioForm()
         {
             InitializeComponent();
+            //Cargar editoriales desde la base de datos
+            EditorialesLogica editorialesLogica = new EditorialesLogica();
+            DataTable dtEditoriales = editorialesLogica.obtenerEditoriales();
+            comboBox_editoriales.DataSource = dtEditoriales;
+            comboBox_editoriales.DisplayMember = "nombre";
+            comboBox_editoriales.ValueMember = "id";
+            comboBox_editoriales.SelectedIndex = -1;
+
             this.StartPosition = FormStartPosition.CenterScreen;
             panel_menu.Width = menu_cerrado;
             dataGrid_stock.Location = new Point(154, 70);
             dataGrid_stock.Size = new Size(662, 508);
-            btn_agregarStock.Location = new Point(154, 584);
+            btn_agregarLibroMenu.Location = new Point(154, 584);
             btn_alertasStockBajo.Location = new Point(606, 584);
             dataGrid_editoriales.Location = new Point(222, 70);
             dataGrid_stock.Hide();
-            btn_agregarStock.Hide();
+            btn_agregarLibroMenu.Hide();
             btn_alertasStockBajo.Hide();
             dataGrid_editoriales.Hide();
             btn_verLibros.Hide();
+            panel_agregarStock.Hide();
+            label_Autor.Hide();
+            label_titulo.Hide();
+            label_Editorial.Hide();
+            label_precio.Hide();
+            label_stockActual.Hide();
+            label_stockMinimo.Hide();
+            txtBox_autor.Hide();
+            txtBox_titulo.Hide();
+            comboBox_editoriales.Hide();
+            txtBox_precio.Hide();
+            txtBox_stockActual.Hide();
+            textBox_StockMinimo.Hide();
+            btn_agregarLibro.Hide();
         }
 
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
@@ -58,7 +80,7 @@ namespace Presentacion
                
                 panel_menu.Width += 5;
                 dataGrid_stock.Location = new Point(197, 70);
-                btn_agregarStock.Location = new Point(197, 584);
+                btn_agregarLibroMenu.Location = new Point(197, 584);
                 dataGrid_editoriales.Location = new Point(276, 70);
                 btn_alertasStockBajo.Location = new Point(649, 584);
 
@@ -78,7 +100,7 @@ namespace Presentacion
                 {
                     timer_animacionMenu.Stop();
                     dataGrid_stock.Location = new Point(154, 70);
-                    btn_agregarStock.Location = new Point(154, 584);
+                    btn_agregarLibroMenu.Location = new Point(154, 584);
                     btn_alertasStockBajo.Location = new Point(606, 584);
                     dataGrid_editoriales.Location = new Point(222, 70);
                     colapsado = true;
@@ -97,7 +119,7 @@ namespace Presentacion
         {
             lbl_bienvenida.Text = mensajes["Stock"];
             dataGrid_stock.Show();
-            btn_agregarStock.Show();
+            btn_agregarLibroMenu.Show();
             btn_alertasStockBajo.Show();
             btn_verLibros.Show();
             dataGrid_editoriales.Hide();
@@ -129,10 +151,11 @@ namespace Presentacion
         {
             lbl_bienvenida.Text = mensajes["Inicio"];
             dataGrid_stock.Hide();
-            btn_agregarStock.Hide();
+            btn_agregarLibroMenu.Hide();
             btn_alertasStockBajo.Hide();
             btn_verLibros.Hide();
             dataGrid_editoriales.Hide();
+            panel_agregarStock.Hide();
         }
 
         private void btn_editoriales_Click(object sender, EventArgs e)
@@ -140,9 +163,10 @@ namespace Presentacion
             lbl_bienvenida.Text = mensajes["Editoriales"];
             dataGrid_editoriales.Show();
             dataGrid_stock.Hide();
-            btn_agregarStock.Hide();
+            btn_agregarLibroMenu.Hide();
             btn_verLibros.Hide();
             btn_alertasStockBajo.Hide();
+            panel_agregarStock.Hide();
 
             // Instancia la lógica de editoriales
             EditorialesLogica editorialesLogica = new EditorialesLogica();
@@ -178,10 +202,11 @@ namespace Presentacion
         {
             lbl_bienvenida.Text = "Libros con stock bajo";
             dataGrid_stock.Show();
-            btn_agregarStock.Show();
+            btn_agregarLibroMenu.Show();
             btn_alertasStockBajo.Show();
             btn_verLibros.Show();
             dataGrid_editoriales.Hide();
+            panel_agregarStock.Hide();
 
             // Instancia la lógica de stock de libros
             StockLibrosLogica stockLogica = new StockLibrosLogica();
@@ -210,10 +235,11 @@ namespace Presentacion
         {
             lbl_bienvenida.Text = mensajes["Stock"];
             dataGrid_stock.Show();
-            btn_agregarStock.Show();
+            btn_agregarLibroMenu.Show();
             btn_alertasStockBajo.Show();
             btn_verLibros.Show();
             dataGrid_editoriales.Hide();
+            panel_agregarStock.Hide();
 
             // Instancia la lógica de stock de libros
             StockLibrosLogica stockLogica = new StockLibrosLogica();
@@ -235,6 +261,80 @@ namespace Presentacion
                     row["stock_minimo"],
                     row["precio"]
                 );
+            }
+        }
+
+        private void btn_agregarLibroMenu_Click(object sender, EventArgs e)
+        {
+            lbl_bienvenida.Text = "Agregar stock libros";
+            dataGrid_stock.Hide();
+            btn_agregarLibroMenu.Hide();
+            btn_alertasStockBajo.Hide();
+            btn_verLibros.Hide();
+            dataGrid_editoriales.Hide();
+            panel_agregarStock.Show();
+            label_titulo.Show();
+            label_Autor.Show();
+            label_Editorial.Show();
+            label_precio.Show();
+            label_stockActual.Show();
+            label_stockMinimo.Show();
+            txtBox_titulo.Show();
+            txtBox_autor.Show();
+            comboBox_editoriales.Show();
+            txtBox_precio.Show();
+            txtBox_stockActual.Show();
+            textBox_StockMinimo.Show();
+            btn_agregarLibro.Show();
+        }
+
+        private void dataGrid_stock_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_agregarLibro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string titulo = txtBox_titulo.Text.Trim();
+                string autor = txtBox_autor.Text.Trim();
+                int stockActual = Convert.ToInt32(txtBox_stockActual.Text.Trim());
+                int stockMinimo = Convert.ToInt32(textBox_StockMinimo.Text.Trim());
+                float precio = float.Parse(txtBox_precio.Text.Trim());
+
+                if (comboBox_editoriales.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar una editorial.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int editorialId = Convert.ToInt32(comboBox_editoriales.SelectedValue);
+
+                Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
+
+                int resultado = stockLogica.agregarLibro(titulo, autor, editorialId, stockActual, stockMinimo, precio);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Libro agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Limpiar campos
+                    txtBox_titulo.Clear();
+                    txtBox_autor.Clear();
+                    txtBox_stockActual.Clear();
+                    textBox_StockMinimo.Clear();
+                    txtBox_precio.Clear();
+                    comboBox_editoriales.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar el libro. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
