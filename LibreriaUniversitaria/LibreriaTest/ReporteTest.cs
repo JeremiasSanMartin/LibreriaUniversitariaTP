@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Logica;
+using Entidades;
 
 namespace LibreriaTest
 {
@@ -15,7 +18,7 @@ namespace LibreriaTest
             //logica
             ReporteLogica logica = new ReporteLogica();
             string nombreVendedor = "Tomas"; //asegurarse que exista en la basae de datos y tenga ventas hechas
-            List<ReporteVendedor> resultados = logica.RecuperarPorNombre(nombreVendedor);
+            List<ReporteDetalleVenta> resultados = logica.RecuperarDetalles(nombreVendedor);
 
             //resultado
             Assert.IsNotNull(resultados);
@@ -28,7 +31,7 @@ namespace LibreriaTest
             //vendedor imaginario
             ReporteLogica logica = new ReporteLogica();
             string nombreVendedor = "VendedorInexistente123";
-            List<ReporteVendedor> resultados = logica.RecuperarPorNombre(nombreVendedor);
+            List<ReporteDetalleVenta> resultados = logica.RecuperarDetalles(nombreVendedor);
 
             //aseguramos que pueda detectar que el vendedor no existe
             Assert.IsNotNull(resultados);
