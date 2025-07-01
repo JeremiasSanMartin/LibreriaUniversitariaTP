@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -47,7 +48,7 @@ namespace Presentacion
             btn_alertasStockBajo.Hide();
             dataGrid_editoriales.Hide();
             btn_verLibros.Hide();
-            panel_agregarStock.Hide();
+            panel_agregarLibro.Hide();
             label_Autor.Hide();
             label_titulo.Hide();
             label_Editorial.Hide();
@@ -61,6 +62,20 @@ namespace Presentacion
             txtBox_stockActual.Hide();
             textBox_StockMinimo.Hide();
             btn_agregarLibro.Hide();
+            panel_editarLibro.Hide();
+            label_AutorEditar.Hide();
+            label_tituloEditar.Hide();
+            label_editorialEditar.Hide();
+            label_PrecioEditar.Hide();
+            label_StockActualEditar.Hide();
+            label_StockMinimoEditar.Hide();
+            txtBox_AutorEditar.Hide();
+            txtBox_tituloEditar.Hide();
+            comboBox_EditorialEditar.Hide();
+            txtBox_PrecioEditar.Hide();
+            textBox_StockActualEditar.Hide();
+            txtBox_StockMinimoEditar.Hide();
+            btn_EditarLibro.Hide();
         }
 
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
@@ -155,7 +170,7 @@ namespace Presentacion
             btn_alertasStockBajo.Hide();
             btn_verLibros.Hide();
             dataGrid_editoriales.Hide();
-            panel_agregarStock.Hide();
+            panel_agregarLibro.Hide();
         }
 
         private void btn_editoriales_Click(object sender, EventArgs e)
@@ -166,7 +181,7 @@ namespace Presentacion
             btn_agregarLibroMenu.Hide();
             btn_verLibros.Hide();
             btn_alertasStockBajo.Hide();
-            panel_agregarStock.Hide();
+            panel_agregarLibro.Hide();
 
             // Instancia la lógica de editoriales
             EditorialesLogica editorialesLogica = new EditorialesLogica();
@@ -206,7 +221,7 @@ namespace Presentacion
             btn_alertasStockBajo.Show();
             btn_verLibros.Show();
             dataGrid_editoriales.Hide();
-            panel_agregarStock.Hide();
+            panel_agregarLibro.Hide();
 
             // Instancia la lógica de stock de libros
             StockLibrosLogica stockLogica = new StockLibrosLogica();
@@ -239,7 +254,7 @@ namespace Presentacion
             btn_alertasStockBajo.Show();
             btn_verLibros.Show();
             dataGrid_editoriales.Hide();
-            panel_agregarStock.Hide();
+            panel_agregarLibro.Hide();
 
             // Instancia la lógica de stock de libros
             StockLibrosLogica stockLogica = new StockLibrosLogica();
@@ -272,7 +287,7 @@ namespace Presentacion
             btn_alertasStockBajo.Hide();
             btn_verLibros.Hide();
             dataGrid_editoriales.Hide();
-            panel_agregarStock.Show();
+            panel_agregarLibro.Show();
             label_titulo.Show();
             label_Autor.Show();
             label_Editorial.Show();
@@ -287,10 +302,50 @@ namespace Presentacion
             textBox_StockMinimo.Show();
             btn_agregarLibro.Show();
         }
-
+        
         private void dataGrid_stock_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGrid_stock.Rows[e.RowIndex];
+                // Mostrar el panel de edición y los controles
+                panel_editarLibro.Show();
+                label_AutorEditar.Show();
+                label_tituloEditar.Show();
+                label_editorialEditar.Show();
+                label_PrecioEditar.Show();
+                label_StockActualEditar.Show();
+                label_StockMinimoEditar.Show();
+                txtBox_AutorEditar.Show();
+                txtBox_tituloEditar.Show();
+                comboBox_EditorialEditar.Show();
+                txtBox_PrecioEditar.Show();
+                textBox_StockActualEditar.Show();
+                txtBox_StockMinimoEditar.Show();
+                btn_EditarLibro.Show();
 
+                // Cargar los datos en los controles
+                txtBox_tituloEditar.Text = row.Cells["titulo"].Value.ToString();
+                txtBox_AutorEditar.Text = row.Cells["autor"].Value.ToString();
+                textBox_StockActualEditar.Text = row.Cells["stock"].Value.ToString();
+                txtBox_StockMinimoEditar.Text = row.Cells["stock_minimo"].Value.ToString();
+                txtBox_PrecioEditar.Text = row.Cells["precio"].Value.ToString();
+
+                // Cargar el ComboBox de editoriales si no está cargado
+                if (comboBox_EditorialEditar.DataSource == null)
+                {
+                    EditorialesLogica editorialesLogica = new EditorialesLogica();
+                    DataTable dtEditoriales = editorialesLogica.obtenerEditoriales();
+                    comboBox_EditorialEditar.DataSource = dtEditoriales;
+                    comboBox_EditorialEditar.DisplayMember = "nombre";
+                    comboBox_EditorialEditar.ValueMember = "id";
+                }
+
+                // Seleccionar la editorial correspondiente
+                string nombreEditorial = row.Cells["Editorial"].Value.ToString();
+                int index = comboBox_EditorialEditar.FindStringExact(nombreEditorial);
+                comboBox_EditorialEditar.SelectedIndex = index;
+            }
         }
 
         private void btn_agregarLibro_Click(object sender, EventArgs e)
@@ -312,7 +367,6 @@ namespace Presentacion
                 int editorialId = Convert.ToInt32(comboBox_editoriales.SelectedValue);
 
                 Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
-
                 int resultado = stockLogica.agregarLibro(titulo, autor, editorialId, stockActual, stockMinimo, precio);
 
                 if (resultado > 0)
@@ -332,9 +386,56 @@ namespace Presentacion
                     MessageBox.Show("Error al agregar el libro. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error de base de datos: {ex.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ha ocurrido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ha ocurrido un error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btn_EditarLibro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int libroId = Convert.ToInt32(dataGrid_stock.CurrentRow.Cells["id"].Value);
+                string titulo = txtBox_tituloEditar.Text.Trim();
+                string autor = txtBox_AutorEditar.Text.Trim();
+                int stockActual = Convert.ToInt32(textBox_StockActualEditar.Text.Trim());
+                int stockMinimo = Convert.ToInt32(txtBox_StockMinimoEditar.Text.Trim());
+                float precio = float.Parse(txtBox_PrecioEditar.Text.Trim());
+
+                if (comboBox_EditorialEditar.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar una editorial.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int editorialId = Convert.ToInt32(comboBox_EditorialEditar.SelectedValue);
+
+                Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
+                int resultado = stockLogica.editarLibro(libroId, titulo, autor, editorialId, stockActual, stockMinimo, precio);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Libro editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Opcional: refrescar el DataGridView
+                }
+                else
+                {
+                    MessageBox.Show("Error al editar el libro. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error de base de datos: {ex.Message}", "Error SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ha ocurrido un error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

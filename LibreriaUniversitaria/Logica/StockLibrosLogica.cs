@@ -30,5 +30,11 @@ namespace Logica
             // Llama al método de la capa de persistencia para insertar un nuevo libro
             return stockLibrosDatos.InsertarLibro(titulo, autor, editorialId, stockActual, stockMinimo, precio);
         }
+
+        public int editarLibro(int id, string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
+        {
+            // Llama al método de la capa de persistencia para editar un libro existente
+            return stockLibrosDatos.EditarLibro(id, titulo, autor, editorialId, stockActual, stockMinimo, precio);
+        }
     }
 }
