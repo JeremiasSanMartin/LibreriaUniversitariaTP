@@ -44,6 +44,7 @@
     <Compile Include="AdminLogica.cs" />
     <Compile Include="EditorialesLogica.cs" />
     <Compile Include="StockLibrosLogica.cs" />
+    <Compile Include="ReporteLogica.cs" />
     <Compile Include="UsuarioLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

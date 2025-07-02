@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DetalleVenta.cs" />
+    <Compile Include="ReporteDetalleVenta.cs" />
+    <Compile Include="ReporteVendedor.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Editorial.cs" />
     <Compile Include="Libro.cs" />
