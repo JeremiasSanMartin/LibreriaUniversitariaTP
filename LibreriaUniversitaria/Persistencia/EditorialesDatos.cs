@@ -10,7 +10,7 @@ namespace Persistencia
 {
     public class EditorialesDatos
     {
-        public DataTable ObtenerDatosEditoriales()
+        public DataTable obtenerDatosEditoriales()
         {
             // Llama al método de la capa de persistencia para obtener los datos de las editoriales
             Conexion conexion = new Conexion();

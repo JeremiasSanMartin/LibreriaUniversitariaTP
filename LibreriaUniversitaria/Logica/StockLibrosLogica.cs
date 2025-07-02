@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Persistencia;
+using Entidades;
 
 namespace Logica
 {
@@ -15,26 +16,26 @@ namespace Logica
         public DataTable obtenerStockLibros()
         {
             // Llama al método de la capa de persistencia para obtener el stock de libros
-            return stockLibrosDatos.ObtenerDatosStockLibros();
+            return stockLibrosDatos.obtenerDatosStockLibros();
         }
 
         public DataTable obtenerLibrosStockBajo()
         {
             // Llama al método de la capa de persistencia para obtener los libros con stock bajo
-            return stockLibrosDatos.ObtenerLibrosStockBajo();
+            return stockLibrosDatos.obtenerLibrosStockBajo();
 
         }
 
-        public int agregarLibro(string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
+        public int agregarLibro(Libro libro)
         {
             // Llama al método de la capa de persistencia para insertar un nuevo libro
-            return stockLibrosDatos.InsertarLibro(titulo, autor, editorialId, stockActual, stockMinimo, precio);
+            return stockLibrosDatos.insertarLibro(libro);
         }
 
         public int editarLibro(int id, string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
         {
             // Llama al método de la capa de persistencia para editar un libro existente
-            return stockLibrosDatos.EditarLibro(id, titulo, autor, editorialId, stockActual, stockMinimo, precio);
+            return stockLibrosDatos.editarLibro(id, titulo, autor, editorialId, stockActual, stockMinimo, precio);
         }
     }
 }

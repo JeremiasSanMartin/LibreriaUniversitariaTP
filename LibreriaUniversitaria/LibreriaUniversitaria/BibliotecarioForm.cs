@@ -1,4 +1,5 @@
-﻿using Logica;
+﻿using Entidades;
+using Logica;
 using Presentacion;
 using System;
 using System.Collections.Generic;
@@ -352,11 +353,20 @@ namespace Presentacion
         {
             try
             {
-                string titulo = txtBox_titulo.Text.Trim();
-                string autor = txtBox_autor.Text.Trim();
-                int stockActual = Convert.ToInt32(txtBox_stockActual.Text.Trim());
-                int stockMinimo = Convert.ToInt32(textBox_StockMinimo.Text.Trim());
-                float precio = float.Parse(txtBox_precio.Text.Trim());
+                //string titulo = txtBox_titulo.Text.Trim();
+                //string autor = txtBox_autor.Text.Trim();
+                //int stockActual = Convert.ToInt32(txtBox_stockActual.Text.Trim());
+                //int stockMinimo = Convert.ToInt32(textBox_StockMinimo.Text.Trim());
+                //float precio = float.Parse(txtBox_precio.Text.Trim());
+
+                Libro libro = new Libro
+                {
+                    Titulo = txtBox_titulo.Text.Trim(),
+                    Autor = txtBox_autor.Text.Trim(),
+                    Stock_actual = Convert.ToInt32(txtBox_stockActual.Text.Trim()),
+                    Stock_minimo = Convert.ToInt32(textBox_StockMinimo.Text.Trim()),
+                    Precio = float.Parse(txtBox_precio.Text.Trim())
+                };
 
                 if (comboBox_editoriales.SelectedIndex == -1)
                 {
@@ -364,10 +374,14 @@ namespace Presentacion
                     return;
                 }
 
-                int editorialId = Convert.ToInt32(comboBox_editoriales.SelectedValue);
-
+                Editorial editorial = new Editorial
+                {
+                    Id = Convert.ToInt32(comboBox_editoriales.SelectedValue),
+                    Nombre = comboBox_editoriales.Text
+                };
+                libro.Editorial = editorial;
                 Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
-                int resultado = stockLogica.agregarLibro(titulo, autor, editorialId, stockActual, stockMinimo, precio);
+                int resultado = stockLogica.agregarLibro(libro);
 
                 if (resultado > 0)
                 {

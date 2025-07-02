@@ -14,7 +14,7 @@ namespace Logica
         public DataTable obtenerEditoriales()
         {
             // Llama al método de la capa de persistencia para obtener los datos de las editoriales
-            return editorialesDatos.ObtenerDatosEditoriales();
+            return editorialesDatos.obtenerDatosEditoriales();
         }
     }
 }

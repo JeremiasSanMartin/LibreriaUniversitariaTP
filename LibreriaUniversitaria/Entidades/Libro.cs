@@ -48,6 +48,13 @@ namespace Entidades
 			set { stock_minimo = value; }
 		}
 
+		private Editorial editorial;
+
+		public Editorial Editorial
+		{
+			get { return editorial; }
+			set { editorial = value; }
+		}
 
 	}
 }

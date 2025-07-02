@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.btn_Inicio = new System.Windows.Forms.Button();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
@@ -278,14 +278,14 @@
             this.dataGrid_stock.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGrid_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -401,14 +401,14 @@
             this.dataGrid_editoriales.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_editoriales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_editoriales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_editoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_editoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGrid_editoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_editoriales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
@@ -671,7 +671,7 @@
             // label_tituloEditar
             // 
             this.label_tituloEditar.AutoSize = true;
-            this.label_tituloEditar.Location = new System.Drawing.Point(80, 70);
+            this.label_tituloEditar.Location = new System.Drawing.Point(76, 59);
             this.label_tituloEditar.Name = "label_tituloEditar";
             this.label_tituloEditar.Size = new System.Drawing.Size(33, 13);
             this.label_tituloEditar.TabIndex = 0;
@@ -679,7 +679,7 @@
             // 
             // txtBox_tituloEditar
             // 
-            this.txtBox_tituloEditar.Location = new System.Drawing.Point(83, 86);
+            this.txtBox_tituloEditar.Location = new System.Drawing.Point(79, 75);
             this.txtBox_tituloEditar.Name = "txtBox_tituloEditar";
             this.txtBox_tituloEditar.Size = new System.Drawing.Size(100, 20);
             this.txtBox_tituloEditar.TabIndex = 1;
@@ -687,7 +687,7 @@
             // label_AutorEditar
             // 
             this.label_AutorEditar.AutoSize = true;
-            this.label_AutorEditar.Location = new System.Drawing.Point(80, 156);
+            this.label_AutorEditar.Location = new System.Drawing.Point(80, 118);
             this.label_AutorEditar.Name = "label_AutorEditar";
             this.label_AutorEditar.Size = new System.Drawing.Size(32, 13);
             this.label_AutorEditar.TabIndex = 2;
@@ -695,7 +695,7 @@
             // 
             // txtBox_AutorEditar
             // 
-            this.txtBox_AutorEditar.Location = new System.Drawing.Point(83, 172);
+            this.txtBox_AutorEditar.Location = new System.Drawing.Point(83, 134);
             this.txtBox_AutorEditar.Name = "txtBox_AutorEditar";
             this.txtBox_AutorEditar.Size = new System.Drawing.Size(100, 20);
             this.txtBox_AutorEditar.TabIndex = 3;
@@ -703,7 +703,7 @@
             // label_editorialEditar
             // 
             this.label_editorialEditar.AutoSize = true;
-            this.label_editorialEditar.Location = new System.Drawing.Point(80, 231);
+            this.label_editorialEditar.Location = new System.Drawing.Point(80, 179);
             this.label_editorialEditar.Name = "label_editorialEditar";
             this.label_editorialEditar.Size = new System.Drawing.Size(44, 13);
             this.label_editorialEditar.TabIndex = 4;
@@ -712,7 +712,7 @@
             // comboBox_EditorialEditar
             // 
             this.comboBox_EditorialEditar.FormattingEnabled = true;
-            this.comboBox_EditorialEditar.Location = new System.Drawing.Point(83, 247);
+            this.comboBox_EditorialEditar.Location = new System.Drawing.Point(83, 195);
             this.comboBox_EditorialEditar.Name = "comboBox_EditorialEditar";
             this.comboBox_EditorialEditar.Size = new System.Drawing.Size(100, 21);
             this.comboBox_EditorialEditar.TabIndex = 5;
@@ -720,7 +720,7 @@
             // label_StockActualEditar
             // 
             this.label_StockActualEditar.AutoSize = true;
-            this.label_StockActualEditar.Location = new System.Drawing.Point(216, 70);
+            this.label_StockActualEditar.Location = new System.Drawing.Point(216, 59);
             this.label_StockActualEditar.Name = "label_StockActualEditar";
             this.label_StockActualEditar.Size = new System.Drawing.Size(67, 13);
             this.label_StockActualEditar.TabIndex = 6;
@@ -728,7 +728,7 @@
             // 
             // textBox_StockActualEditar
             // 
-            this.textBox_StockActualEditar.Location = new System.Drawing.Point(219, 86);
+            this.textBox_StockActualEditar.Location = new System.Drawing.Point(219, 75);
             this.textBox_StockActualEditar.Name = "textBox_StockActualEditar";
             this.textBox_StockActualEditar.Size = new System.Drawing.Size(100, 20);
             this.textBox_StockActualEditar.TabIndex = 7;
@@ -736,7 +736,7 @@
             // label_StockMinimoEditar
             // 
             this.label_StockMinimoEditar.AutoSize = true;
-            this.label_StockMinimoEditar.Location = new System.Drawing.Point(216, 156);
+            this.label_StockMinimoEditar.Location = new System.Drawing.Point(216, 118);
             this.label_StockMinimoEditar.Name = "label_StockMinimoEditar";
             this.label_StockMinimoEditar.Size = new System.Drawing.Size(70, 13);
             this.label_StockMinimoEditar.TabIndex = 8;
@@ -744,7 +744,7 @@
             // 
             // txtBox_StockMinimoEditar
             // 
-            this.txtBox_StockMinimoEditar.Location = new System.Drawing.Point(219, 172);
+            this.txtBox_StockMinimoEditar.Location = new System.Drawing.Point(219, 134);
             this.txtBox_StockMinimoEditar.Name = "txtBox_StockMinimoEditar";
             this.txtBox_StockMinimoEditar.Size = new System.Drawing.Size(100, 20);
             this.txtBox_StockMinimoEditar.TabIndex = 9;
@@ -752,7 +752,7 @@
             // label_PrecioEditar
             // 
             this.label_PrecioEditar.AutoSize = true;
-            this.label_PrecioEditar.Location = new System.Drawing.Point(216, 231);
+            this.label_PrecioEditar.Location = new System.Drawing.Point(216, 179);
             this.label_PrecioEditar.Name = "label_PrecioEditar";
             this.label_PrecioEditar.Size = new System.Drawing.Size(37, 13);
             this.label_PrecioEditar.TabIndex = 10;
@@ -760,14 +760,14 @@
             // 
             // txtBox_PrecioEditar
             // 
-            this.txtBox_PrecioEditar.Location = new System.Drawing.Point(219, 247);
+            this.txtBox_PrecioEditar.Location = new System.Drawing.Point(219, 196);
             this.txtBox_PrecioEditar.Name = "txtBox_PrecioEditar";
             this.txtBox_PrecioEditar.Size = new System.Drawing.Size(100, 20);
             this.txtBox_PrecioEditar.TabIndex = 11;
             // 
             // btn_EditarLibro
             // 
-            this.btn_EditarLibro.Location = new System.Drawing.Point(153, 287);
+            this.btn_EditarLibro.Location = new System.Drawing.Point(153, 292);
             this.btn_EditarLibro.Name = "btn_EditarLibro";
             this.btn_EditarLibro.Size = new System.Drawing.Size(90, 28);
             this.btn_EditarLibro.TabIndex = 12;

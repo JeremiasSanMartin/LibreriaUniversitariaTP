@@ -12,7 +12,7 @@ namespace Persistencia
 {
     public class StockLibrosDatos
     {
-        public DataTable ObtenerDatosStockLibros()
+        public DataTable obtenerDatosStockLibros()
         {
             //RETORNAR UN DATATABLE CON LOS DATOS DEL LIBRO DEL SP obtenerStockLibros
             Conexion conexion = new Conexion();
@@ -20,7 +20,7 @@ namespace Persistencia
             return dt;
         }
 
-        public DataTable ObtenerLibrosStockBajo()
+        public DataTable obtenerLibrosStockBajo()
         {
             //RETORNAR UN DATATABLE CON LOS DATOS DEL LIBRO DEL SP obtenerLibrosStockBajo
             Conexion conexion = new Conexion();
@@ -28,24 +28,24 @@ namespace Persistencia
             return dt;
         }
 
-        public int InsertarLibro(string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
+        public int insertarLibro(Libro libro)
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
             {
-                conexion.crearParametro("@titulo", titulo),
-                conexion.crearParametro("@autor", autor),
-                conexion.crearParametro("@editorial_id", editorialId),
-                conexion.crearParametro("@stock_actual", stockActual),
-                conexion.crearParametro("@stock_minimo", stockMinimo),
-                conexion.crearParametro("@precio", precio)
+                conexion.crearParametro("@titulo", libro.Titulo),
+                conexion.crearParametro("@autor", libro.Autor),
+                conexion.crearParametro("@editorial_id", libro.Editorial.Id),
+                conexion.crearParametro("@stock_actual", libro.Stock_actual),
+                conexion.crearParametro("@stock_minimo", libro.Stock_minimo),
+                conexion.crearParametro("@precio", libro.Precio)
             };
 
             int filasAfectadas = conexion.EscribirPorStoreProcedure("agregarLibro", parametros);
             return filasAfectadas;
         }
 
-        public int EditarLibro(int id, string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
+        public int editarLibro(int id, string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
