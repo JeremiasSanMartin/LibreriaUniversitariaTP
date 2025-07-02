@@ -29,12 +29,15 @@ namespace Presentacion
             this.StartPosition = FormStartPosition.CenterScreen;
             panel_menu.Width = menu_cerrado;
             dataGrid_reportes.Location = new Point(155, 111);
-            dateTimePicker_mes.Location = new Point(635, 78);
             txtBox_busquedaReporte.Location = new Point(155, 78);
             dataGrid_reportes.Hide();
             txtBox_busquedaReporte.Hide();
-            dateTimePicker_mes.Hide();
             pictureBoxBuscar.Hide();
+            pictureBoxBuscarFecha.Hide();
+            label3.Hide();
+            label4.Hide();
+            dtpInicio.Hide();
+            dtpFinal.Hide();
             txtBox_busquedaReporte.Click += txtBox_busquedaReporte_Click;
             txtBox_busquedaReporte.KeyDown += txtBox_busquedaReporte_KeyDown;
 
@@ -58,7 +61,6 @@ namespace Presentacion
 
                 panel_menu.Width += 5;
                 dataGrid_reportes.Location = new Point(210, 111);
-                dateTimePicker_mes.Location = new Point(690, 78); 
                 txtBox_busquedaReporte.Location = new Point(210, 78);
 
                 if (panel_menu.Width >= menu_abierto)
@@ -76,7 +78,6 @@ namespace Presentacion
                 if (panel_menu.Width <= menu_cerrado)
                 {
                     dataGrid_reportes.Location = new Point(155, 111);
-                    dateTimePicker_mes.Location = new Point(635, 78);
                     txtBox_busquedaReporte.Location = new Point(155, 78);
                     timer_animacionMenu.Stop();
                     colapsado = true;
@@ -98,15 +99,14 @@ namespace Presentacion
             lbl_bienvenida.Text = mensajes["Reportes"];
             dataGrid_reportes.Show();
             txtBox_busquedaReporte.Show();
-            dateTimePicker_mes.Show();
             pictureBoxBuscar.Show();
+            pictureBoxBuscarFecha.Show();
+            label3.Show();
+            label4.Show();
+            dtpInicio.Show();
+            dtpFinal.Show();
 
-            //utiliza RecupearDetalles sin pasar parametros para obtener los datos de los reportes
-            var lista = _reporteLogica.RecuperarDetalles();
-            dataGrid_reportes.Columns.Clear(); // Limpiar columnas
-            dataGrid_reportes.AutoGenerateColumns = true;
-            dataGrid_reportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGrid_reportes.DataSource = lista;
+            CargarDatos();
         }
 
         private void btn_Inicio_Click(object sender, EventArgs e)
@@ -114,7 +114,12 @@ namespace Presentacion
             lbl_bienvenida.Text = mensajes["Inicio"];
             dataGrid_reportes.Hide();
             txtBox_busquedaReporte.Hide();
-            dateTimePicker_mes.Hide();
+            pictureBoxBuscar.Hide();
+            pictureBoxBuscarFecha.Hide();
+            label3.Hide();
+            label4.Hide();
+            dtpInicio.Hide();
+            dtpFinal.Hide();
         }
 
         private void pctBox_salir_Click(object sender, EventArgs e)
@@ -130,7 +135,7 @@ namespace Presentacion
         private void txtBox_busquedaReporte_KeyDown(object sender, KeyEventArgs e)
         {
 
-   
+
 
         }
 
@@ -139,24 +144,42 @@ namespace Presentacion
             //limpia el campo al hacer click en el textbox
             txtBox_busquedaReporte.Clear();
         }
+
+        //funcion para realizar la busqueda por vendedor
         private void RealizarBusqueda()
         {
-            string texto = txtBox_busquedaReporte.Text.Trim();
-            var lista = _reporteLogica.RecuperarDetalles(texto);
+            try
+            {
+                string texto = txtBox_busquedaReporte.Text.Trim();
+                var lista = _reporteLogica.RecuperarDetalles(texto);
 
-            if (lista == null || lista.Count == 0)
-            {
-                MessageBox.Show("No se encontraron resultados para la búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataGrid_reportes.DataSource = null;
+                if (lista == null || lista.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron resultados para la búsqueda.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarDatos();
+                }
+                else
+                {
+                    dataGrid_reportes.Columns.Clear();
+                    dataGrid_reportes.AutoGenerateColumns = true;
+                    dataGrid_reportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGrid_reportes.DataSource = lista;
+                    dataGrid_reportes.Refresh();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                dataGrid_reportes.Columns.Clear();
-                dataGrid_reportes.AutoGenerateColumns = true;
-                dataGrid_reportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dataGrid_reportes.DataSource = lista;
-                dataGrid_reportes.Refresh();
+                MessageBox.Show($"Error al buscar por vendedor:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void CargarDatos()
+        {
+            //utiliza RecupearDetalles sin pasar parametros para obtener los datos de los reportes
+            var lista = _reporteLogica.RecuperarDetalles();
+            dataGrid_reportes.Columns.Clear(); // Limpiar columnas
+            dataGrid_reportes.AutoGenerateColumns = true;
+            dataGrid_reportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGrid_reportes.DataSource = lista;
         }
 
         private void txtBox_busquedaReporte_KeyPress(object sender, KeyPressEventArgs e)
@@ -171,6 +194,43 @@ namespace Presentacion
         private void pictureBoxBuscar_Click(object sender, EventArgs e)
         {
             RealizarBusqueda();
+        }
+
+        private void pictureBoxBuscarFecha_Click(object sender, EventArgs e)
+        {
+            DateTime desde = dtpInicio.Value.Date;
+            DateTime hasta = dtpFinal.Value.Date;
+            try
+            {
+                //verifica que las fechas cumplan con las condiciones
+                if (desde > hasta)
+                {
+                    MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha final.");
+                    return;
+                }
+
+                //recupera los reportes por el rango de fechas ingresado
+                var lista = _reporteLogica.RecuperarPorFechas(desde, hasta);
+
+                if (lista.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron ventas en el rango seleccionado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarDatos();
+                }
+                else
+                {
+                    dataGrid_reportes.Columns.Clear();
+                    dataGrid_reportes.AutoGenerateColumns = true;
+                    dataGrid_reportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGrid_reportes.DataSource = lista;
+                    dataGrid_reportes.Refresh();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al buscar ventas por fecha:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
