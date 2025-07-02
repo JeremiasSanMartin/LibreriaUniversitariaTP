@@ -8,6 +8,14 @@ namespace Entidades
 {
     public class Usuario
     {
+        private int id;
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         private string nombre;
 
         public string Nombre

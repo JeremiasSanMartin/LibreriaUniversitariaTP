@@ -22,7 +22,7 @@ namespace DAL
          * base de datos (en este caso, SqlServer)
          * 
          */
-        private void Conectar()
+        private void conectar()
         {   // HACK: Cadena de conexión hardcodeada. Luego ponerla como parametro de configuración del proyecto u otra alternativa.
             strCadenaDeConexion = @"Integrated Security = SSPI; Persist Security Info = False; Initial Catalog = BibliotecaDB; Data Source = . \SQLEXPRESS";
 
@@ -37,13 +37,13 @@ namespace DAL
          * base de datos (en este caso, SqlServer)
          * 
          */
-        private void Desconectar()
+        private void desconectar()
         {
             objConexion.Close();
             objConexion.Dispose();
         }
 
-        public DataTable LeerPorStoreProcedure(string pNombreStoreProcedure, SqlParameter[] pParametrosSql = null)
+        public DataTable leerPorStoreProcedure(string pNombreStoreProcedure, SqlParameter[] pParametrosSql = null)
         {
             //Instancio un objeto del tipo DataTable
             var unaTabla = new DataTable();
@@ -52,7 +52,7 @@ namespace DAL
             var objComando = new SqlCommand();
 
             //Me conecto...
-            this.Conectar();
+            this.conectar();
 
 
             try
@@ -84,14 +84,14 @@ namespace DAL
             {
 
                 //Pase lo que pase me desconecto
-                this.Desconectar();
+                this.desconectar();
             }
 
 
             return unaTabla;
         }
 
-        public DataTable LeerPorComando(string pComando)
+        public DataTable leerPorComando(string pComando)
         {
             //Instancio un objeto del tipo DataTable
             var unaTabla = new DataTable();
@@ -100,7 +100,7 @@ namespace DAL
             var objComando = new SqlCommand();
 
             //Me conecto...
-            this.Conectar();
+            this.conectar();
 
             try
             {
@@ -128,13 +128,13 @@ namespace DAL
             finally
             {
                 //Siempre, por más que salga bien o mal el llenado, me desconecto
-                this.Desconectar();
+                this.desconectar();
             }
 
             return unaTabla;
         }
 
-        public int EscribirPorComando(string pTexto)
+        public int escribirPorComando(string pTexto)
         {
             //Instanció una variable filasAfectadas que va a terminar devolviendo la cantidad de filas afectadas.
             int filasAfectadas = 0;
@@ -143,7 +143,7 @@ namespace DAL
             var objComando = new SqlCommand();
 
             //Me conecto...
-            this.Conectar();
+            this.conectar();
 
             try
             {
@@ -164,7 +164,7 @@ namespace DAL
             finally
             {
                 //Me desconecto
-                this.Desconectar();
+                this.desconectar();
             }
 
 
@@ -172,7 +172,7 @@ namespace DAL
         }
 
 
-        public int EscribirPorStoreProcedure(string pTexto, SqlParameter[] pParametrosSql)
+        public int escribirPorStoreProcedure(string pTexto, SqlParameter[] pParametrosSql)
         {
             //Instanció una variable filasAfectadas que va a terminar devolviendo la cantidad de filas afectadas.
             int filasAfectadas = 0;
@@ -181,7 +181,7 @@ namespace DAL
             var objComando = new SqlCommand();
 
             //Me conecto...
-            this.Conectar();
+            this.conectar();
 
             try
             {
@@ -212,7 +212,7 @@ namespace DAL
             finally
             {
                 //Me desconecto
-                this.Desconectar();
+                this.desconectar();
             }
 
 

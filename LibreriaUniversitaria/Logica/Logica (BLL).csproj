@@ -45,6 +45,7 @@
     <Compile Include="ReporteLogica.cs" />
     <Compile Include="UsuarioLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaLogica.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades %28BE%29.csproj">

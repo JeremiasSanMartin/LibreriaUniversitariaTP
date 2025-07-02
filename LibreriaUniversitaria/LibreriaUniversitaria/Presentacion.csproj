@@ -36,6 +36,7 @@
     <Reference Include="GumroadLicensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GumroadLicensing.1.0.3\lib\net40\GumroadLicensing.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NavigationMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Kimtoo.NavigationMenu.1.0.2\lib\net40\NavigationMenu.dll</HintPath>
     </Reference>
@@ -134,6 +135,10 @@
     <ProjectReference Include="..\Logica\Logica %28BLL%29.csproj">
       <Project>{2591f114-14be-40b4-a4aa-684294a9d5b9}</Project>
       <Name>Logica %28BLL%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia %28DAL%29.csproj">
+      <Project>{03B63BAF-9210-4942-B694-5324BEAB429B}</Project>
+      <Name>Persistencia %28DAL%29</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

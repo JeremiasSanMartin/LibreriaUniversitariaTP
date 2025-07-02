@@ -8,7 +8,16 @@ namespace Entidades
 {
     public class Libro
     {
-		private string titulo;
+
+        private int id;
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string titulo;
 
 		public string Titulo
 		{
@@ -46,6 +55,21 @@ namespace Entidades
         {
 			get { return stock_minimo; }
 			set { stock_minimo = value; }
+		}
+
+		private Editorial editorial;
+
+		public Editorial Editorial
+		{
+			get { return editorial; }
+			set { editorial = value; }
+		}
+
+		private string nombreEditorial;
+
+		public string NombreEditorial
+		{
+			get { return Editorial.Nombre; }
 		}
 
 

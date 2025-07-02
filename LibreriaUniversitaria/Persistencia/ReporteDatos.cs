@@ -26,7 +26,7 @@ namespace Persistencia
             }
 
             //prepara la consulta a la base de datos
-            DataTable tabla = conexion.LeerPorStoreProcedure("obtenerVentasPorVendedor", parametros.ToArray());
+            DataTable tabla = conexion.leerPorStoreProcedure("obtenerVentasPorVendedor", parametros.ToArray());
 
             //lena la data table
             foreach (DataRow fila in tabla.Rows)

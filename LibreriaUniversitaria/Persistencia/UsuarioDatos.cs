@@ -23,7 +23,7 @@ namespace Persistencia
                 conexion.crearParametro("@nombre_usuario", nombreUsuario),
                 conexion.crearParametro("@contrasena", contraseña)
             };
-            DataTable dt = conexion.LeerPorStoreProcedure("obtenerUsuarioLogin", parametros);
+            DataTable dt = conexion.leerPorStoreProcedure("obtenerUsuarioLogin", parametros);
             return dt;
         }
 
@@ -41,7 +41,7 @@ namespace Persistencia
                 conexion.crearParametro("@activo", 1)//Si el usuario se crea, por defecto estará activo
             };
 
-            int filasAfectadas = conexion.EscribirPorStoreProcedure("insertarUsuario", parametros);
+            int filasAfectadas = conexion.escribirPorStoreProcedure("insertarUsuario", parametros);
             return filasAfectadas;
         }
 
@@ -49,7 +49,7 @@ namespace Persistencia
         {
             //RETORNAR UN DATATABLE CON LOS DATOS DEL USUARIO DEL SP obtenerUsuarios
             Conexion conexion = new Conexion();
-            DataTable dt = conexion.LeerPorStoreProcedure("obtenerUsuarios");
+            DataTable dt = conexion.leerPorStoreProcedure("obtenerUsuarios");
             return dt;
         }
     }
