@@ -8,7 +8,14 @@ namespace Entidades
 {
     public class Editorial
     {
-		private string nombre;
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string nombre;
 
 		public string Nombre
 		{
