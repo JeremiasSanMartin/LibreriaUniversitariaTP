@@ -79,5 +79,15 @@ namespace Entidades
             get { return descuento; }
             set { descuento = value; }
         }
+
+        private int rol_cliente_id;
+
+        public int RolClienteId
+        {
+            get { return rol_cliente_id; }
+            set { rol_cliente_id = value; }
+        }
+
+
     }
 }

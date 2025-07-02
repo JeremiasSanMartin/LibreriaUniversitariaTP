@@ -39,6 +39,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pctBox_minimizar = new System.Windows.Forms.PictureBox();
             this.pctBox_salir = new System.Windows.Forms.PictureBox();
+            this.agregarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_linea2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_linea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_usuario)).BeginInit();
@@ -147,7 +148,7 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(887, 31);
             this.panel1.TabIndex = 17;
@@ -157,7 +158,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pctBox_minimizar);
             this.flowLayoutPanel1.Controls.Add(this.pctBox_salir);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(788, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(99, 30);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -166,7 +167,7 @@
             // 
             this.pctBox_minimizar.Image = global::LibreriaUniversitaria.Properties.Resources.minimizar;
             this.pctBox_minimizar.Location = new System.Drawing.Point(2, 2);
-            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2);
             this.pctBox_minimizar.Name = "pctBox_minimizar";
             this.pctBox_minimizar.Size = new System.Drawing.Size(44, 29);
             this.pctBox_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -178,13 +179,23 @@
             // 
             this.pctBox_salir.Image = global::LibreriaUniversitaria.Properties.Resources.cerrar;
             this.pctBox_salir.Location = new System.Drawing.Point(50, 2);
-            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2);
             this.pctBox_salir.Name = "pctBox_salir";
             this.pctBox_salir.Size = new System.Drawing.Size(44, 31);
             this.pctBox_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBox_salir.TabIndex = 1;
             this.pctBox_salir.TabStop = false;
             this.pctBox_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
+            // agregarCliente
+            // 
+            this.agregarCliente.Location = new System.Drawing.Point(561, 531);
+            this.agregarCliente.Name = "agregarCliente";
+            this.agregarCliente.Size = new System.Drawing.Size(230, 45);
+            this.agregarCliente.TabIndex = 18;
+            this.agregarCliente.Text = "Agregar cliente (TEST)";
+            this.agregarCliente.UseVisualStyleBackColor = true;
+            this.agregarCliente.Click += new System.EventHandler(this.agregarCliente_Click);
             // 
             // LoginForm
             // 
@@ -194,6 +205,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(887, 664);
+            this.Controls.Add(this.agregarCliente);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pctBox_linea2);
             this.Controls.Add(this.pctBox_linea);
@@ -232,5 +244,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pctBox_minimizar;
         private System.Windows.Forms.PictureBox pctBox_salir;
+        private System.Windows.Forms.Button agregarCliente;
     }
 }

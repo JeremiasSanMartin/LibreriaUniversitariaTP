@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
 using Logica;
+using LibreriaUniversitaria;
 
 namespace Presentacion
 {
@@ -186,6 +187,14 @@ namespace Presentacion
                 btn_iniciarSesion_Click(sender, e);
                 e.SuppressKeyPress = true; 
             }
+        }
+
+        private void agregarCliente_Click(object sender, EventArgs e)
+        {
+            PruebaCliente pruebaCliente = new PruebaCliente();
+            this.Hide();
+            pruebaCliente.ShowDialog();
+            this.Show();
         }
     }
 }
