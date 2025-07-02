@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.btn_Inicio = new System.Windows.Forms.Button();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
@@ -75,19 +75,19 @@
             this.label_stockActual = new System.Windows.Forms.Label();
             this.label_stockMinimo = new System.Windows.Forms.Label();
             this.panel_editarLibro = new System.Windows.Forms.Panel();
-            this.label_tituloEditar = new System.Windows.Forms.Label();
-            this.txtBox_tituloEditar = new System.Windows.Forms.TextBox();
-            this.label_AutorEditar = new System.Windows.Forms.Label();
-            this.txtBox_AutorEditar = new System.Windows.Forms.TextBox();
-            this.label_editorialEditar = new System.Windows.Forms.Label();
-            this.comboBox_EditorialEditar = new System.Windows.Forms.ComboBox();
-            this.label_StockActualEditar = new System.Windows.Forms.Label();
-            this.textBox_StockActualEditar = new System.Windows.Forms.TextBox();
-            this.label_StockMinimoEditar = new System.Windows.Forms.Label();
-            this.txtBox_StockMinimoEditar = new System.Windows.Forms.TextBox();
-            this.label_PrecioEditar = new System.Windows.Forms.Label();
-            this.txtBox_PrecioEditar = new System.Windows.Forms.TextBox();
             this.btn_EditarLibro = new System.Windows.Forms.Button();
+            this.txtBox_precioEditar = new System.Windows.Forms.TextBox();
+            this.label_PrecioEditar = new System.Windows.Forms.Label();
+            this.txtBox_stockMinimoEditar = new System.Windows.Forms.TextBox();
+            this.label_StockMinimoEditar = new System.Windows.Forms.Label();
+            this.textBox_stockActualEditar = new System.Windows.Forms.TextBox();
+            this.label_StockActualEditar = new System.Windows.Forms.Label();
+            this.comboBox_editorialEditar = new System.Windows.Forms.ComboBox();
+            this.label_editorialEditar = new System.Windows.Forms.Label();
+            this.txtBox_autorEditar = new System.Windows.Forms.TextBox();
+            this.label_AutorEditar = new System.Windows.Forms.Label();
+            this.txtBox_tituloEditar = new System.Windows.Forms.TextBox();
+            this.label_tituloEditar = new System.Windows.Forms.Label();
             this.panel_menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -278,14 +278,14 @@
             this.dataGrid_stock.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGrid_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -401,14 +401,14 @@
             this.dataGrid_editoriales.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_editoriales.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_editoriales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_editoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_editoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGrid_editoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_editoriales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
@@ -651,15 +651,15 @@
             // 
             this.panel_editarLibro.BackColor = System.Drawing.Color.Gainsboro;
             this.panel_editarLibro.Controls.Add(this.btn_EditarLibro);
-            this.panel_editarLibro.Controls.Add(this.txtBox_PrecioEditar);
+            this.panel_editarLibro.Controls.Add(this.txtBox_precioEditar);
             this.panel_editarLibro.Controls.Add(this.label_PrecioEditar);
-            this.panel_editarLibro.Controls.Add(this.txtBox_StockMinimoEditar);
+            this.panel_editarLibro.Controls.Add(this.txtBox_stockMinimoEditar);
             this.panel_editarLibro.Controls.Add(this.label_StockMinimoEditar);
-            this.panel_editarLibro.Controls.Add(this.textBox_StockActualEditar);
+            this.panel_editarLibro.Controls.Add(this.textBox_stockActualEditar);
             this.panel_editarLibro.Controls.Add(this.label_StockActualEditar);
-            this.panel_editarLibro.Controls.Add(this.comboBox_EditorialEditar);
+            this.panel_editarLibro.Controls.Add(this.comboBox_editorialEditar);
             this.panel_editarLibro.Controls.Add(this.label_editorialEditar);
-            this.panel_editarLibro.Controls.Add(this.txtBox_AutorEditar);
+            this.panel_editarLibro.Controls.Add(this.txtBox_autorEditar);
             this.panel_editarLibro.Controls.Add(this.label_AutorEditar);
             this.panel_editarLibro.Controls.Add(this.txtBox_tituloEditar);
             this.panel_editarLibro.Controls.Add(this.label_tituloEditar);
@@ -667,103 +667,6 @@
             this.panel_editarLibro.Name = "panel_editarLibro";
             this.panel_editarLibro.Size = new System.Drawing.Size(393, 335);
             this.panel_editarLibro.TabIndex = 14;
-            // 
-            // label_tituloEditar
-            // 
-            this.label_tituloEditar.AutoSize = true;
-            this.label_tituloEditar.Location = new System.Drawing.Point(76, 59);
-            this.label_tituloEditar.Name = "label_tituloEditar";
-            this.label_tituloEditar.Size = new System.Drawing.Size(33, 13);
-            this.label_tituloEditar.TabIndex = 0;
-            this.label_tituloEditar.Text = "Titulo";
-            // 
-            // txtBox_tituloEditar
-            // 
-            this.txtBox_tituloEditar.Location = new System.Drawing.Point(79, 75);
-            this.txtBox_tituloEditar.Name = "txtBox_tituloEditar";
-            this.txtBox_tituloEditar.Size = new System.Drawing.Size(100, 20);
-            this.txtBox_tituloEditar.TabIndex = 1;
-            // 
-            // label_AutorEditar
-            // 
-            this.label_AutorEditar.AutoSize = true;
-            this.label_AutorEditar.Location = new System.Drawing.Point(80, 118);
-            this.label_AutorEditar.Name = "label_AutorEditar";
-            this.label_AutorEditar.Size = new System.Drawing.Size(32, 13);
-            this.label_AutorEditar.TabIndex = 2;
-            this.label_AutorEditar.Text = "Autor";
-            // 
-            // txtBox_AutorEditar
-            // 
-            this.txtBox_AutorEditar.Location = new System.Drawing.Point(83, 134);
-            this.txtBox_AutorEditar.Name = "txtBox_AutorEditar";
-            this.txtBox_AutorEditar.Size = new System.Drawing.Size(100, 20);
-            this.txtBox_AutorEditar.TabIndex = 3;
-            // 
-            // label_editorialEditar
-            // 
-            this.label_editorialEditar.AutoSize = true;
-            this.label_editorialEditar.Location = new System.Drawing.Point(80, 179);
-            this.label_editorialEditar.Name = "label_editorialEditar";
-            this.label_editorialEditar.Size = new System.Drawing.Size(44, 13);
-            this.label_editorialEditar.TabIndex = 4;
-            this.label_editorialEditar.Text = "Editorial";
-            // 
-            // comboBox_EditorialEditar
-            // 
-            this.comboBox_EditorialEditar.FormattingEnabled = true;
-            this.comboBox_EditorialEditar.Location = new System.Drawing.Point(83, 195);
-            this.comboBox_EditorialEditar.Name = "comboBox_EditorialEditar";
-            this.comboBox_EditorialEditar.Size = new System.Drawing.Size(100, 21);
-            this.comboBox_EditorialEditar.TabIndex = 5;
-            // 
-            // label_StockActualEditar
-            // 
-            this.label_StockActualEditar.AutoSize = true;
-            this.label_StockActualEditar.Location = new System.Drawing.Point(216, 59);
-            this.label_StockActualEditar.Name = "label_StockActualEditar";
-            this.label_StockActualEditar.Size = new System.Drawing.Size(67, 13);
-            this.label_StockActualEditar.TabIndex = 6;
-            this.label_StockActualEditar.Text = "Stock actual";
-            // 
-            // textBox_StockActualEditar
-            // 
-            this.textBox_StockActualEditar.Location = new System.Drawing.Point(219, 75);
-            this.textBox_StockActualEditar.Name = "textBox_StockActualEditar";
-            this.textBox_StockActualEditar.Size = new System.Drawing.Size(100, 20);
-            this.textBox_StockActualEditar.TabIndex = 7;
-            // 
-            // label_StockMinimoEditar
-            // 
-            this.label_StockMinimoEditar.AutoSize = true;
-            this.label_StockMinimoEditar.Location = new System.Drawing.Point(216, 118);
-            this.label_StockMinimoEditar.Name = "label_StockMinimoEditar";
-            this.label_StockMinimoEditar.Size = new System.Drawing.Size(70, 13);
-            this.label_StockMinimoEditar.TabIndex = 8;
-            this.label_StockMinimoEditar.Text = "Stock minimo";
-            // 
-            // txtBox_StockMinimoEditar
-            // 
-            this.txtBox_StockMinimoEditar.Location = new System.Drawing.Point(219, 134);
-            this.txtBox_StockMinimoEditar.Name = "txtBox_StockMinimoEditar";
-            this.txtBox_StockMinimoEditar.Size = new System.Drawing.Size(100, 20);
-            this.txtBox_StockMinimoEditar.TabIndex = 9;
-            // 
-            // label_PrecioEditar
-            // 
-            this.label_PrecioEditar.AutoSize = true;
-            this.label_PrecioEditar.Location = new System.Drawing.Point(216, 179);
-            this.label_PrecioEditar.Name = "label_PrecioEditar";
-            this.label_PrecioEditar.Size = new System.Drawing.Size(37, 13);
-            this.label_PrecioEditar.TabIndex = 10;
-            this.label_PrecioEditar.Text = "Precio";
-            // 
-            // txtBox_PrecioEditar
-            // 
-            this.txtBox_PrecioEditar.Location = new System.Drawing.Point(219, 196);
-            this.txtBox_PrecioEditar.Name = "txtBox_PrecioEditar";
-            this.txtBox_PrecioEditar.Size = new System.Drawing.Size(100, 20);
-            this.txtBox_PrecioEditar.TabIndex = 11;
             // 
             // btn_EditarLibro
             // 
@@ -774,6 +677,103 @@
             this.btn_EditarLibro.Text = "Editar libro";
             this.btn_EditarLibro.UseVisualStyleBackColor = true;
             this.btn_EditarLibro.Click += new System.EventHandler(this.btn_EditarLibro_Click);
+            // 
+            // txtBox_precioEditar
+            // 
+            this.txtBox_precioEditar.Location = new System.Drawing.Point(219, 196);
+            this.txtBox_precioEditar.Name = "txtBox_precioEditar";
+            this.txtBox_precioEditar.Size = new System.Drawing.Size(100, 20);
+            this.txtBox_precioEditar.TabIndex = 11;
+            // 
+            // label_PrecioEditar
+            // 
+            this.label_PrecioEditar.AutoSize = true;
+            this.label_PrecioEditar.Location = new System.Drawing.Point(216, 179);
+            this.label_PrecioEditar.Name = "label_PrecioEditar";
+            this.label_PrecioEditar.Size = new System.Drawing.Size(37, 13);
+            this.label_PrecioEditar.TabIndex = 10;
+            this.label_PrecioEditar.Text = "Precio";
+            // 
+            // txtBox_stockMinimoEditar
+            // 
+            this.txtBox_stockMinimoEditar.Location = new System.Drawing.Point(219, 134);
+            this.txtBox_stockMinimoEditar.Name = "txtBox_stockMinimoEditar";
+            this.txtBox_stockMinimoEditar.Size = new System.Drawing.Size(100, 20);
+            this.txtBox_stockMinimoEditar.TabIndex = 9;
+            // 
+            // label_StockMinimoEditar
+            // 
+            this.label_StockMinimoEditar.AutoSize = true;
+            this.label_StockMinimoEditar.Location = new System.Drawing.Point(216, 118);
+            this.label_StockMinimoEditar.Name = "label_StockMinimoEditar";
+            this.label_StockMinimoEditar.Size = new System.Drawing.Size(70, 13);
+            this.label_StockMinimoEditar.TabIndex = 8;
+            this.label_StockMinimoEditar.Text = "Stock minimo";
+            // 
+            // textBox_stockActualEditar
+            // 
+            this.textBox_stockActualEditar.Location = new System.Drawing.Point(219, 75);
+            this.textBox_stockActualEditar.Name = "textBox_stockActualEditar";
+            this.textBox_stockActualEditar.Size = new System.Drawing.Size(100, 20);
+            this.textBox_stockActualEditar.TabIndex = 7;
+            // 
+            // label_StockActualEditar
+            // 
+            this.label_StockActualEditar.AutoSize = true;
+            this.label_StockActualEditar.Location = new System.Drawing.Point(216, 59);
+            this.label_StockActualEditar.Name = "label_StockActualEditar";
+            this.label_StockActualEditar.Size = new System.Drawing.Size(67, 13);
+            this.label_StockActualEditar.TabIndex = 6;
+            this.label_StockActualEditar.Text = "Stock actual";
+            // 
+            // comboBox_editorialEditar
+            // 
+            this.comboBox_editorialEditar.FormattingEnabled = true;
+            this.comboBox_editorialEditar.Location = new System.Drawing.Point(83, 195);
+            this.comboBox_editorialEditar.Name = "comboBox_editorialEditar";
+            this.comboBox_editorialEditar.Size = new System.Drawing.Size(100, 21);
+            this.comboBox_editorialEditar.TabIndex = 5;
+            // 
+            // label_editorialEditar
+            // 
+            this.label_editorialEditar.AutoSize = true;
+            this.label_editorialEditar.Location = new System.Drawing.Point(80, 179);
+            this.label_editorialEditar.Name = "label_editorialEditar";
+            this.label_editorialEditar.Size = new System.Drawing.Size(44, 13);
+            this.label_editorialEditar.TabIndex = 4;
+            this.label_editorialEditar.Text = "Editorial";
+            // 
+            // txtBox_autorEditar
+            // 
+            this.txtBox_autorEditar.Location = new System.Drawing.Point(83, 134);
+            this.txtBox_autorEditar.Name = "txtBox_autorEditar";
+            this.txtBox_autorEditar.Size = new System.Drawing.Size(100, 20);
+            this.txtBox_autorEditar.TabIndex = 3;
+            // 
+            // label_AutorEditar
+            // 
+            this.label_AutorEditar.AutoSize = true;
+            this.label_AutorEditar.Location = new System.Drawing.Point(80, 118);
+            this.label_AutorEditar.Name = "label_AutorEditar";
+            this.label_AutorEditar.Size = new System.Drawing.Size(32, 13);
+            this.label_AutorEditar.TabIndex = 2;
+            this.label_AutorEditar.Text = "Autor";
+            // 
+            // txtBox_tituloEditar
+            // 
+            this.txtBox_tituloEditar.Location = new System.Drawing.Point(79, 75);
+            this.txtBox_tituloEditar.Name = "txtBox_tituloEditar";
+            this.txtBox_tituloEditar.Size = new System.Drawing.Size(100, 20);
+            this.txtBox_tituloEditar.TabIndex = 1;
+            // 
+            // label_tituloEditar
+            // 
+            this.label_tituloEditar.AutoSize = true;
+            this.label_tituloEditar.Location = new System.Drawing.Point(76, 59);
+            this.label_tituloEditar.Name = "label_tituloEditar";
+            this.label_tituloEditar.Size = new System.Drawing.Size(33, 13);
+            this.label_tituloEditar.TabIndex = 0;
+            this.label_tituloEditar.Text = "Titulo";
             // 
             // BibliotecarioForm
             // 
@@ -857,17 +857,17 @@
         private System.Windows.Forms.ComboBox comboBox_editoriales;
         private System.Windows.Forms.Panel panel_editarLibro;
         private System.Windows.Forms.Label label_StockMinimoEditar;
-        private System.Windows.Forms.TextBox textBox_StockActualEditar;
+        private System.Windows.Forms.TextBox textBox_stockActualEditar;
         private System.Windows.Forms.Label label_StockActualEditar;
-        private System.Windows.Forms.ComboBox comboBox_EditorialEditar;
+        private System.Windows.Forms.ComboBox comboBox_editorialEditar;
         private System.Windows.Forms.Label label_editorialEditar;
-        private System.Windows.Forms.TextBox txtBox_AutorEditar;
+        private System.Windows.Forms.TextBox txtBox_autorEditar;
         private System.Windows.Forms.Label label_AutorEditar;
         private System.Windows.Forms.TextBox txtBox_tituloEditar;
         private System.Windows.Forms.Label label_tituloEditar;
         private System.Windows.Forms.Button btn_EditarLibro;
-        private System.Windows.Forms.TextBox txtBox_PrecioEditar;
+        private System.Windows.Forms.TextBox txtBox_precioEditar;
         private System.Windows.Forms.Label label_PrecioEditar;
-        private System.Windows.Forms.TextBox txtBox_StockMinimoEditar;
+        private System.Windows.Forms.TextBox txtBox_stockMinimoEditar;
     }
 }

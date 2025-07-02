@@ -26,6 +26,7 @@ namespace Presentacion
         { "Stock", "Lista de stock de Libreria Universitaria" },
         { "Editoriales", "Contactos de editoriales " },
     };
+        private int id_libro_a_editar = -1; // Variable para almacenar el ID del libro a editar
         public BibliotecarioForm()
         {
             InitializeComponent();
@@ -70,12 +71,12 @@ namespace Presentacion
             label_PrecioEditar.Hide();
             label_StockActualEditar.Hide();
             label_StockMinimoEditar.Hide();
-            txtBox_AutorEditar.Hide();
+            txtBox_autorEditar.Hide();
             txtBox_tituloEditar.Hide();
-            comboBox_EditorialEditar.Hide();
-            txtBox_PrecioEditar.Hide();
-            textBox_StockActualEditar.Hide();
-            txtBox_StockMinimoEditar.Hide();
+            comboBox_editorialEditar.Hide();
+            txtBox_precioEditar.Hide();
+            textBox_stockActualEditar.Hide();
+            txtBox_stockMinimoEditar.Hide();
             btn_EditarLibro.Hide();
         }
 
@@ -247,25 +248,14 @@ namespace Presentacion
             }
         }
 
-        private void btn_verLibros_Click(object sender, EventArgs e)
+        private void cargarLibros()
         {
-            lbl_bienvenida.Text = mensajes["Stock"];
-            dataGrid_stock.Show();
-            btn_agregarLibroMenu.Show();
-            btn_alertasStockBajo.Show();
-            btn_verLibros.Show();
-            dataGrid_editoriales.Hide();
-            panel_agregarLibro.Hide();
-
             // Instancia la lógica de stock de libros
             StockLibrosLogica stockLogica = new StockLibrosLogica();
-
             // Obtener los libros en stock
             DataTable dt = stockLogica.obtenerStockLibros();
-
             // Limpia el DataGridView antes de cargar nuevos datos
             dataGrid_stock.Rows.Clear();
-
             foreach (DataRow row in dt.Rows)
             {
                 dataGrid_stock.Rows.Add(
@@ -278,6 +268,19 @@ namespace Presentacion
                     row["precio"]
                 );
             }
+        }
+
+        private void btn_verLibros_Click(object sender, EventArgs e)
+        {
+            lbl_bienvenida.Text = mensajes["Stock"];
+            dataGrid_stock.Show();
+            btn_agregarLibroMenu.Show();
+            btn_alertasStockBajo.Show();
+            btn_verLibros.Show();
+            dataGrid_editoriales.Hide();
+            panel_agregarLibro.Hide();
+
+            cargarLibros();
         }
 
         private void btn_agregarLibroMenu_Click(object sender, EventArgs e)
@@ -306,7 +309,7 @@ namespace Presentacion
         
         private void dataGrid_stock_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && dataGrid_stock.Columns[e.ColumnIndex].Name == "editar")
             {
                 DataGridViewRow row = dataGrid_stock.Rows[e.RowIndex];
                 // Mostrar el panel de edición y los controles
@@ -317,35 +320,36 @@ namespace Presentacion
                 label_PrecioEditar.Show();
                 label_StockActualEditar.Show();
                 label_StockMinimoEditar.Show();
-                txtBox_AutorEditar.Show();
+                txtBox_autorEditar.Show();
                 txtBox_tituloEditar.Show();
-                comboBox_EditorialEditar.Show();
-                txtBox_PrecioEditar.Show();
-                textBox_StockActualEditar.Show();
-                txtBox_StockMinimoEditar.Show();
+                comboBox_editorialEditar.Show();
+                txtBox_precioEditar.Show();
+                textBox_stockActualEditar.Show();
+                txtBox_stockMinimoEditar.Show();
                 btn_EditarLibro.Show();
 
                 // Cargar los datos en los controles
+                id_libro_a_editar = Convert.ToInt32(row.Cells["id"].Value);
                 txtBox_tituloEditar.Text = row.Cells["titulo"].Value.ToString();
-                txtBox_AutorEditar.Text = row.Cells["autor"].Value.ToString();
-                textBox_StockActualEditar.Text = row.Cells["stock"].Value.ToString();
-                txtBox_StockMinimoEditar.Text = row.Cells["stock_minimo"].Value.ToString();
-                txtBox_PrecioEditar.Text = row.Cells["precio"].Value.ToString();
+                txtBox_autorEditar.Text = row.Cells["autor"].Value.ToString();
+                textBox_stockActualEditar.Text = row.Cells["stock"].Value.ToString();
+                txtBox_stockMinimoEditar.Text = row.Cells["stock_minimo"].Value.ToString();
+                txtBox_precioEditar.Text = row.Cells["precio"].Value.ToString();
 
                 // Cargar el ComboBox de editoriales si no está cargado
-                if (comboBox_EditorialEditar.DataSource == null)
+                if (comboBox_editorialEditar.DataSource == null)
                 {
                     EditorialesLogica editorialesLogica = new EditorialesLogica();
                     DataTable dtEditoriales = editorialesLogica.obtenerEditoriales();
-                    comboBox_EditorialEditar.DataSource = dtEditoriales;
-                    comboBox_EditorialEditar.DisplayMember = "nombre";
-                    comboBox_EditorialEditar.ValueMember = "id";
+                    comboBox_editorialEditar.DataSource = dtEditoriales;
+                    comboBox_editorialEditar.DisplayMember = "nombre";
+                    comboBox_editorialEditar.ValueMember = "id";
                 }
 
                 // Seleccionar la editorial correspondiente
                 string nombreEditorial = row.Cells["Editorial"].Value.ToString();
-                int index = comboBox_EditorialEditar.FindStringExact(nombreEditorial);
-                comboBox_EditorialEditar.SelectedIndex = index;
+                int index = comboBox_editorialEditar.FindStringExact(nombreEditorial);
+                comboBox_editorialEditar.SelectedIndex = index;
             }
         }
 
@@ -412,14 +416,15 @@ namespace Presentacion
             {
                 Libro libro = new Libro()
                 {
+                    Id = id_libro_a_editar,
                     Titulo = txtBox_tituloEditar.Text.Trim(),
-                    Autor = txtBox_AutorEditar.Text.Trim(),
-                    Stock_actual = Convert.ToInt32(textBox_StockActualEditar.Text.Trim()),
-                    Stock_minimo = Convert.ToInt32(txtBox_StockMinimoEditar.Text.Trim()),
-                    Precio = float.Parse(txtBox_PrecioEditar.Text.Trim())
+                    Autor = txtBox_autorEditar.Text.Trim(),
+                    Stock_actual = Convert.ToInt32(textBox_stockActualEditar.Text.Trim()),
+                    Stock_minimo = Convert.ToInt32(txtBox_stockMinimoEditar.Text.Trim()),
+                    Precio = float.Parse(txtBox_precioEditar.Text.Trim())
                 };
 
-                if (comboBox_EditorialEditar.SelectedIndex == -1)
+                if (comboBox_editorialEditar.SelectedIndex == -1)
                 {
                     MessageBox.Show("Debe seleccionar una editorial.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -427,17 +432,19 @@ namespace Presentacion
 
                 Editorial editorial = new Editorial
                 {
-                    Id = Convert.ToInt32(comboBox_editoriales.SelectedValue),
-                    Nombre = comboBox_editoriales.Text
+                    Id = Convert.ToInt32(comboBox_editorialEditar.SelectedValue),
+                    Nombre = comboBox_editorialEditar.Text
                 };
 
+                libro.Editorial = editorial;
                 Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
                 int resultado = stockLogica.editarLibro(libro);
 
                 if (resultado > 0)
                 {
                     MessageBox.Show("Libro editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Opcional: refrescar el DataGridView
+                    panel_editarLibro.Hide();
+                    cargarLibros();
                 }
                 else
                 {
