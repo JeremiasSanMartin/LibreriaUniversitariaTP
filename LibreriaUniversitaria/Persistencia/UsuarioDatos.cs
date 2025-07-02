@@ -15,7 +15,7 @@ namespace Persistencia
 {
     public class UsuarioDatos
     {
-        public DataTable ObtenerDatosUsuarioLogin(string nombreUsuario, string contraseña)
+        public DataTable obtenerDatosUsuarioLogin(string nombreUsuario, string contraseña)
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
@@ -27,7 +27,7 @@ namespace Persistencia
             return dt;
         }
 
-        public int InsertarUsuario(string nombreUsuario, string contraseña, string nombre, string apellido, int idRol)
+        public int insertarUsuario(string nombreUsuario, string contraseña, string nombre, string apellido, int idRol)
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
@@ -45,7 +45,7 @@ namespace Persistencia
             return filasAfectadas;
         }
 
-        public DataTable ObtenerDatosUsuario()
+        public DataTable obtenerDatosUsuario()
         {
             //RETORNAR UN DATATABLE CON LOS DATOS DEL USUARIO DEL SP obtenerUsuarios
             Conexion conexion = new Conexion();

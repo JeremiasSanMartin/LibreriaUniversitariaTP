@@ -9,6 +9,7 @@ namespace Entidades
     public class Libro
     {
 
+
         private int id;
 
         public int ID
@@ -16,8 +17,8 @@ namespace Entidades
             get { return id; }
             set { id = value; }
         }
-
-        private string titulo;
+		
+		private string titulo;
 
 		public string Titulo
 		{
@@ -71,7 +72,6 @@ namespace Entidades
 		{
 			get { return Editorial.Nombre; }
 		}
-
 
 	}
 }

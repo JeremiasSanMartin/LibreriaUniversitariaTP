@@ -14,7 +14,7 @@ namespace Logica
 
         public bool loguearse(string nombreUsuario, string contraseña, out string rol) //El out string rol es para devolver el rol del usuario, como parametro de salida
         {
-            DataTable dt = unLogin.ObtenerDatosUsuarioLogin(nombreUsuario, contraseña);
+            DataTable dt = unLogin.obtenerDatosUsuarioLogin(nombreUsuario, contraseña);
 
             foreach (DataRow fila in dt.Rows)
             {
