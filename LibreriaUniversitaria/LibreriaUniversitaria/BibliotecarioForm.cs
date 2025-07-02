@@ -353,12 +353,6 @@ namespace Presentacion
         {
             try
             {
-                //string titulo = txtBox_titulo.Text.Trim();
-                //string autor = txtBox_autor.Text.Trim();
-                //int stockActual = Convert.ToInt32(txtBox_stockActual.Text.Trim());
-                //int stockMinimo = Convert.ToInt32(textBox_StockMinimo.Text.Trim());
-                //float precio = float.Parse(txtBox_precio.Text.Trim());
-
                 Libro libro = new Libro
                 {
                     Titulo = txtBox_titulo.Text.Trim(),
@@ -379,6 +373,7 @@ namespace Presentacion
                     Id = Convert.ToInt32(comboBox_editoriales.SelectedValue),
                     Nombre = comboBox_editoriales.Text
                 };
+
                 libro.Editorial = editorial;
                 Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
                 int resultado = stockLogica.agregarLibro(libro);
@@ -415,12 +410,14 @@ namespace Presentacion
         {
             try
             {
-                int libroId = Convert.ToInt32(dataGrid_stock.CurrentRow.Cells["id"].Value);
-                string titulo = txtBox_tituloEditar.Text.Trim();
-                string autor = txtBox_AutorEditar.Text.Trim();
-                int stockActual = Convert.ToInt32(textBox_StockActualEditar.Text.Trim());
-                int stockMinimo = Convert.ToInt32(txtBox_StockMinimoEditar.Text.Trim());
-                float precio = float.Parse(txtBox_PrecioEditar.Text.Trim());
+                Libro libro = new Libro()
+                {
+                    Titulo = txtBox_tituloEditar.Text.Trim(),
+                    Autor = txtBox_AutorEditar.Text.Trim(),
+                    Stock_actual = Convert.ToInt32(textBox_StockActualEditar.Text.Trim()),
+                    Stock_minimo = Convert.ToInt32(txtBox_StockMinimoEditar.Text.Trim()),
+                    Precio = float.Parse(txtBox_PrecioEditar.Text.Trim())
+                };
 
                 if (comboBox_EditorialEditar.SelectedIndex == -1)
                 {
@@ -428,10 +425,14 @@ namespace Presentacion
                     return;
                 }
 
-                int editorialId = Convert.ToInt32(comboBox_EditorialEditar.SelectedValue);
+                Editorial editorial = new Editorial
+                {
+                    Id = Convert.ToInt32(comboBox_editoriales.SelectedValue),
+                    Nombre = comboBox_editoriales.Text
+                };
 
                 Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
-                int resultado = stockLogica.editarLibro(libroId, titulo, autor, editorialId, stockActual, stockMinimo, precio);
+                int resultado = stockLogica.editarLibro(libro);
 
                 if (resultado > 0)
                 {

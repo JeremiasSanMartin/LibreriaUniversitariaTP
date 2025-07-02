@@ -45,18 +45,18 @@ namespace Persistencia
             return filasAfectadas;
         }
 
-        public int editarLibro(int id, string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
+        public int editarLibro(Libro libro)
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
             {
-                conexion.crearParametro("@id_libro", id),
-                conexion.crearParametro("@titulo", titulo),
-                conexion.crearParametro("@autor", autor),
-                conexion.crearParametro("@editorial_id", editorialId),
-                conexion.crearParametro("@stock_actual", stockActual),
-                conexion.crearParametro("@stock_minimo", stockMinimo),
-                conexion.crearParametro("@precio", precio)
+                conexion.crearParametro("@id_libro", libro.Id),
+                conexion.crearParametro("@titulo", libro.Titulo),
+                conexion.crearParametro("@autor", libro.Autor),
+                conexion.crearParametro("@editorial_id", libro.Editorial.Id),
+                conexion.crearParametro("@stock_actual", libro.Stock_actual),
+                conexion.crearParametro("@stock_minimo", libro.Stock_minimo),
+                conexion.crearParametro("@precio", libro.Precio)
             };
             int filasAfectadas = conexion.EscribirPorStoreProcedure("editarLibro", parametros);
             return filasAfectadas;

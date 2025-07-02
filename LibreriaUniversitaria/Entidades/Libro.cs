@@ -8,6 +8,15 @@ namespace Entidades
 {
     public class Libro
     {
+
+		private int id;
+
+		public int Id
+		{
+			get { return id; }
+			set { id = value; }
+		}
+
 		private string titulo;
 
 		public string Titulo

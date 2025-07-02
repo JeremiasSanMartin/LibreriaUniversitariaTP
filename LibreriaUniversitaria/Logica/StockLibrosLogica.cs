@@ -32,10 +32,10 @@ namespace Logica
             return stockLibrosDatos.insertarLibro(libro);
         }
 
-        public int editarLibro(int id, string titulo, string autor, int editorialId, int stockActual, int stockMinimo, float precio)
+        public int editarLibro(Libro libro)
         {
             // Llama al método de la capa de persistencia para editar un libro existente
-            return stockLibrosDatos.editarLibro(id, titulo, autor, editorialId, stockActual, stockMinimo, precio);
+            return stockLibrosDatos.editarLibro(libro);
         }
     }
 }
