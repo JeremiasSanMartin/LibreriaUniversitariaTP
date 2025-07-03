@@ -2,6 +2,7 @@
 using Persistencia;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Logica
 {
     public class ClienteLogica
     {
-        private ManejoCliente manejoCliente = new ManejoCliente();
+        private ClienteDatos manejoCliente = new ClienteDatos();
 
         public int agregarCliente(Cliente cliente)
         {
@@ -39,8 +40,29 @@ namespace Logica
             }
         }
 
+        public DataTable BuscarClientes(string nombre)
+        {
+            return manejoCliente.BuscarClientesPorNombre(nombre);
+        }
 
+        public int InactivarCliente(int idCliente)
+        {
+            if (idCliente <= 0)
+                throw new ArgumentException("ID de cliente inválido.");
 
+            return manejoCliente.Inactivar(idCliente);
+        }
+
+        public int EditarCliente(Cliente cliente)
+        {
+            if (cliente.ID <= 0)
+                throw new ArgumentException("ID de cliente inválido.");
+
+            if (string.IsNullOrWhiteSpace(cliente.Nombre) || string.IsNullOrWhiteSpace(cliente.Apellido))
+                throw new Exception("Nombre y apellido son obligatorios.");
+
+            return manejoCliente.Editar(cliente);
+        }
 
     }
 }

@@ -39,7 +39,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pctBox_minimizar = new System.Windows.Forms.PictureBox();
             this.pctBox_salir = new System.Windows.Forms.PictureBox();
-            this.agregarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_linea2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_linea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox_usuario)).BeginInit();
@@ -187,16 +186,6 @@
             this.pctBox_salir.TabStop = false;
             this.pctBox_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // agregarCliente
-            // 
-            this.agregarCliente.Location = new System.Drawing.Point(561, 531);
-            this.agregarCliente.Name = "agregarCliente";
-            this.agregarCliente.Size = new System.Drawing.Size(230, 45);
-            this.agregarCliente.TabIndex = 18;
-            this.agregarCliente.Text = "Agregar cliente (TEST)";
-            this.agregarCliente.UseVisualStyleBackColor = true;
-            this.agregarCliente.Click += new System.EventHandler(this.agregarCliente_Click);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -205,7 +194,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(887, 664);
-            this.Controls.Add(this.agregarCliente);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pctBox_linea2);
             this.Controls.Add(this.pctBox_linea);
@@ -244,6 +232,5 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pctBox_minimizar;
         private System.Windows.Forms.PictureBox pctBox_salir;
-        private System.Windows.Forms.Button agregarCliente;
     }
 }

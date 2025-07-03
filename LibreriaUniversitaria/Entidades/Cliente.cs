@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,16 @@ namespace Entidades
 {
     public class Cliente
     {
+        private int id;
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+
+
         private bool activo;
 
         public bool Activo

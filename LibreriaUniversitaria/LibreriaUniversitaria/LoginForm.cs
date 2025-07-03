@@ -20,8 +20,6 @@ namespace Presentacion
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-          
-            
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -189,12 +187,5 @@ namespace Presentacion
             }
         }
 
-        private void agregarCliente_Click(object sender, EventArgs e)
-        {
-            PruebaCliente pruebaCliente = new PruebaCliente();
-            this.Hide();
-            pruebaCliente.ShowDialog();
-            this.Show();
-        }
     }
 }
