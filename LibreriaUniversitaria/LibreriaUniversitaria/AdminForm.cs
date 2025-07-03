@@ -37,6 +37,7 @@ namespace Presentacion
             dataGrid_usuarios.Hide();
             panel_crearUsuario.Hide();
             this.Load += AdminForm_Load;
+            dataGrid_usuarios.RowPrePaint += dataGrid_usuarios_RowPrePaint;
         }
 
         public void AdminForm_Load(object sender, EventArgs e)
@@ -148,7 +149,57 @@ namespace Presentacion
                     row["nombre"],
                     row["apellido"],
                     row["contrasena"],
-                    row["rol"]
+                    row["rol"],
+                    row["activo"]
+                );
+            }
+        }
+
+        // Evento para cambiar el color de las filas según el estado del usuario (activo/inactivo)
+        private void dataGrid_usuarios_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            var row = dataGrid_usuarios.Rows[e.RowIndex];
+
+            var activoCell = row.Cells["Activo"];
+            if (activoCell.Value == null)
+                return;
+
+            bool activo = false;
+            string valorTexto = activoCell.Value.ToString().Trim().ToLower();
+            if (valorTexto == "1" || valorTexto == "true")
+                activo = true;
+
+            if (!activo)
+            {
+                row.DefaultCellStyle.BackColor = Color.LightGray;
+                row.DefaultCellStyle.ForeColor = Color.DarkGray;
+            }
+            else
+            {
+                row.DefaultCellStyle.BackColor = Color.White;
+                row.DefaultCellStyle.ForeColor = Color.Black;
+            }
+
+        }
+
+        // Método para refrescar la grilla de usuarios
+        private void RefrescarUsuarios()
+        {
+            AdminLogica adminLogica = new AdminLogica();
+            DataTable dt = adminLogica.buscarUsuario();
+
+            dataGrid_usuarios.Rows.Clear();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                dataGrid_usuarios.Rows.Add(
+                    row["id"],
+                    row["nombre_usuario"],
+                    row["nombre"],
+                    row["apellido"],
+                    row["contrasena"],
+                    row["rol"],
+                    row["activo"]
                 );
             }
         }
@@ -250,6 +301,48 @@ namespace Presentacion
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; 
+            }
+        }
+
+        private void dataGrid_usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica si se hizo clic en la columna de bloquear
+            if (e.ColumnIndex == dataGrid_usuarios.Columns["inactivar"].Index && e.RowIndex >= 0)
+            {
+                Usuario usuarioSeleccionado = new Usuario
+                {
+                    Id = Convert.ToInt32(dataGrid_usuarios.Rows[e.RowIndex].Cells["ID"].Value),
+                    Nombre_usuario = dataGrid_usuarios.Rows[e.RowIndex].Cells["nombreUsuario"].Value.ToString(),
+                    Nombre = dataGrid_usuarios.Rows[e.RowIndex].Cells["nombre"].Value.ToString(),
+                    Apellido = dataGrid_usuarios.Rows[e.RowIndex].Cells["apellido"].Value.ToString(),
+                    Contraseña = dataGrid_usuarios.Rows[e.RowIndex].Cells["password"].Value.ToString(),
+                    Rol = dataGrid_usuarios.Rows[e.RowIndex].Cells["rol"].Value.ToString(),
+                    Activo = Convert.ToBoolean(dataGrid_usuarios.Rows[e.RowIndex].Cells["activo"].Value)
+                };
+
+                if (!usuarioSeleccionado.Activo)
+                {
+                    MessageBox.Show($"El usuario {usuarioSeleccionado.Nombre_usuario} ya está inactivado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                var confirm = MessageBox.Show($"¿Seguro que desea inactivar al usuario {usuarioSeleccionado.Nombre_usuario}?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    AdminLogica adminLogica = new AdminLogica();
+                    bool exito = adminLogica.inactivarUsuario(usuarioSeleccionado);
+
+                    if (exito)
+                    {
+                        MessageBox.Show("Usuario inactivado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefrescarUsuarios();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo inactivar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }

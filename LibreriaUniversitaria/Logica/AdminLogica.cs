@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades;
 using Persistencia;
 
 namespace Logica
@@ -26,10 +27,17 @@ namespace Logica
             }
         }
 
+        public bool inactivarUsuario(Usuario usuario)
+        {
+            //Llamo al método de la capa de persistencia para inactivar un usuario
+            int resultado = this.usuario.inactivarUsuario(usuario.Id);
+            return resultado > 0;
+        }
+
         public DataTable buscarUsuario()
         {
             //Llamo al método de la capa de persistencia para obtener los datos del usuario
-            return usuario.ObtenerDatosUsuario();
+            return usuario.obtenerDatosUsuario();
         }
 
     }

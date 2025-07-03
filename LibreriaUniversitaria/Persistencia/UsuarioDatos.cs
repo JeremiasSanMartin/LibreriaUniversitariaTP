@@ -55,7 +55,19 @@ namespace Persistencia
             return (int)resultadoParam.Value;
         }
 
-        public DataTable ObtenerDatosUsuario()
+        public int inactivarUsuario(int idUsuario)
+        {
+            //Inactivar un usuario por su ID
+            Conexion conexion = new Conexion();
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                conexion.crearParametro("@id_usuario", idUsuario)
+            };
+            int resultado = conexion.EscribirPorStoreProcedure("inactivarUsuario", parametros);
+            return resultado;
+        }
+
+        public DataTable obtenerDatosUsuario()
         {
             //RETORNAR UN DATATABLE CON LOS DATOS DEL USUARIO DEL SP obtenerUsuarios
             Conexion conexion = new Conexion();
