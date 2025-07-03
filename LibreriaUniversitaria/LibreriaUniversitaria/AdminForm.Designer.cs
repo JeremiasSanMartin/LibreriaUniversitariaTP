@@ -30,10 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGrid_usuarios = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inactivar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.btn_usuarios = new System.Windows.Forms.Button();
@@ -60,14 +68,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inactivar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_usuarios)).BeginInit();
             this.panel_menu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -117,6 +117,79 @@
             this.dataGrid_usuarios.Size = new System.Drawing.Size(595, 499);
             this.dataGrid_usuarios.TabIndex = 5;
             this.dataGrid_usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_usuarios_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // nombreUsuario
+            // 
+            this.nombreUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nombreUsuario.HeaderText = "Nombre de Usuario";
+            this.nombreUsuario.MinimumWidth = 6;
+            this.nombreUsuario.Name = "nombreUsuario";
+            this.nombreUsuario.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // password
+            // 
+            this.password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.password.HeaderText = "Contraseña";
+            this.password.MinimumWidth = 6;
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            // 
+            // rol
+            // 
+            this.rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.rol.HeaderText = "Rol";
+            this.rol.MinimumWidth = 6;
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Visible = false;
+            // 
+            // inactivar
+            // 
+            this.inactivar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.inactivar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.inactivar.HeaderText = "";
+            this.inactivar.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar;
+            this.inactivar.MinimumWidth = 6;
+            this.inactivar.Name = "inactivar";
+            this.inactivar.ReadOnly = true;
+            this.inactivar.Width = 50;
             // 
             // panel_menu
             // 
@@ -366,6 +439,7 @@
             this.txtBox_contrasenaCrear.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtBox_contrasenaCrear.ForeColor = System.Drawing.Color.Gray;
             this.txtBox_contrasenaCrear.Location = new System.Drawing.Point(234, 192);
+            this.txtBox_contrasenaCrear.MaxLength = 20;
             this.txtBox_contrasenaCrear.Multiline = true;
             this.txtBox_contrasenaCrear.Name = "txtBox_contrasenaCrear";
             this.txtBox_contrasenaCrear.Size = new System.Drawing.Size(177, 40);
@@ -380,6 +454,7 @@
             this.txtBox_usuarioCrear.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_usuarioCrear.ForeColor = System.Drawing.Color.Gray;
             this.txtBox_usuarioCrear.Location = new System.Drawing.Point(40, 192);
+            this.txtBox_usuarioCrear.MaxLength = 15;
             this.txtBox_usuarioCrear.Multiline = true;
             this.txtBox_usuarioCrear.Name = "txtBox_usuarioCrear";
             this.txtBox_usuarioCrear.Size = new System.Drawing.Size(177, 40);
@@ -470,79 +545,6 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 25;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // nombreUsuario
-            // 
-            this.nombreUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nombreUsuario.HeaderText = "Nombre de Usuario";
-            this.nombreUsuario.MinimumWidth = 6;
-            this.nombreUsuario.Name = "nombreUsuario";
-            this.nombreUsuario.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.MinimumWidth = 6;
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // password
-            // 
-            this.password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.password.HeaderText = "Contraseña";
-            this.password.MinimumWidth = 6;
-            this.password.Name = "password";
-            this.password.ReadOnly = true;
-            // 
-            // rol
-            // 
-            this.rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            this.Activo.Visible = false;
-            // 
-            // inactivar
-            // 
-            this.inactivar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.inactivar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.inactivar.HeaderText = "";
-            this.inactivar.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar;
-            this.inactivar.MinimumWidth = 6;
-            this.inactivar.Name = "inactivar";
-            this.inactivar.ReadOnly = true;
-            this.inactivar.Width = 50;
             // 
             // AdminForm
             // 

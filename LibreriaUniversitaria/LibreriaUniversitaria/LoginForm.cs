@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
 using Logica;
+using Entidades;
+using System.Data.SqlClient;
 
 namespace Presentacion
 {
@@ -49,63 +51,82 @@ namespace Presentacion
 
         private void btn_iniciarSesion_Click(object sender, EventArgs e)
         {
-            string usuario = textBox_usuario.Text;
-            string clave = textBox_clave.Text;
-            string rol; // Variable para almacenar el rol del usuario
-
-            Logica.UsuarioLogica unLogin = new Logica.UsuarioLogica();
-
-            if (unLogin.loguearse(usuario, clave, out rol))
+            try 
             {
-                MessageBox.Show($"Inicio sesión correctamente");
-
-                if (rol == "Administrador")
+                Usuario login = new Usuario
                 {
+                    Nombre_usuario = textBox_usuario.Text,
+                    Contraseña = textBox_clave.Text
+                };
 
-                    AdminForm adminForm = new AdminForm();
-                    this.Hide(); // oculta el form actual
-                    adminForm.ShowDialog(); // muestra el nuevo form 
-                    this.Show(); // vuelve a mostrar el menú al cerrar el AdminForm
-                    cargarPlaceholders();
-
-
+                if (string.IsNullOrWhiteSpace(login.Nombre_usuario) || login.Nombre_usuario == "Usuario" || string.IsNullOrWhiteSpace(login.Contraseña) || login.Contraseña == "Contraseña")
+                {
+                    MessageBox.Show("Debe completar nombre de usuario y contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else if (rol == "Bibliotecario")
+
+                UsuarioLogica usuarioLogica = new UsuarioLogica();
+                if (usuarioLogica.loguearse(login))
                 {
+                    MessageBox.Show($"Inicio sesión correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-                    BibliotecarioForm bibliotecarioForm = new BibliotecarioForm();
-                    this.Hide();
-                    bibliotecarioForm.ShowDialog();
-                    this.Show();
-                    cargarPlaceholders();   
+                    if (login.Rol == "Administrador")
+                    {
 
+                        AdminForm adminForm = new AdminForm();
+                        this.Hide(); // oculta el form actual
+                        adminForm.ShowDialog(); // muestra el nuevo form 
+                        this.Show(); // vuelve a mostrar el menú al cerrar el AdminForm
+                        cargarPlaceholders();
+
+
+                    }
+                    else if (login.Rol == "Bibliotecario")
+                    {
+
+                        BibliotecarioForm bibliotecarioForm = new BibliotecarioForm();
+                        this.Hide();
+                        bibliotecarioForm.ShowDialog();
+                        this.Show();
+                        cargarPlaceholders();
+
+                    }
+                    else if (login.Rol == "Gerente")
+                    {
+                        GerenteForm gerenteForm = new GerenteForm();
+                        this.Hide();
+                        gerenteForm.ShowDialog();
+                        this.Show();
+                        cargarPlaceholders();
+                    }
+                    else if (login.Rol == "Vendedor")
+                    {
+                        VendedorForm vendedorForm = new VendedorForm();
+                        this.Hide();
+                        vendedorForm.ShowDialog();
+                        this.Show();
+                        cargarPlaceholders();
+
+                    }
                 }
-                else if (rol == "Gerente")
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("inactivado"))
                 {
-                    GerenteForm gerenteForm = new GerenteForm();
-                    this.Hide();
-                    gerenteForm.ShowDialog();
-                    this.Show();
-                    cargarPlaceholders();
+                    MessageBox.Show("Este usuario está inactivado. Contacte al administrador.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (rol == "Vendedor")
+                else if (ex.Message.Contains("incorrecto"))
                 {
-                    VendedorForm vendedorForm = new VendedorForm();
-                    this.Hide();
-                    vendedorForm.ShowDialog();
-                    this.Show();
-                    cargarPlaceholders();
-
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Rol no reconocido");
+                    MessageBox.Show("Error de base de datos: " + ex.Message);
                 }
+
             }
-            else
-            {
-                MessageBox.Show("El usuario, la contraseña o el tipo de rol es incorrecto");
-            }
+
         }
 
 

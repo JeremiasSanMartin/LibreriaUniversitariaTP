@@ -15,19 +15,19 @@ namespace Persistencia
 {
     public class UsuarioDatos
     {
-        public DataTable ObtenerDatosUsuarioLogin(string nombreUsuario, string contraseña)
+        public DataTable obtenerDatosUsuarioLogin(Usuario usuario)
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
             {
-                conexion.crearParametro("@nombre_usuario", nombreUsuario),
-                conexion.crearParametro("@contrasena", contraseña)
+                conexion.crearParametro("@nombre_usuario", usuario.Nombre_usuario),
+                conexion.crearParametro("@contrasena", usuario.Contraseña)
             };
             DataTable dt = conexion.LeerPorStoreProcedure("obtenerUsuarioLogin", parametros);
             return dt;
         }
 
-        public int InsertarUsuario(string nombreUsuario, string contraseña, string nombre, string apellido, string rol, string dni)
+        public int insertarUsuario(Usuario usuario)
         {
             Conexion conexion = new Conexion();
 
@@ -39,12 +39,12 @@ namespace Persistencia
 
             SqlParameter[] parametros = new SqlParameter[]
             {
-                conexion.crearParametro("@nombre_usuario", nombreUsuario),
-                conexion.crearParametro("@contrasena", contraseña),
-                conexion.crearParametro("@nombre", nombre),
-                conexion.crearParametro("@apellido", apellido),
-                conexion.crearParametro("@dni", dni),
-                conexion.crearParametro("@nombre_rol", rol),
+                conexion.crearParametro("@nombre_usuario", usuario.Nombre_usuario),
+                conexion.crearParametro("@contrasena", usuario.Contraseña),
+                conexion.crearParametro("@nombre", usuario.Nombre),
+                conexion.crearParametro("@apellido", usuario.Apellido),
+                conexion.crearParametro("@dni", usuario.DNI),
+                conexion.crearParametro("@nombre_rol", usuario.Rol),
                 conexion.crearParametro("@activo", 1),//Si el usuario se crea, por defecto estará activo
                 resultadoParam
             };
@@ -55,13 +55,13 @@ namespace Persistencia
             return (int)resultadoParam.Value;
         }
 
-        public int inactivarUsuario(int idUsuario)
+        public int inactivarUsuario(Usuario usuario)
         {
             //Inactivar un usuario por su ID
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
             {
-                conexion.crearParametro("@id_usuario", idUsuario)
+                conexion.crearParametro("@id_usuario", usuario.Id)
             };
             int resultado = conexion.EscribirPorStoreProcedure("inactivarUsuario", parametros);
             return resultado;

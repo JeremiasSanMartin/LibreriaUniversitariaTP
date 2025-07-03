@@ -5,9 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -232,31 +234,78 @@ namespace Presentacion
 
         private void btn_crearUsuario_Click(object sender, EventArgs e)
         {
-            string nombre = txtBox_nombreCrear.Text.Trim();
-            string apellido = txtBox_apellidoCrear.Text.Trim();
-            string nombreUsuario = txtBox_usuarioCrear.Text.Trim();
-            string contrasena = txtBox_contrasenaCrear.Text.Trim();
-            string dni = txtBox_DNI.Text.Trim();
-            string rolSeleccionado = cBox_rolCrear.SelectedItem?.ToString();
-
-            Logica.AdminLogica adminLogica = new Logica.AdminLogica();
-
-            if (adminLogica.crearUsuario(nombre, apellido, nombreUsuario, contrasena, dni, rolSeleccionado))
+            try 
             {
-                MessageBox.Show("Usuario creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Usuario usuario = new Usuario
+                {
+                    Nombre = txtBox_nombreCrear.Text.Trim(),
+                    Apellido = txtBox_apellidoCrear.Text.Trim(),
+                    Nombre_usuario = txtBox_usuarioCrear.Text.Trim(),
+                    Contraseña = txtBox_contrasenaCrear.Text.Trim(),
+                    DNI = txtBox_DNI.Text.Trim(),
+                    Rol = cBox_rolCrear.SelectedItem?.ToString() ?? "Bibliotecario", // Valor por defecto si no se selecciona nada
+                    Activo = true // Por defecto, el usuario se crea como activo
+                };
 
-                // Limpiar campos
-                txtBox_nombreCrear.Clear();
-                txtBox_apellidoCrear.Clear();
-                txtBox_usuarioCrear.Clear();
-                txtBox_contrasenaCrear.Clear();
-                txtBox_DNI.Clear();
-                cBox_rolCrear.SelectedIndex = -1;
+                // Validaciones de campos vacíos
+                if (string.IsNullOrWhiteSpace(usuario.Nombre) ||
+                    string.IsNullOrWhiteSpace(usuario.Apellido) ||
+                    string.IsNullOrWhiteSpace(usuario.Nombre_usuario) ||
+                    string.IsNullOrWhiteSpace(usuario.Contraseña) ||
+                    string.IsNullOrWhiteSpace(usuario.DNI) ||
+                    string.IsNullOrWhiteSpace(usuario.Rol))
+                {
+                    MessageBox.Show("Debe completar todos los campos antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validación de contraseña segura
+                Regex regexContrasena = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[^\s]{8,}$");
+
+                if (!regexContrasena.IsMatch(usuario.Contraseña))
+                {
+                    MessageBox.Show("La contraseña debe tener al menos:\n- Una letra mayúscula\n- Una letra minúscula\n- Un número\n- Un carácter especial\n- Y no contener espacios",
+                                    "Contraseña inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                AdminLogica adminLogica = new AdminLogica();
+
+                if (adminLogica.crearUsuario(usuario))
+                {
+                    MessageBox.Show("Usuario creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    txtBox_nombreCrear.Clear();
+                    txtBox_apellidoCrear.Clear();
+                    txtBox_usuarioCrear.Clear();
+                    txtBox_contrasenaCrear.Clear();
+                    txtBox_DNI.Clear();
+                    cBox_rolCrear.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show("El nombre de usuario ya existe. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (SqlException ex)
             {
-                MessageBox.Show("El nombre de usuario ya existe. Por favor, intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = ex.Message.ToLower();
+
+                if (msg.Contains("usuario ya existe"))
+                {
+                    MessageBox.Show("El nombre de usuario ya está en uso.", "Usuario duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (msg.Contains("dni ya está"))
+                {
+                    MessageBox.Show("El DNI ingresado ya fue registrado anteriormente.", "DNI duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Error al insertar usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
+            
         }
 
         //Eventos para que al presionar enter envie datos al crear usuario
