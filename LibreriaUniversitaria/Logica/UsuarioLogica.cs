@@ -24,7 +24,7 @@ namespace Logica
                     // Devuelve el rol si la validación es correcta
                     usuario.Rol = fila["rol"].ToString();
 
-                    id = (int)fila["id"];
+                    usuario.ID = (int)fila["id"];
 
                     return true; // Retorna true si el usuario y la contraseña son correctos
                 }
@@ -33,7 +33,7 @@ namespace Logica
 
             usuario.Rol = null;
 
-            id = 0;
+            usuario.ID = 0;
 
             return false;
         }

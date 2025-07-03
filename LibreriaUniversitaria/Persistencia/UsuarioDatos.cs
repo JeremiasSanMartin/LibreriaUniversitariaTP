@@ -53,7 +53,7 @@ namespace Persistencia
                 resultadoParam
             };
 
-            conexion.EscribirPorStoreProcedure("insertarUsuario", parametros);
+            conexion.escribirPorStoreProcedure("insertarUsuario", parametros);
 
             //Devuelve el parametro de salida que en este caso es el resultado de la inserción
             return (int)resultadoParam.Value;
@@ -65,9 +65,9 @@ namespace Persistencia
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
             {
-                conexion.crearParametro("@id_usuario", usuario.Id)
+                conexion.crearParametro("@id_usuario", usuario.ID)
             };
-            int resultado = conexion.EscribirPorStoreProcedure("inactivarUsuario", parametros);
+            int resultado = conexion.escribirPorStoreProcedure("inactivarUsuario", parametros);
             return resultado;
 
         }

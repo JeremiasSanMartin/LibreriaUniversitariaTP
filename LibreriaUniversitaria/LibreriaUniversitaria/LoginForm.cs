@@ -100,7 +100,7 @@ namespace Presentacion
                     }
                     else if (login.Rol == "Vendedor")
                     {
-                        VendedorForm vendedorForm = new VendedorForm(id);
+                        VendedorForm vendedorForm = new VendedorForm(login.ID);
                         this.Hide();
                         vendedorForm.ShowDialog();
                         this.Show();

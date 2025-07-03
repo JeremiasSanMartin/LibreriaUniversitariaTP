@@ -360,7 +360,7 @@ namespace Presentacion
             {
                 Usuario usuarioSeleccionado = new Usuario
                 {
-                    Id = Convert.ToInt32(dataGrid_usuarios.Rows[e.RowIndex].Cells["ID"].Value),
+                    ID = Convert.ToInt32(dataGrid_usuarios.Rows[e.RowIndex].Cells["ID"].Value),
                     Nombre_usuario = dataGrid_usuarios.Rows[e.RowIndex].Cells["nombreUsuario"].Value.ToString(),
                     Nombre = dataGrid_usuarios.Rows[e.RowIndex].Cells["nombre"].Value.ToString(),
                     Apellido = dataGrid_usuarios.Rows[e.RowIndex].Cells["apellido"].Value.ToString(),
