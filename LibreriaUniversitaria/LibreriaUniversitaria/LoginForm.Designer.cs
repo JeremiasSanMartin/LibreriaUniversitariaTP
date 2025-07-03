@@ -147,7 +147,7 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(887, 31);
             this.panel1.TabIndex = 17;
@@ -157,7 +157,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pctBox_minimizar);
             this.flowLayoutPanel1.Controls.Add(this.pctBox_salir);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(788, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(99, 30);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -166,7 +166,7 @@
             // 
             this.pctBox_minimizar.Image = global::LibreriaUniversitaria.Properties.Resources.minimizar;
             this.pctBox_minimizar.Location = new System.Drawing.Point(2, 2);
-            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2);
             this.pctBox_minimizar.Name = "pctBox_minimizar";
             this.pctBox_minimizar.Size = new System.Drawing.Size(44, 29);
             this.pctBox_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -178,7 +178,7 @@
             // 
             this.pctBox_salir.Image = global::LibreriaUniversitaria.Properties.Resources.cerrar;
             this.pctBox_salir.Location = new System.Drawing.Point(50, 2);
-            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2);
             this.pctBox_salir.Name = "pctBox_salir";
             this.pctBox_salir.Size = new System.Drawing.Size(44, 31);
             this.pctBox_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
