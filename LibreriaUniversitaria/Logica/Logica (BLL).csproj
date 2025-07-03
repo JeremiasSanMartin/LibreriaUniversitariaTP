@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminLogica.cs" />
+    <Compile Include="ClienteLogica.cs" />
     <Compile Include="EditorialesLogica.cs" />
     <Compile Include="StockLibrosLogica.cs" />
     <Compile Include="ReporteLogica.cs" />
