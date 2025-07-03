@@ -17,8 +17,6 @@ namespace Entidades
             set { id = value; }
         }
 
-
-
         private bool activo;
 
         public bool Activo
@@ -91,12 +89,26 @@ namespace Entidades
             set { descuento = value; }
         }
 
-        private int rol_cliente_id;
 
-        public int RolClienteId
+        private int tipo_id;
+
+        public int Tipo_ID
         {
-            get { return rol_cliente_id; }
-            set { rol_cliente_id = value; }
+            get
+            {
+                switch (Tipo)
+                {
+                    case "Estudiante":
+                        return 1;   
+                    case "Profesor":
+                        return 2;  
+                    case "Personal":
+                        return 3; 
+                    default:
+                        return 4; 
+
+                }
+            }
         }
 
 

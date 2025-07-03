@@ -10,7 +10,7 @@ namespace Logica
 {
     public class AdminLogica
     {
-        Persistencia.UsuarioDatos usuario = new Persistencia.UsuarioDatos();
+        UsuarioDatos usuario = new UsuarioDatos();
         public bool crearUsuario(string nombre, string apellido, string nombreUsuario, string contraseña, int idRol) 
         {
             //Llamo al método de la capa de persistencia para insertar un nuevo usuario

@@ -8,17 +8,26 @@ namespace Entidades
 {
     public class Venta
     {
-		private DateTime fecha_venta;
 
-		public DateTime Fecha_venta
+        private int id;
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private DateTime fecha;
+
+		public DateTime Fecha
 		{
-			get { return fecha_venta; }
-			set { fecha_venta = value; }
+			get { return fecha; }
+			set { fecha = value; }
 		}
 
 		private float precio_final;
 
-		public float Precio_final
+		public float Precio_Final
 		{
 			get { return precio_final; }
 			set { precio_final = value; }
@@ -26,11 +35,30 @@ namespace Entidades
 
 		private int vendedor_asociado;
 
-		public int Vendedor_asociado
+		public int Vendedor_Asociado
 		{
 			get { return vendedor_asociado; }
 			set { vendedor_asociado = value; }
 		}
+
+		private Cliente cliente_asociado;
+
+		public Cliente Cliente_Asociado
+		{
+			get { return cliente_asociado; }
+			set { cliente_asociado = value; }
+		}
+
+		private List<DetalleVenta> detalles;
+
+		public List<DetalleVenta> Detalles
+		{
+			get { return detalles; }
+			set { detalles = value; }
+		}
+
+
+		
 
 
 	}

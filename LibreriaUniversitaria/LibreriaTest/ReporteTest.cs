@@ -18,7 +18,7 @@ namespace LibreriaTest
             //logica
             ReporteLogica logica = new ReporteLogica();
             string nombreVendedor = "Tomas"; //asegurarse que exista en la basae de datos y tenga ventas hechas
-            List<ReporteDetalleVenta> resultados = logica.RecuperarDetalles(nombreVendedor);
+            List<ReporteDetalleVenta> resultados = logica.recuperarDetalles(nombreVendedor);
 
             //resultado
             Assert.IsNotNull(resultados);
@@ -31,7 +31,7 @@ namespace LibreriaTest
             //vendedor imaginario
             ReporteLogica logica = new ReporteLogica();
             string nombreVendedor = "VendedorInexistente123";
-            List<ReporteDetalleVenta> resultados = logica.RecuperarDetalles(nombreVendedor);
+            List<ReporteDetalleVenta> resultados = logica.recuperarDetalles(nombreVendedor);
 
             //aseguramos que pueda detectar que el vendedor no existe
             Assert.IsNotNull(resultados);
@@ -45,7 +45,7 @@ namespace LibreriaTest
             ReporteLogica logica = new ReporteLogica();
             DateTime inicio = new DateTime(2025, 6, 1);
             DateTime fin = new DateTime(2025, 7, 31);
-            List<ReporteVendedor> resultados = logica.RecuperarPorFechas(inicio, fin);
+            List<ReporteVendedor> resultados = logica.recuperarPorFechas(inicio, fin);
 
             //aseguramos que haya resultados
             Assert.IsNotNull(resultados);
@@ -59,7 +59,7 @@ namespace LibreriaTest
             ReporteLogica logica = new ReporteLogica();
             DateTime inicio = new DateTime(1999, 1, 1);
             DateTime fin = new DateTime(1999, 1, 31);
-            List<ReporteVendedor> resultados = logica.RecuperarPorFechas(inicio, fin);
+            List<ReporteVendedor> resultados = logica.recuperarPorFechas(inicio, fin);
 
             //deberia devolver 0
             Assert.IsNotNull(resultados);

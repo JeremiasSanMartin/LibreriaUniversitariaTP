@@ -13,7 +13,7 @@ namespace Persistencia
     public class ReporteDatos
     {
         //recupera los reportes por vendedor o si no se pasa ningun parametro, recupera todos los reportes
-        public List<ReporteDetalleVenta> RecuperarDetallesPorVendedor(string nombreVendedor = null)
+        public List<ReporteDetalleVenta> recuperarDetallesPorVendedor(string nombreVendedor = null)
         {
             List<ReporteDetalleVenta> lista = new List<ReporteDetalleVenta>();
             Conexion conexion = new Conexion();
@@ -26,7 +26,7 @@ namespace Persistencia
             }
 
             //prepara la consulta a la base de datos
-            DataTable tabla = conexion.LeerPorStoreProcedure("obtenerVentasPorVendedor", parametros.ToArray());
+            DataTable tabla = conexion.leerPorStoreProcedure("obtenerVentasPorVendedor", parametros.ToArray());
 
             //lena la data table
             foreach (DataRow fila in tabla.Rows)
@@ -45,7 +45,7 @@ namespace Persistencia
         }
 
         //recupera las ventas por fechas, desde y hasta
-        public List<ReporteVendedor> RecuperarVentasPorFechas(DateTime fechaInicio, DateTime fechaFin)
+        public List<ReporteVendedor> recuperarVentasPorFechas(DateTime fechaInicio, DateTime fechaFin)
         {
             List<ReporteVendedor> lista = new List<ReporteVendedor>();
             Conexion conexion = new Conexion();
@@ -58,7 +58,7 @@ namespace Persistencia
             };
 
             //ejecuta el stored procedure para obtener las ventas por fecha
-            DataTable tabla = conexion.LeerPorStoreProcedure("obtenerVentasPorFecha", parametros);
+            DataTable tabla = conexion.leerPorStoreProcedure("obtenerVentasPorFecha", parametros);
 
             //lena la data table
             foreach (DataRow fila in tabla.Rows)

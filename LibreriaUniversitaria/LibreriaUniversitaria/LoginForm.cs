@@ -51,10 +51,11 @@ namespace Presentacion
             string usuario = textBox_usuario.Text;
             string clave = textBox_clave.Text;
             string rol; // Variable para almacenar el rol del usuario
+            int id;
 
             Logica.UsuarioLogica unLogin = new Logica.UsuarioLogica();
 
-            if (unLogin.loguearse(usuario, clave, out rol))
+            if (unLogin.loguearse(usuario, clave, out rol, out id))
             {
                 MessageBox.Show($"Inicio sesión correctamente");
 
@@ -89,7 +90,7 @@ namespace Presentacion
                 }
                 else if (rol == "Vendedor")
                 {
-                    VendedorForm vendedorForm = new VendedorForm();
+                    VendedorForm vendedorForm = new VendedorForm(id);
                     this.Hide();
                     vendedorForm.ShowDialog();
                     this.Show();

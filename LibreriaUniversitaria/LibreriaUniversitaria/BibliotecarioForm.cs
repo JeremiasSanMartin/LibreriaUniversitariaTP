@@ -142,10 +142,10 @@ namespace Presentacion
             dataGrid_editoriales.Hide();
 
             // Instancia la lógica de stock de libros
-            StockLibrosLogica stockLogica = new StockLibrosLogica();
+            LibroLogica stockLogica = new LibroLogica();
 
             // Obtener los libros en stock
-            DataTable dt = stockLogica.obtenerStockLibros();
+            DataTable dt = stockLogica.obtenerDataTableLibros();
 
             // Limpia el DataGridView antes de cargar nuevos datos
             dataGrid_stock.Rows.Clear();
@@ -226,7 +226,7 @@ namespace Presentacion
             panel_agregarLibro.Hide();
 
             // Instancia la lógica de stock de libros
-            StockLibrosLogica stockLogica = new StockLibrosLogica();
+            LibroLogica stockLogica = new LibroLogica();
 
             // Obtener los libros con stock bajo
             DataTable dt = stockLogica.obtenerLibrosStockBajo();
@@ -251,9 +251,9 @@ namespace Presentacion
         private void cargarLibros()
         {
             // Instancia la lógica de stock de libros
-            StockLibrosLogica stockLogica = new StockLibrosLogica();
+            LibroLogica stockLogica = new LibroLogica();
             // Obtener los libros en stock
-            DataTable dt = stockLogica.obtenerStockLibros();
+            DataTable dt = stockLogica.obtenerDataTableLibros();
             // Limpia el DataGridView antes de cargar nuevos datos
             dataGrid_stock.Rows.Clear();
             foreach (DataRow row in dt.Rows)
@@ -374,12 +374,12 @@ namespace Presentacion
 
                 Editorial editorial = new Editorial
                 {
-                    Id = Convert.ToInt32(comboBox_editoriales.SelectedValue),
+                    ID = Convert.ToInt32(comboBox_editoriales.SelectedValue),
                     Nombre = comboBox_editoriales.Text
                 };
 
                 libro.Editorial = editorial;
-                Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
+                Logica.LibroLogica stockLogica = new Logica.LibroLogica();
                 int resultado = stockLogica.agregarLibro(libro);
 
                 if (resultado > 0)
@@ -416,7 +416,7 @@ namespace Presentacion
             {
                 Libro libro = new Libro()
                 {
-                    Id = id_libro_a_editar,
+                    ID = id_libro_a_editar,
                     Titulo = txtBox_tituloEditar.Text.Trim(),
                     Autor = txtBox_autorEditar.Text.Trim(),
                     Stock_actual = Convert.ToInt32(textBox_stockActualEditar.Text.Trim()),
@@ -432,12 +432,12 @@ namespace Presentacion
 
                 Editorial editorial = new Editorial
                 {
-                    Id = Convert.ToInt32(comboBox_editorialEditar.SelectedValue),
+                    ID = Convert.ToInt32(comboBox_editorialEditar.SelectedValue),
                     Nombre = comboBox_editorialEditar.Text
                 };
 
                 libro.Editorial = editorial;
-                Logica.StockLibrosLogica stockLogica = new Logica.StockLibrosLogica();
+                Logica.LibroLogica stockLogica = new Logica.LibroLogica();
                 int resultado = stockLogica.editarLibro(libro);
 
                 if (resultado > 0)

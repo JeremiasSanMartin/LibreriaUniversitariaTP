@@ -9,14 +9,21 @@ using Entidades;
 
 namespace Logica
 {
-    public class StockLibrosLogica
+    public class LibroLogica
     {
-        public Persistencia.StockLibrosDatos stockLibrosDatos = new Persistencia.StockLibrosDatos();
+        public LibroDatos stockLibrosDatos = new LibroDatos();
 
-        public DataTable obtenerStockLibros()
+        public List<Libro> obtenerDatosLibros()
         {
-            // Llama al método de la capa de persistencia para obtener el stock de libros
-            return stockLibrosDatos.obtenerDatosStockLibros();
+            // Llama al método de la capa de persistencia para obtener los datos de los libros
+            return stockLibrosDatos.obtenerDatosLibros();
+        }
+
+        public DataTable obtenerDataTableLibros()
+        {
+            // Llama al método de la capa de persistencia para obtener los libros con stock bajo
+            return stockLibrosDatos.obtenerDataTableLibros();
+
         }
 
         public DataTable obtenerLibrosStockBajo()

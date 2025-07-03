@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+
+
     public class Editorial
     {
+
         private int id;
-        public int Id
+
+        public int ID
         {
             get { return id; }
             set { id = value; }

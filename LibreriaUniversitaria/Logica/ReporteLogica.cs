@@ -13,10 +13,10 @@ namespace Logica
         private ReporteDatos _reporteDatos = new ReporteDatos();
 
         //permite null porque si no se pasa parametro obtiene todos los reportes, y si se pasa un vendedor, obtiene los reportes de ese vendedor   
-        public List<ReporteDetalleVenta> RecuperarDetalles(string vendedor = null)
+        public List<ReporteDetalleVenta> recuperarDetalles(string vendedor = null)
         {
             try { 
-                return _reporteDatos.RecuperarDetallesPorVendedor(vendedor);
+                return _reporteDatos.recuperarDetallesPorVendedor(vendedor);
             }
             catch (Exception ex)
             {
@@ -31,12 +31,12 @@ namespace Logica
         }
 
         //obtiene los reportes por fecha, desde y hasta
-        public List<ReporteVendedor> RecuperarPorFechas(DateTime desde, DateTime hasta)
+        public List<ReporteVendedor> recuperarPorFechas(DateTime desde, DateTime hasta)
         {
             try
             {
                 ReporteDatos datos = new ReporteDatos();
-                return datos.RecuperarVentasPorFechas(desde, hasta);
+                return datos.recuperarVentasPorFechas(desde, hasta);
             }
             catch (Exception ex)
             {

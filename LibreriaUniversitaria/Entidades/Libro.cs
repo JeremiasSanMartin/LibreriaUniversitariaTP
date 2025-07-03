@@ -9,14 +9,15 @@ namespace Entidades
     public class Libro
     {
 
-		private int id;
 
-		public int Id
-		{
-			get { return id; }
-			set { id = value; }
-		}
+        private int id;
 
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+		
 		private string titulo;
 
 		public string Titulo
@@ -63,6 +64,13 @@ namespace Entidades
 		{
 			get { return editorial; }
 			set { editorial = value; }
+		}
+
+		private string nombreEditorial;
+
+		public string NombreEditorial
+		{
+			get { return Editorial.Nombre; }
 		}
 
 	}
