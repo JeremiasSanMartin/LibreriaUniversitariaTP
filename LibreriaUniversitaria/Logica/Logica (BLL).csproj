@@ -42,8 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminLogica.cs" />
+    <Compile Include="ClienteLogica.cs" />
+    <Compile Include="EditorialesLogica.cs" />
+    <Compile Include="LibroLogica.cs" />
+    <Compile Include="ReporteLogica.cs" />
     <Compile Include="UsuarioLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaLogica.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades %28BE%29.csproj">

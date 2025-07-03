@@ -29,36 +29,44 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.btn_clientes = new System.Windows.Forms.Button();
-            this.btn_Inicio = new System.Windows.Forms.Button();
+            this.btn_inicio = new System.Windows.Forms.Button();
             this.btn_nuevaVenta = new System.Windows.Forms.Button();
             this.btn_desplegar = new System.Windows.Forms.Button();
             this.dataGrid_clientes = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pctBox_minimizar = new System.Windows.Forms.PictureBox();
-            this.pctBox_salir = new System.Windows.Forms.PictureBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.esEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.inactivar = new System.Windows.Forms.DataGridViewImageColumn();
             this.lbl_bienvenida = new System.Windows.Forms.Label();
             this.timer_animacionMenu = new System.Windows.Forms.Timer(this.components);
             this.panel_nuevaVenta = new System.Windows.Forms.Panel();
+            this.lbl_sinResultados = new System.Windows.Forms.Label();
+            this.btn_buscarCliente = new System.Windows.Forms.Button();
             this.txtBox_busquedaLibro = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.pctBox_carrito = new System.Windows.Forms.PictureBox();
             this.dataGrid_factura = new System.Windows.Forms.DataGridView();
             this.id_libro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titulo_libro_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,36 +80,32 @@
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.agregar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtBox_usuarioCrear = new System.Windows.Forms.TextBox();
+            this.btn_cancelarVenta = new System.Windows.Forms.Button();
+            this.btn_finalizarVenta = new System.Windows.Forms.Button();
+            this.txtBox_busquedaCliente = new System.Windows.Forms.TextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_nuevoCliente = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.esEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.inactivar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pctBox_fondo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel_superior = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pctBox_minimizar = new System.Windows.Forms.PictureBox();
+            this.pctBox_salir = new System.Windows.Forms.PictureBox();
+            this.lbl_mensaje = new System.Windows.Forms.Label();
+            this.lbl_aviso = new System.Windows.Forms.Label();
             this.panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_clientes)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBox_minimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBox_salir)).BeginInit();
             this.panel_nuevaVenta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_carrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_factura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_libros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_fondo)).BeginInit();
+            this.panel_superior.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_minimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_salir)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_menu
@@ -109,7 +113,7 @@
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
             this.panel_menu.Controls.Add(this.btn_cerrarSesion);
             this.panel_menu.Controls.Add(this.btn_clientes);
-            this.panel_menu.Controls.Add(this.btn_Inicio);
+            this.panel_menu.Controls.Add(this.btn_inicio);
             this.panel_menu.Controls.Add(this.btn_nuevaVenta);
             this.panel_menu.Controls.Add(this.btn_desplegar);
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -156,24 +160,24 @@
             this.btn_clientes.UseVisualStyleBackColor = true;
             this.btn_clientes.Click += new System.EventHandler(this.btn_clientes_Click);
             // 
-            // btn_Inicio
+            // btn_inicio
             // 
-            this.btn_Inicio.FlatAppearance.BorderSize = 0;
-            this.btn_Inicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(182)))), ((int)(((byte)(255)))));
-            this.btn_Inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Inicio.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btn_Inicio.ForeColor = System.Drawing.Color.White;
-            this.btn_Inicio.Image = global::LibreriaUniversitaria.Properties.Resources.inicio__2_;
-            this.btn_Inicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Inicio.Location = new System.Drawing.Point(0, 240);
-            this.btn_Inicio.Name = "btn_Inicio";
-            this.btn_Inicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_Inicio.Size = new System.Drawing.Size(191, 66);
-            this.btn_Inicio.TabIndex = 19;
-            this.btn_Inicio.Text = "  Inicio";
-            this.btn_Inicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Inicio.UseVisualStyleBackColor = true;
-            this.btn_Inicio.Click += new System.EventHandler(this.btn_Inicio_Click);
+            this.btn_inicio.FlatAppearance.BorderSize = 0;
+            this.btn_inicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(182)))), ((int)(((byte)(255)))));
+            this.btn_inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inicio.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_inicio.ForeColor = System.Drawing.Color.White;
+            this.btn_inicio.Image = global::LibreriaUniversitaria.Properties.Resources.inicio__2_;
+            this.btn_inicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_inicio.Location = new System.Drawing.Point(0, 240);
+            this.btn_inicio.Name = "btn_inicio";
+            this.btn_inicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_inicio.Size = new System.Drawing.Size(191, 66);
+            this.btn_inicio.TabIndex = 19;
+            this.btn_inicio.Text = "  Inicio";
+            this.btn_inicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_inicio.UseVisualStyleBackColor = true;
+            this.btn_inicio.Click += new System.EventHandler(this.btn_Inicio_Click);
             // 
             // btn_nuevaVenta
             // 
@@ -221,14 +225,14 @@
             this.dataGrid_clientes.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid_clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -256,456 +260,6 @@
             this.dataGrid_clientes.RowTemplate.Height = 40;
             this.dataGrid_clientes.Size = new System.Drawing.Size(771, 508);
             this.dataGrid_clientes.TabIndex = 8;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.lbl_bienvenida);
-            this.panel1.Location = new System.Drawing.Point(59, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(818, 55);
-            this.panel1.TabIndex = 9;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.pctBox_minimizar);
-            this.flowLayoutPanel1.Controls.Add(this.pctBox_salir);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(725, 1);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(93, 31);
-            this.flowLayoutPanel1.TabIndex = 17;
-            // 
-            // pctBox_minimizar
-            // 
-            this.pctBox_minimizar.Image = global::LibreriaUniversitaria.Properties.Resources.minimizar;
-            this.pctBox_minimizar.Location = new System.Drawing.Point(2, 2);
-            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pctBox_minimizar.Name = "pctBox_minimizar";
-            this.pctBox_minimizar.Size = new System.Drawing.Size(41, 29);
-            this.pctBox_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctBox_minimizar.TabIndex = 0;
-            this.pctBox_minimizar.TabStop = false;
-            this.pctBox_minimizar.Click += new System.EventHandler(this.pctBox_minimizar_Click);
-            // 
-            // pctBox_salir
-            // 
-            this.pctBox_salir.Image = global::LibreriaUniversitaria.Properties.Resources.cerrar;
-            this.pctBox_salir.Location = new System.Drawing.Point(47, 2);
-            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pctBox_salir.Name = "pctBox_salir";
-            this.pctBox_salir.Size = new System.Drawing.Size(41, 32);
-            this.pctBox_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctBox_salir.TabIndex = 1;
-            this.pctBox_salir.TabStop = false;
-            this.pctBox_salir.Click += new System.EventHandler(this.pctBox_salir_Click);
-            // 
-            // lbl_bienvenida
-            // 
-            this.lbl_bienvenida.AutoSize = true;
-            this.lbl_bienvenida.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_bienvenida.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
-            this.lbl_bienvenida.ForeColor = System.Drawing.Color.White;
-            this.lbl_bienvenida.Location = new System.Drawing.Point(3, 10);
-            this.lbl_bienvenida.Name = "lbl_bienvenida";
-            this.lbl_bienvenida.Size = new System.Drawing.Size(447, 37);
-            this.lbl_bienvenida.TabIndex = 7;
-            this.lbl_bienvenida.Text = "¡Bienvenido/a, (nombre y apellido)!";
-            // 
-            // timer_animacionMenu
-            // 
-            this.timer_animacionMenu.Interval = 5;
-            this.timer_animacionMenu.Tick += new System.EventHandler(this.timer_animacionMenu_Tick);
-            // 
-            // panel_nuevaVenta
-            // 
-            this.panel_nuevaVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(55)))), ((int)(((byte)(125)))));
-            this.panel_nuevaVenta.Controls.Add(this.txtBox_busquedaLibro);
-            this.panel_nuevaVenta.Controls.Add(this.label2);
-            this.panel_nuevaVenta.Controls.Add(this.pictureBox2);
-            this.panel_nuevaVenta.Controls.Add(this.dataGrid_factura);
-            this.panel_nuevaVenta.Controls.Add(this.dataGrid_libros);
-            this.panel_nuevaVenta.Controls.Add(this.button2);
-            this.panel_nuevaVenta.Controls.Add(this.label1);
-            this.panel_nuevaVenta.Controls.Add(this.button1);
-            this.panel_nuevaVenta.Controls.Add(this.txtBox_usuarioCrear);
-            this.panel_nuevaVenta.Location = new System.Drawing.Point(84, 76);
-            this.panel_nuevaVenta.Name = "panel_nuevaVenta";
-            this.panel_nuevaVenta.Size = new System.Drawing.Size(780, 543);
-            this.panel_nuevaVenta.TabIndex = 15;
-            // 
-            // txtBox_busquedaLibro
-            // 
-            this.txtBox_busquedaLibro.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtBox_busquedaLibro.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_busquedaLibro.ForeColor = System.Drawing.Color.Gray;
-            this.txtBox_busquedaLibro.Location = new System.Drawing.Point(342, 34);
-            this.txtBox_busquedaLibro.Multiline = true;
-            this.txtBox_busquedaLibro.Name = "txtBox_busquedaLibro";
-            this.txtBox_busquedaLibro.Size = new System.Drawing.Size(174, 27);
-            this.txtBox_busquedaLibro.TabIndex = 25;
-            this.txtBox_busquedaLibro.Text = "Buscar libro...";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(12, 459);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 60);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Subtotal: $XXXX\r\nDescuento: $XXXX\r\nTOTAL: $XXXX";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox2.Image = global::LibreriaUniversitaria.Properties.Resources.carrito;
-            this.pictureBox2.Location = new System.Drawing.Point(-15, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(120, 61);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
-            // 
-            // dataGrid_factura
-            // 
-            this.dataGrid_factura.AllowUserToAddRows = false;
-            this.dataGrid_factura.AllowUserToDeleteRows = false;
-            this.dataGrid_factura.AllowUserToResizeColumns = false;
-            this.dataGrid_factura.AllowUserToResizeRows = false;
-            this.dataGrid_factura.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dataGrid_factura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGrid_factura.BackgroundColor = System.Drawing.Color.White;
-            this.dataGrid_factura.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGrid_factura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_factura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGrid_factura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_factura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_libro,
-            this.titulo_libro_factura,
-            this.cantidad,
-            this.precio_unitario,
-            this.precio_total});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGrid_factura.DefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGrid_factura.EnableHeadersVisualStyles = false;
-            this.dataGrid_factura.GridColor = System.Drawing.Color.White;
-            this.dataGrid_factura.Location = new System.Drawing.Point(16, 111);
-            this.dataGrid_factura.MultiSelect = false;
-            this.dataGrid_factura.Name = "dataGrid_factura";
-            this.dataGrid_factura.ReadOnly = true;
-            this.dataGrid_factura.RowHeadersVisible = false;
-            this.dataGrid_factura.RowHeadersWidth = 51;
-            this.dataGrid_factura.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dataGrid_factura.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGrid_factura.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataGrid_factura.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.dataGrid_factura.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGrid_factura.RowTemplate.Height = 40;
-            this.dataGrid_factura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid_factura.Size = new System.Drawing.Size(276, 334);
-            this.dataGrid_factura.TabIndex = 22;
-            // 
-            // id_libro
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id_libro.DefaultCellStyle = dataGridViewCellStyle17;
-            this.id_libro.FillWeight = 90.66039F;
-            this.id_libro.HeaderText = "ID";
-            this.id_libro.MinimumWidth = 6;
-            this.id_libro.Name = "id_libro";
-            this.id_libro.ReadOnly = true;
-            // 
-            // titulo_libro_factura
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.titulo_libro_factura.DefaultCellStyle = dataGridViewCellStyle18;
-            this.titulo_libro_factura.HeaderText = "Tit.";
-            this.titulo_libro_factura.MinimumWidth = 6;
-            this.titulo_libro_factura.Name = "titulo_libro_factura";
-            this.titulo_libro_factura.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle19;
-            this.cantidad.FillWeight = 112.9157F;
-            this.cantidad.HeaderText = "Cant.";
-            this.cantidad.MinimumWidth = 6;
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // precio_unitario
-            // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.Format = "C2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.precio_unitario.DefaultCellStyle = dataGridViewCellStyle20;
-            this.precio_unitario.FillWeight = 86.44902F;
-            this.precio_unitario.HeaderText = "P. Uni";
-            this.precio_unitario.MinimumWidth = 6;
-            this.precio_unitario.Name = "precio_unitario";
-            this.precio_unitario.ReadOnly = true;
-            // 
-            // precio_total
-            // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.precio_total.DefaultCellStyle = dataGridViewCellStyle21;
-            this.precio_total.FillWeight = 135.7363F;
-            this.precio_total.HeaderText = "Total";
-            this.precio_total.MinimumWidth = 6;
-            this.precio_total.Name = "precio_total";
-            this.precio_total.ReadOnly = true;
-            // 
-            // dataGrid_libros
-            // 
-            this.dataGrid_libros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGrid_libros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGrid_libros.BackgroundColor = System.Drawing.Color.White;
-            this.dataGrid_libros.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGrid_libros.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_libros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            this.dataGrid_libros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_libros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.titulo,
-            this.autor,
-            this.editorial,
-            this.stock,
-            this.precio,
-            this.agregar});
-            this.dataGrid_libros.EnableHeadersVisualStyles = false;
-            this.dataGrid_libros.GridColor = System.Drawing.Color.White;
-            this.dataGrid_libros.Location = new System.Drawing.Point(342, 75);
-            this.dataGrid_libros.Name = "dataGrid_libros";
-            this.dataGrid_libros.ReadOnly = true;
-            this.dataGrid_libros.RowHeadersVisible = false;
-            this.dataGrid_libros.RowHeadersWidth = 51;
-            this.dataGrid_libros.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dataGrid_libros.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGrid_libros.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataGrid_libros.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
-            this.dataGrid_libros.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGrid_libros.RowTemplate.Height = 40;
-            this.dataGrid_libros.Size = new System.Drawing.Size(405, 428);
-            this.dataGrid_libros.TabIndex = 21;
-            // 
-            // titulo
-            // 
-            this.titulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.titulo.FillWeight = 244.0171F;
-            this.titulo.HeaderText = "Titulo";
-            this.titulo.MinimumWidth = 6;
-            this.titulo.Name = "titulo";
-            this.titulo.ReadOnly = true;
-            this.titulo.Width = 70;
-            // 
-            // autor
-            // 
-            this.autor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.autor.FillWeight = 164.1291F;
-            this.autor.HeaderText = "Autor";
-            this.autor.MinimumWidth = 6;
-            this.autor.Name = "autor";
-            this.autor.ReadOnly = true;
-            this.autor.Width = 70;
-            // 
-            // editorial
-            // 
-            this.editorial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.editorial.FillWeight = 75.58714F;
-            this.editorial.HeaderText = "Editorial";
-            this.editorial.MinimumWidth = 6;
-            this.editorial.Name = "editorial";
-            this.editorial.ReadOnly = true;
-            this.editorial.Width = 85;
-            // 
-            // stock
-            // 
-            this.stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.stock.FillWeight = 31.78815F;
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            this.stock.Width = 60;
-            // 
-            // precio
-            // 
-            this.precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.precio.FillWeight = 33.51697F;
-            this.precio.HeaderText = "Precio";
-            this.precio.MinimumWidth = 6;
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 70;
-            // 
-            // agregar
-            // 
-            this.agregar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.agregar.FillWeight = 50.96173F;
-            this.agregar.HeaderText = "";
-            this.agregar.Image = global::LibreriaUniversitaria.Properties.Resources.addverde;
-            this.agregar.MinimumWidth = 6;
-            this.agregar.Name = "agregar";
-            this.agregar.ReadOnly = true;
-            this.agregar.Width = 50;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(166, 494);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 37);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Cancelar venta";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(162, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 24);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "SOLO VISTA";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(166, 451);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 37);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Finalizar venta";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // txtBox_usuarioCrear
-            // 
-            this.txtBox_usuarioCrear.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtBox_usuarioCrear.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_usuarioCrear.ForeColor = System.Drawing.Color.Gray;
-            this.txtBox_usuarioCrear.Location = new System.Drawing.Point(16, 75);
-            this.txtBox_usuarioCrear.Multiline = true;
-            this.txtBox_usuarioCrear.Name = "txtBox_usuarioCrear";
-            this.txtBox_usuarioCrear.Size = new System.Drawing.Size(174, 27);
-            this.txtBox_usuarioCrear.TabIndex = 15;
-            this.txtBox_usuarioCrear.Text = "DNI del cliente";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.NullValue = null;
-            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle24;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 89;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.NullValue = null;
-            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle25;
-            this.dataGridViewImageColumn2.FillWeight = 45.68528F;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::LibreriaUniversitaria.Properties.Resources.add;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 28;
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.NullValue = null;
-            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle26;
-            this.dataGridViewImageColumn3.FillWeight = 45.68528F;
-            this.dataGridViewImageColumn3.HeaderText = "";
-            this.dataGridViewImageColumn3.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar_rojo__1_;
-            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn3.MinimumWidth = 6;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Width = 50;
-            // 
-            // btn_nuevoCliente
-            // 
-            this.btn_nuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_nuevoCliente.FlatAppearance.BorderSize = 0;
-            this.btn_nuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevoCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btn_nuevoCliente.ForeColor = System.Drawing.Color.White;
-            this.btn_nuevoCliente.Image = global::LibreriaUniversitaria.Properties.Resources.add_blanco;
-            this.btn_nuevoCliente.Location = new System.Drawing.Point(198, 582);
-            this.btn_nuevoCliente.Name = "btn_nuevoCliente";
-            this.btn_nuevoCliente.Size = new System.Drawing.Size(164, 37);
-            this.btn_nuevoCliente.TabIndex = 16;
-            this.btn_nuevoCliente.Text = "Agregar cliente";
-            this.btn_nuevoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_nuevoCliente.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LibreriaUniversitaria.Properties.Resources.libreria;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(818, 581);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
             // 
             // ID
             // 
@@ -797,13 +351,13 @@
             // inactivar
             // 
             this.inactivar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.NullValue = null;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            this.inactivar.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.inactivar.DefaultCellStyle = dataGridViewCellStyle2;
             this.inactivar.FillWeight = 45.68528F;
             this.inactivar.HeaderText = "";
             this.inactivar.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar_rojo__1_;
@@ -812,35 +366,558 @@
             this.inactivar.ReadOnly = true;
             this.inactivar.Width = 50;
             // 
+            // lbl_bienvenida
+            // 
+            this.lbl_bienvenida.Location = new System.Drawing.Point(0, 0);
+            this.lbl_bienvenida.Name = "lbl_bienvenida";
+            this.lbl_bienvenida.Size = new System.Drawing.Size(100, 23);
+            this.lbl_bienvenida.TabIndex = 0;
+            // 
+            // timer_animacionMenu
+            // 
+            this.timer_animacionMenu.Interval = 5;
+            this.timer_animacionMenu.Tick += new System.EventHandler(this.timer_animacionMenu_Tick);
+            // 
+            // panel_nuevaVenta
+            // 
+            this.panel_nuevaVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(55)))), ((int)(((byte)(125)))));
+            this.panel_nuevaVenta.Controls.Add(this.lbl_aviso);
+            this.panel_nuevaVenta.Controls.Add(this.lbl_sinResultados);
+            this.panel_nuevaVenta.Controls.Add(this.btn_buscarCliente);
+            this.panel_nuevaVenta.Controls.Add(this.txtBox_busquedaLibro);
+            this.panel_nuevaVenta.Controls.Add(this.lbl_total);
+            this.panel_nuevaVenta.Controls.Add(this.pctBox_carrito);
+            this.panel_nuevaVenta.Controls.Add(this.dataGrid_factura);
+            this.panel_nuevaVenta.Controls.Add(this.dataGrid_libros);
+            this.panel_nuevaVenta.Controls.Add(this.btn_cancelarVenta);
+            this.panel_nuevaVenta.Controls.Add(this.btn_finalizarVenta);
+            this.panel_nuevaVenta.Controls.Add(this.txtBox_busquedaCliente);
+            this.panel_nuevaVenta.Location = new System.Drawing.Point(84, 76);
+            this.panel_nuevaVenta.Name = "panel_nuevaVenta";
+            this.panel_nuevaVenta.Size = new System.Drawing.Size(780, 543);
+            this.panel_nuevaVenta.TabIndex = 15;
+            // 
+            // lbl_sinResultados
+            // 
+            this.lbl_sinResultados.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_sinResultados.AutoSize = true;
+            this.lbl_sinResultados.BackColor = System.Drawing.Color.White;
+            this.lbl_sinResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sinResultados.ForeColor = System.Drawing.Color.Red;
+            this.lbl_sinResultados.Location = new System.Drawing.Point(371, 98);
+            this.lbl_sinResultados.Name = "lbl_sinResultados";
+            this.lbl_sinResultados.Size = new System.Drawing.Size(395, 16);
+            this.lbl_sinResultados.TabIndex = 27;
+            this.lbl_sinResultados.Text = "No se han encontrado resultados para la busqueda especificada\r\n";
+            this.lbl_sinResultados.Visible = false;
+            // 
+            // btn_buscarCliente
+            // 
+            this.btn_buscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
+            this.btn_buscarCliente.FlatAppearance.BorderSize = 0;
+            this.btn_buscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_buscarCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_buscarCliente.ForeColor = System.Drawing.Color.White;
+            this.btn_buscarCliente.Location = new System.Drawing.Point(229, 72);
+            this.btn_buscarCliente.Name = "btn_buscarCliente";
+            this.btn_buscarCliente.Size = new System.Drawing.Size(96, 30);
+            this.btn_buscarCliente.TabIndex = 26;
+            this.btn_buscarCliente.Text = "Buscar";
+            this.btn_buscarCliente.UseVisualStyleBackColor = false;
+            this.btn_buscarCliente.Click += new System.EventHandler(this.btn_busquedaCliente_Click);
+            // 
+            // txtBox_busquedaLibro
+            // 
+            this.txtBox_busquedaLibro.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtBox_busquedaLibro.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_busquedaLibro.ForeColor = System.Drawing.Color.Gray;
+            this.txtBox_busquedaLibro.Location = new System.Drawing.Point(361, 42);
+            this.txtBox_busquedaLibro.Multiline = true;
+            this.txtBox_busquedaLibro.Name = "txtBox_busquedaLibro";
+            this.txtBox_busquedaLibro.Size = new System.Drawing.Size(174, 27);
+            this.txtBox_busquedaLibro.TabIndex = 25;
+            this.txtBox_busquedaLibro.Text = "Buscar libro...";
+            this.txtBox_busquedaLibro.Visible = false;
+            this.txtBox_busquedaLibro.TextChanged += new System.EventHandler(this.txtBox_busquedaLibro_TextChanged);
+            this.txtBox_busquedaLibro.Enter += new System.EventHandler(this.txtBox_busquedaLibro_Enter);
+            this.txtBox_busquedaLibro.Leave += new System.EventHandler(this.txtBox_busquedaLibro_Leave);
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.ForeColor = System.Drawing.Color.Red;
+            this.lbl_total.Location = new System.Drawing.Point(12, 459);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(155, 60);
+            this.lbl_total.TabIndex = 24;
+            this.lbl_total.Text = "Subtotal: $0\r\nDescuento (0%): -$0\r\nTotal a pagar: $0\r\n";
+            // 
+            // pctBox_carrito
+            // 
+            this.pctBox_carrito.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pctBox_carrito.Image = global::LibreriaUniversitaria.Properties.Resources.carrito;
+            this.pctBox_carrito.Location = new System.Drawing.Point(-15, 0);
+            this.pctBox_carrito.Name = "pctBox_carrito";
+            this.pctBox_carrito.Size = new System.Drawing.Size(120, 61);
+            this.pctBox_carrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox_carrito.TabIndex = 23;
+            this.pctBox_carrito.TabStop = false;
+            // 
+            // dataGrid_factura
+            // 
+            this.dataGrid_factura.AllowUserToAddRows = false;
+            this.dataGrid_factura.AllowUserToDeleteRows = false;
+            this.dataGrid_factura.AllowUserToResizeColumns = false;
+            this.dataGrid_factura.AllowUserToResizeRows = false;
+            this.dataGrid_factura.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dataGrid_factura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGrid_factura.BackgroundColor = System.Drawing.Color.White;
+            this.dataGrid_factura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid_factura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_factura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGrid_factura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_factura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_libro,
+            this.titulo_libro_factura,
+            this.cantidad,
+            this.precio_unitario,
+            this.precio_total});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGrid_factura.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGrid_factura.EnableHeadersVisualStyles = false;
+            this.dataGrid_factura.GridColor = System.Drawing.Color.White;
+            this.dataGrid_factura.Location = new System.Drawing.Point(16, 111);
+            this.dataGrid_factura.MultiSelect = false;
+            this.dataGrid_factura.Name = "dataGrid_factura";
+            this.dataGrid_factura.ReadOnly = true;
+            this.dataGrid_factura.RowHeadersVisible = false;
+            this.dataGrid_factura.RowHeadersWidth = 51;
+            this.dataGrid_factura.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dataGrid_factura.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGrid_factura.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataGrid_factura.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.dataGrid_factura.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGrid_factura.RowTemplate.Height = 40;
+            this.dataGrid_factura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGrid_factura.Size = new System.Drawing.Size(316, 334);
+            this.dataGrid_factura.TabIndex = 22;
+            // 
+            // id_libro
+            // 
+            this.id_libro.DataPropertyName = "ID";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id_libro.DefaultCellStyle = dataGridViewCellStyle4;
+            this.id_libro.FillWeight = 90.66039F;
+            this.id_libro.HeaderText = "ID";
+            this.id_libro.MinimumWidth = 6;
+            this.id_libro.Name = "id_libro";
+            this.id_libro.ReadOnly = true;
+            // 
+            // titulo_libro_factura
+            // 
+            this.titulo_libro_factura.DataPropertyName = "NombreLibro";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.titulo_libro_factura.DefaultCellStyle = dataGridViewCellStyle5;
+            this.titulo_libro_factura.HeaderText = "Tit.";
+            this.titulo_libro_factura.MinimumWidth = 6;
+            this.titulo_libro_factura.Name = "titulo_libro_factura";
+            this.titulo_libro_factura.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "Cantidad";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle6;
+            this.cantidad.FillWeight = 112.9157F;
+            this.cantidad.HeaderText = "Cant.";
+            this.cantidad.MinimumWidth = 6;
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // precio_unitario
+            // 
+            this.precio_unitario.DataPropertyName = "Precio_unitario";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.precio_unitario.DefaultCellStyle = dataGridViewCellStyle7;
+            this.precio_unitario.FillWeight = 86.44902F;
+            this.precio_unitario.HeaderText = "P. Uni";
+            this.precio_unitario.MinimumWidth = 6;
+            this.precio_unitario.Name = "precio_unitario";
+            this.precio_unitario.ReadOnly = true;
+            // 
+            // precio_total
+            // 
+            this.precio_total.DataPropertyName = "Subtotal";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.precio_total.DefaultCellStyle = dataGridViewCellStyle8;
+            this.precio_total.FillWeight = 135.7363F;
+            this.precio_total.HeaderText = "Total";
+            this.precio_total.MinimumWidth = 6;
+            this.precio_total.Name = "precio_total";
+            this.precio_total.ReadOnly = true;
+            // 
+            // dataGrid_libros
+            // 
+            this.dataGrid_libros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGrid_libros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGrid_libros.BackgroundColor = System.Drawing.Color.White;
+            this.dataGrid_libros.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid_libros.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_libros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGrid_libros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_libros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.titulo,
+            this.autor,
+            this.editorial,
+            this.stock,
+            this.precio,
+            this.agregar});
+            this.dataGrid_libros.EnableHeadersVisualStyles = false;
+            this.dataGrid_libros.GridColor = System.Drawing.Color.White;
+            this.dataGrid_libros.Location = new System.Drawing.Point(361, 75);
+            this.dataGrid_libros.Name = "dataGrid_libros";
+            this.dataGrid_libros.ReadOnly = true;
+            this.dataGrid_libros.RowHeadersVisible = false;
+            this.dataGrid_libros.RowHeadersWidth = 51;
+            this.dataGrid_libros.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dataGrid_libros.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGrid_libros.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataGrid_libros.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(190)))), ((int)(((byte)(255)))));
+            this.dataGrid_libros.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGrid_libros.RowTemplate.Height = 40;
+            this.dataGrid_libros.Size = new System.Drawing.Size(405, 428);
+            this.dataGrid_libros.TabIndex = 21;
+            this.dataGrid_libros.Visible = false;
+            this.dataGrid_libros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_libros_CellClick);
+            // 
+            // titulo
+            // 
+            this.titulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.titulo.DataPropertyName = "Titulo";
+            this.titulo.FillWeight = 244.0171F;
+            this.titulo.HeaderText = "Titulo";
+            this.titulo.MinimumWidth = 6;
+            this.titulo.Name = "titulo";
+            this.titulo.ReadOnly = true;
+            this.titulo.Width = 70;
+            // 
+            // autor
+            // 
+            this.autor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.autor.DataPropertyName = "Autor";
+            this.autor.FillWeight = 164.1291F;
+            this.autor.HeaderText = "Autor";
+            this.autor.MinimumWidth = 6;
+            this.autor.Name = "autor";
+            this.autor.ReadOnly = true;
+            this.autor.Width = 70;
+            // 
+            // editorial
+            // 
+            this.editorial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.editorial.DataPropertyName = "NombreEditorial";
+            this.editorial.FillWeight = 75.58714F;
+            this.editorial.HeaderText = "Editorial";
+            this.editorial.MinimumWidth = 6;
+            this.editorial.Name = "editorial";
+            this.editorial.ReadOnly = true;
+            this.editorial.Width = 85;
+            // 
+            // stock
+            // 
+            this.stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.stock.DataPropertyName = "Stock_actual";
+            this.stock.FillWeight = 31.78815F;
+            this.stock.HeaderText = "Stock";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            this.stock.Width = 60;
+            // 
+            // precio
+            // 
+            this.precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.precio.DataPropertyName = "Precio";
+            this.precio.FillWeight = 33.51697F;
+            this.precio.HeaderText = "Precio";
+            this.precio.MinimumWidth = 6;
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 70;
+            // 
+            // agregar
+            // 
+            this.agregar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.agregar.FillWeight = 50.96173F;
+            this.agregar.HeaderText = "";
+            this.agregar.Image = global::LibreriaUniversitaria.Properties.Resources.addverde;
+            this.agregar.MinimumWidth = 6;
+            this.agregar.Name = "agregar";
+            this.agregar.ReadOnly = true;
+            this.agregar.Width = 50;
+            // 
+            // btn_cancelarVenta
+            // 
+            this.btn_cancelarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
+            this.btn_cancelarVenta.FlatAppearance.BorderSize = 0;
+            this.btn_cancelarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelarVenta.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_cancelarVenta.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelarVenta.Location = new System.Drawing.Point(229, 494);
+            this.btn_cancelarVenta.Name = "btn_cancelarVenta";
+            this.btn_cancelarVenta.Size = new System.Drawing.Size(126, 37);
+            this.btn_cancelarVenta.TabIndex = 20;
+            this.btn_cancelarVenta.Text = "Cancelar venta";
+            this.btn_cancelarVenta.UseVisualStyleBackColor = false;
+            this.btn_cancelarVenta.Click += new System.EventHandler(this.btn_cancelarVenta_Click);
+            // 
+            // btn_finalizarVenta
+            // 
+            this.btn_finalizarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
+            this.btn_finalizarVenta.FlatAppearance.BorderSize = 0;
+            this.btn_finalizarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_finalizarVenta.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_finalizarVenta.ForeColor = System.Drawing.Color.White;
+            this.btn_finalizarVenta.Location = new System.Drawing.Point(229, 451);
+            this.btn_finalizarVenta.Name = "btn_finalizarVenta";
+            this.btn_finalizarVenta.Size = new System.Drawing.Size(126, 37);
+            this.btn_finalizarVenta.TabIndex = 18;
+            this.btn_finalizarVenta.Text = "Finalizar venta";
+            this.btn_finalizarVenta.UseVisualStyleBackColor = false;
+            this.btn_finalizarVenta.Click += new System.EventHandler(this.btn_finalizarVenta_Click);
+            // 
+            // txtBox_busquedaCliente
+            // 
+            this.txtBox_busquedaCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtBox_busquedaCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_busquedaCliente.ForeColor = System.Drawing.Color.Gray;
+            this.txtBox_busquedaCliente.Location = new System.Drawing.Point(16, 75);
+            this.txtBox_busquedaCliente.Multiline = true;
+            this.txtBox_busquedaCliente.Name = "txtBox_busquedaCliente";
+            this.txtBox_busquedaCliente.Size = new System.Drawing.Size(207, 27);
+            this.txtBox_busquedaCliente.TabIndex = 15;
+            this.txtBox_busquedaCliente.Text = "DNI del cliente";
+            this.txtBox_busquedaCliente.Enter += new System.EventHandler(this.txtBox_busquedaCliente_Enter);
+            this.txtBox_busquedaCliente.Leave += new System.EventHandler(this.txtBox_busquedaCliente_Leave);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.NullValue = null;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 89;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewImageColumn2.FillWeight = 45.68528F;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::LibreriaUniversitaria.Properties.Resources.add;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 28;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.NullValue = null;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewImageColumn3.FillWeight = 45.68528F;
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::LibreriaUniversitaria.Properties.Resources.inactivar_rojo__1_;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.MinimumWidth = 6;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Width = 50;
+            // 
+            // btn_nuevoCliente
+            // 
+            this.btn_nuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_nuevoCliente.FlatAppearance.BorderSize = 0;
+            this.btn_nuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevoCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_nuevoCliente.ForeColor = System.Drawing.Color.White;
+            this.btn_nuevoCliente.Image = global::LibreriaUniversitaria.Properties.Resources.add_blanco;
+            this.btn_nuevoCliente.Location = new System.Drawing.Point(198, 582);
+            this.btn_nuevoCliente.Name = "btn_nuevoCliente";
+            this.btn_nuevoCliente.Size = new System.Drawing.Size(164, 37);
+            this.btn_nuevoCliente.TabIndex = 16;
+            this.btn_nuevoCliente.Text = "Agregar cliente";
+            this.btn_nuevoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_nuevoCliente.UseVisualStyleBackColor = false;
+            // 
+            // pctBox_fondo
+            // 
+            this.pctBox_fondo.Image = global::LibreriaUniversitaria.Properties.Resources.libreria;
+            this.pctBox_fondo.Location = new System.Drawing.Point(59, 50);
+            this.pctBox_fondo.Name = "pctBox_fondo";
+            this.pctBox_fondo.Size = new System.Drawing.Size(818, 581);
+            this.pctBox_fondo.TabIndex = 14;
+            this.pctBox_fondo.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(447, 37);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "¡Bienvenido/a, (nombre y apellido)!";
+            // 
+            // panel_superior
+            // 
+            this.panel_superior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(111)))), ((int)(((byte)(173)))));
+            this.panel_superior.Controls.Add(this.flowLayoutPanel3);
+            this.panel_superior.Controls.Add(this.lbl_mensaje);
+            this.panel_superior.Location = new System.Drawing.Point(59, 0);
+            this.panel_superior.Name = "panel_superior";
+            this.panel_superior.Size = new System.Drawing.Size(818, 54);
+            this.panel_superior.TabIndex = 29;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.pctBox_minimizar);
+            this.flowLayoutPanel3.Controls.Add(this.pctBox_salir);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(723, 2);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(93, 31);
+            this.flowLayoutPanel3.TabIndex = 25;
+            // 
+            // pctBox_minimizar
+            // 
+            this.pctBox_minimizar.Image = global::LibreriaUniversitaria.Properties.Resources.minimizar;
+            this.pctBox_minimizar.Location = new System.Drawing.Point(2, 2);
+            this.pctBox_minimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.pctBox_minimizar.Name = "pctBox_minimizar";
+            this.pctBox_minimizar.Size = new System.Drawing.Size(41, 29);
+            this.pctBox_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox_minimizar.TabIndex = 0;
+            this.pctBox_minimizar.TabStop = false;
+            this.pctBox_minimizar.Click += new System.EventHandler(this.pctBox_minimizar_Click);
+            // 
+            // pctBox_salir
+            // 
+            this.pctBox_salir.Image = global::LibreriaUniversitaria.Properties.Resources.cerrar;
+            this.pctBox_salir.Location = new System.Drawing.Point(47, 2);
+            this.pctBox_salir.Margin = new System.Windows.Forms.Padding(2);
+            this.pctBox_salir.Name = "pctBox_salir";
+            this.pctBox_salir.Size = new System.Drawing.Size(41, 32);
+            this.pctBox_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox_salir.TabIndex = 1;
+            this.pctBox_salir.TabStop = false;
+            this.pctBox_salir.Click += new System.EventHandler(this.pctBox_salir_Click);
+            // 
+            // lbl_mensaje
+            // 
+            this.lbl_mensaje.AutoSize = true;
+            this.lbl_mensaje.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_mensaje.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
+            this.lbl_mensaje.ForeColor = System.Drawing.Color.White;
+            this.lbl_mensaje.Location = new System.Drawing.Point(3, 7);
+            this.lbl_mensaje.Name = "lbl_mensaje";
+            this.lbl_mensaje.Size = new System.Drawing.Size(447, 37);
+            this.lbl_mensaje.TabIndex = 7;
+            this.lbl_mensaje.Text = "¡Bienvenido/a, (nombre y apellido)!";
+            // 
+            // lbl_aviso
+            // 
+            this.lbl_aviso.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_aviso.AutoSize = true;
+            this.lbl_aviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(55)))), ((int)(((byte)(125)))));
+            this.lbl_aviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aviso.ForeColor = System.Drawing.Color.Red;
+            this.lbl_aviso.Location = new System.Drawing.Point(338, 225);
+            this.lbl_aviso.Name = "lbl_aviso";
+            this.lbl_aviso.Size = new System.Drawing.Size(428, 48);
+            this.lbl_aviso.TabIndex = 28;
+            this.lbl_aviso.Text = "Ingrese un Cliente valido para acceder al catalogo\r\n(Ingrese 0 para cliente gener" +
+    "ico)";
+            this.lbl_aviso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_aviso.Visible = false;
+            // 
             // VendedorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(876, 631);
-            this.Controls.Add(this.btn_nuevoCliente);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_superior);
             this.Controls.Add(this.panel_menu);
-            this.Controls.Add(this.dataGrid_clientes);
             this.Controls.Add(this.panel_nuevaVenta);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dataGrid_clientes);
+            this.Controls.Add(this.btn_nuevoCliente);
+            this.Controls.Add(this.pctBox_fondo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VendedorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VendedorForm";
             this.panel_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_clientes)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctBox_minimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBox_salir)).EndInit();
             this.panel_nuevaVenta.ResumeLayout(false);
             this.panel_nuevaVenta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_carrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_factura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_libros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_fondo)).EndInit();
+            this.panel_superior.ResumeLayout(false);
+            this.panel_superior.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_minimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox_salir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -849,42 +926,26 @@
         private System.Windows.Forms.Panel panel_menu;
         private System.Windows.Forms.Button btn_cerrarSesion;
         private System.Windows.Forms.Button btn_clientes;
-        private System.Windows.Forms.Button btn_Inicio;
+        private System.Windows.Forms.Button btn_inicio;
         private System.Windows.Forms.Button btn_nuevaVenta;
         private System.Windows.Forms.Button btn_desplegar;
         private System.Windows.Forms.DataGridView dataGrid_clientes;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_bienvenida;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctBox_fondo;
         private System.Windows.Forms.Timer timer_animacionMenu;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Panel panel_nuevaVenta;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtBox_usuarioCrear;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_finalizarVenta;
+        private System.Windows.Forms.TextBox txtBox_busquedaCliente;
+        private System.Windows.Forms.Button btn_cancelarVenta;
         private System.Windows.Forms.DataGridView dataGrid_libros;
         private System.Windows.Forms.DataGridView dataGrid_factura;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pctBox_carrito;
+        private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_libro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titulo_libro_factura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_total;
         private System.Windows.Forms.TextBox txtBox_busquedaLibro;
         private System.Windows.Forms.Button btn_nuevoCliente;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn autor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn editorial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.DataGridViewImageColumn agregar;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pctBox_minimizar;
-        private System.Windows.Forms.PictureBox pctBox_salir;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
@@ -895,5 +956,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn esEstudiante;
         private System.Windows.Forms.DataGridViewImageColumn editar;
         private System.Windows.Forms.DataGridViewImageColumn inactivar;
+        private System.Windows.Forms.Button btn_buscarCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn editorial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewImageColumn agregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_libro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titulo_libro_factura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_total;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel_superior;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.PictureBox pctBox_minimizar;
+        private System.Windows.Forms.PictureBox pctBox_salir;
+        private System.Windows.Forms.Label lbl_mensaje;
+        private System.Windows.Forms.Label lbl_sinResultados;
+        private System.Windows.Forms.Label lbl_aviso;
     }
 }

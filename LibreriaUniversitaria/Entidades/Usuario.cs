@@ -10,7 +10,8 @@ namespace Entidades
     {
         private int id;
 
-        public int Id
+        public int ID
+          
         {
             get { return id; }
             set { id = value; }

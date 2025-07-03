@@ -22,7 +22,7 @@ namespace DAL
          * base de datos (en este caso, SqlServer)
          * 
          */
-        private void Conectar()
+        private void conectar()
         {   // HACK: Cadena de conexión hardcodeada. Luego ponerla como parametro de configuración del proyecto u otra alternativa.
             strCadenaDeConexion = @"Integrated Security = SSPI; Persist Security Info = False; Initial Catalog = BibliotecaDB; Data Source = . \SQLEXPRESS";
 
@@ -37,13 +37,13 @@ namespace DAL
          * base de datos (en este caso, SqlServer)
          * 
          */
-        private void Desconectar()
+        private void desconectar()
         {
             objConexion.Close();
             objConexion.Dispose();
         }
 
-        public DataTable LeerPorStoreProcedure(string pNombreStoreProcedure, SqlParameter[] pParametrosSql = null)
+        public DataTable leerPorStoreProcedure(string pNombreStoreProcedure, SqlParameter[] pParametrosSql = null)
         {
             //Instancio un objeto del tipo DataTable
             var unaTabla = new DataTable();
@@ -52,7 +52,7 @@ namespace DAL
             var objComando = new SqlCommand();
 
             //Me conecto...
-            this.Conectar();
+            this.conectar();
 
 
             try
@@ -84,57 +84,15 @@ namespace DAL
             {
 
                 //Pase lo que pase me desconecto
-                this.Desconectar();
+                this.desconectar();
             }
 
 
             return unaTabla;
         }
 
-        public DataTable LeerPorComando(string pComando)
-        {
-            //Instancio un objeto del tipo DataTable
-            var unaTabla = new DataTable();
 
-            //Instancio un objeto del tipo SqlCommand
-            var objComando = new SqlCommand();
-
-            //Me conecto...
-            this.Conectar();
-
-            try
-            {
-
-
-                //Parametrizo el objeto SqlCommand con sus valores respectivos
-                objComando.CommandType = CommandType.Text;
-                objComando.Connection = this.objConexion;
-                objComando.CommandText = pComando;
-
-                //Instancio un adaptador con el parametro SqlCommand
-                var objAdaptador = new SqlDataAdapter(objComando);
-
-                //Lleno la tabla, el objeto unaTabla con el adaptador
-                objAdaptador.Fill(unaTabla);
-
-            }
-            catch
-            {
-                //Como hay error... por el motivo que sea asigno el resultado a null
-                unaTabla = null;
-
-                throw;
-            }
-            finally
-            {
-                //Siempre, por más que salga bien o mal el llenado, me desconecto
-                this.Desconectar();
-            }
-
-            return unaTabla;
-        }
-
-        public int EscribirPorComando(string pTexto)
+        public int escribirPorStoreProcedure(string pTexto, SqlParameter[] pParametrosSql)
         {
             //Instanció una variable filasAfectadas que va a terminar devolviendo la cantidad de filas afectadas.
             int filasAfectadas = 0;
@@ -143,45 +101,7 @@ namespace DAL
             var objComando = new SqlCommand();
 
             //Me conecto...
-            this.Conectar();
-
-            try
-            {
-                objComando.CommandText = pTexto;
-                objComando.CommandType = CommandType.Text;
-                objComando.Connection = this.objConexion;
-
-                //El método ExecuteNonQuery() me devuelve la cantidad de filas afectadas.
-                filasAfectadas = objComando.ExecuteNonQuery();
-
-
-            }
-            catch (Exception)
-            {
-                filasAfectadas = -1;
-                throw;
-            }
-            finally
-            {
-                //Me desconecto
-                this.Desconectar();
-            }
-
-
-            return filasAfectadas;
-        }
-
-
-        public int EscribirPorStoreProcedure(string pTexto, SqlParameter[] pParametrosSql)
-        {
-            //Instanció una variable filasAfectadas que va a terminar devolviendo la cantidad de filas afectadas.
-            int filasAfectadas = 0;
-
-            //Instancio un objeto del tipo SqlCommand
-            var objComando = new SqlCommand();
-
-            //Me conecto...
-            this.Conectar();
+            this.conectar();
 
             try
             {
@@ -212,12 +132,46 @@ namespace DAL
             finally
             {
                 //Me desconecto
-                this.Desconectar();
+                this.desconectar();
             }
 
 
             return filasAfectadas;
         }
+
+        public int leerValorEscalar(string nombreSP, SqlParameter[] parametros)
+        {
+            int resultado = -1;
+            var comando = new SqlCommand();
+
+            this.conectar();
+
+            try
+            {
+                comando.CommandText = nombreSP;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Connection = this.objConexion;
+
+                if (parametros != null && parametros.Length > 0)
+                    comando.Parameters.AddRange(parametros);
+
+                object valor = comando.ExecuteScalar();
+                if (valor != null && int.TryParse(valor.ToString(), out int id))
+                    resultado = id;
+            }
+            catch (Exception)
+            {
+                resultado = -1;
+                throw;
+            }
+            finally
+            {
+                this.desconectar();
+            }
+
+            return resultado;
+        }
+
 
         #region Parametros
         public SqlParameter crearParametro(string pNombre, string pValor)

@@ -15,7 +15,9 @@ namespace Persistencia
 {
     public class UsuarioDatos
     {
+
         public DataTable obtenerDatosUsuarioLogin(Usuario usuario)
+
         {
             Conexion conexion = new Conexion();
             SqlParameter[] parametros = new SqlParameter[]
@@ -23,11 +25,13 @@ namespace Persistencia
                 conexion.crearParametro("@nombre_usuario", usuario.Nombre_usuario),
                 conexion.crearParametro("@contrasena", usuario.Contraseña)
             };
-            DataTable dt = conexion.LeerPorStoreProcedure("obtenerUsuarioLogin", parametros);
+            DataTable dt = conexion.leerPorStoreProcedure("obtenerUsuarioLogin", parametros);
             return dt;
         }
 
+
         public int insertarUsuario(Usuario usuario)
+
         {
             Conexion conexion = new Conexion();
 
@@ -65,13 +69,14 @@ namespace Persistencia
             };
             int resultado = conexion.EscribirPorStoreProcedure("inactivarUsuario", parametros);
             return resultado;
+
         }
 
         public DataTable obtenerDatosUsuario()
         {
             //RETORNAR UN DATATABLE CON LOS DATOS DEL USUARIO DEL SP obtenerUsuarios
             Conexion conexion = new Conexion();
-            DataTable dt = conexion.LeerPorStoreProcedure("obtenerUsuarios");
+            DataTable dt = conexion.leerPorStoreProcedure("obtenerUsuarios");
             return dt;
         }
     }

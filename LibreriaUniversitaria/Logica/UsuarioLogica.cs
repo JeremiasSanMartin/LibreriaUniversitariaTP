@@ -23,11 +23,18 @@ namespace Logica
                 {
                     // Devuelve el rol si la validación es correcta
                     usuario.Rol = fila["rol"].ToString();
+
+                    id = (int)fila["id"];
+
                     return true; // Retorna true si el usuario y la contraseña son correctos
                 }
             }
             // Devuelve null si no se encontró el usuario o la contraseña
+
             usuario.Rol = null;
+
+            id = 0;
+
             return false;
         }
     }

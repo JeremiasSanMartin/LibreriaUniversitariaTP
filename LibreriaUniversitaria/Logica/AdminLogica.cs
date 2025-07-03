@@ -17,6 +17,7 @@ namespace Logica
             //Llamo al método de la capa de persistencia para insertar un nuevo usuario
             int resultado = usuarioDatos.insertarUsuario(usuario);
 
+
             if(resultado > 0)
             {
                 return true; //Si se insertó correctamente, retorno true

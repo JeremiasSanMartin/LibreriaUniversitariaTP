@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+
+
     public class Editorial
     {
-		private string nombre;
+
+        private int id;
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string nombre;
 
 		public string Nombre
 		{

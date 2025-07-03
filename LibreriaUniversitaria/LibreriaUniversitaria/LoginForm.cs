@@ -12,6 +12,7 @@ using Presentacion;
 using Logica;
 using Entidades;
 using System.Data.SqlClient;
+using LibreriaUniversitaria;
 
 namespace Presentacion
 {
@@ -21,8 +22,6 @@ namespace Presentacion
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-          
-            
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -101,7 +100,7 @@ namespace Presentacion
                     }
                     else if (login.Rol == "Vendedor")
                     {
-                        VendedorForm vendedorForm = new VendedorForm();
+                        VendedorForm vendedorForm = new VendedorForm(id);
                         this.Hide();
                         vendedorForm.ShowDialog();
                         this.Show();
@@ -119,6 +118,7 @@ namespace Presentacion
                 else if (ex.Message.Contains("incorrecto"))
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos.", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
                 else
                 {
@@ -208,5 +208,6 @@ namespace Presentacion
                 e.SuppressKeyPress = true; 
             }
         }
+
     }
 }
