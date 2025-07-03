@@ -19,26 +19,29 @@ namespace Persistencia
             {
                 conexion.crearParametro("@fecha", venta.Fecha),
                 conexion.crearParametro("@precio_final", venta.Precio_Final),
-                conexion.crearParametro("@dni_cliente", venta.Cliente_Asociado.DNI),
+                conexion.crearParametro("@cliente_id", venta.Cliente_Asociado.ID),
                 conexion.crearParametro("@vendedor_id", venta.Vendedor_Asociado)
             };
 
-            int filasAfectadas = conexion.escribirPorStoreProcedure("guardarVenta", parametros.ToArray());
+            int ventaID = conexion.leerValorEscalar("insertarVenta", parametros.ToArray());
 
-            
+            if (ventaID <= 0)
+                return false;
+
             foreach (var detalle in venta.Detalles)
             {
                 List<SqlParameter> parametrosDetalle = new List<SqlParameter>
                 {
-                    conexion.crearParametro("@titulo_libro", detalle.Libro.Titulo),
+                    conexion.crearParametro("@venta_id", ventaID),
+                    conexion.crearParametro("@libro_id", detalle.Libro.ID),
                     conexion.crearParametro("@cantidad", detalle.Cantidad),
                     conexion.crearParametro("@precio_unitario", detalle.Precio_Unitario)
                 };
 
-                conexion.escribirPorStoreProcedure("guardarDetalleVenta", parametrosDetalle.ToArray());
+                conexion.escribirPorStoreProcedure("insertarDetalleVenta", parametrosDetalle.ToArray());
             }
 
-            return filasAfectadas > 0;
+            return true;
         }
     }
 }

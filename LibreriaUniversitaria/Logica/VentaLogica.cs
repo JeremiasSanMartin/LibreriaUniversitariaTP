@@ -12,18 +12,12 @@ namespace Logica
     {
         private VentaDatos ventaDatos = new VentaDatos();
         private LibroDatos libroDatos = new LibroDatos();
+        private ClienteDatos clienteDatos = new ClienteDatos(); 
+        private int id_detalle_venta = 1;
 
 
-        public Cliente obtenerClientePrueba()
-        {
-            return new Cliente
-            {
-                DNI = "00000000",
-                Nombre = "Cliente prueba",
-                Activo = true,
-                Descuento = 15
-            };
-        }
+   
+
 
         public string validarStock(List<DetalleVenta> detalles)
         {
@@ -49,6 +43,7 @@ namespace Logica
 
             foreach (var detalle in detalles)
             {
+                
                 detalle.Libro.Stock_actual -= detalle.Cantidad;
                 libroDatos.actualizarStock(detalle.Libro);
             }
@@ -69,7 +64,7 @@ namespace Logica
                 subtotal = subtotal + detalle.Subtotal;
             }
 
-            venta.Precio_Final = subtotal - (subtotal * descuento / 100);
+            venta.Precio_Final = subtotal - (subtotal * descuento);
 
 
         }
@@ -77,17 +72,24 @@ namespace Logica
 
         public void agregarDetalle(Venta venta, Libro libro, int cantidad)
         {
+
             if (libro.Stock_actual < cantidad)
                 throw new Exception($"Stock insuficiente para '{libro.Titulo}'");
 
             var detalle = new DetalleVenta
             {
+                ID = id_detalle_venta++,
                 Libro = libro,
                 Cantidad = cantidad,
                 Precio_Unitario = libro.Precio
             };
 
             venta.Detalles.Add(detalle);
+        }
+
+        public void reiniciarContadorDetalles()
+        {
+            id_detalle_venta = 1;
         }
 
         public string generarVenta(Cliente cliente, List<DetalleVenta> detalles, int idVendedor)
@@ -122,7 +124,7 @@ namespace Logica
                 descontarStock(detalles);
 
             return guardado
-                ? $"Venta registrada con éxito. Total: ${venta.Precio_Final}"
+                ? "OK"
                 : "Error al registrar la venta en la base de datos.";
 
         }

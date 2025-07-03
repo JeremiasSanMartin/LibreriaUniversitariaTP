@@ -11,7 +11,7 @@ namespace Logica
 {
     public class ClienteLogica
     {
-        private ClienteDatos manejoCliente = new ClienteDatos();
+        private ClienteDatos clienteDatos = new ClienteDatos();
 
         public int agregarCliente(Cliente cliente)
         {
@@ -32,7 +32,7 @@ namespace Logica
             // Si todo está bien, lo insertamos usando el SP a través de la DAL
             try
             {
-                return manejoCliente.Insertar(cliente);
+                return clienteDatos.insertarCliente(cliente);
             }
             catch (Exception ex)
             {
@@ -40,20 +40,28 @@ namespace Logica
             }
         }
 
-        public DataTable BuscarClientes(string nombre)
+        public DataTable buscarClientePorNombre(string nombre)
         {
-            return manejoCliente.BuscarClientesPorNombre(nombre);
+            return clienteDatos.obtenerClientePorNombre(nombre);
         }
 
-        public int InactivarCliente(int idCliente)
+        public Cliente buscarClientePorDNI(string dni)
+        {
+            if (string.IsNullOrWhiteSpace(dni))
+                return null;
+
+            return clienteDatos.obtenerClientePorDNI(dni);
+        }
+
+        public int inactivarCliente(int idCliente)
         {
             if (idCliente <= 0)
                 throw new ArgumentException("ID de cliente inválido.");
 
-            return manejoCliente.Inactivar(idCliente);
+            return clienteDatos.inactivarCliente(idCliente);
         }
 
-        public int EditarCliente(Cliente cliente)
+        public int editarCliente(Cliente cliente)
         {
             if (cliente.ID <= 0)
                 throw new ArgumentException("ID de cliente inválido.");
@@ -61,7 +69,7 @@ namespace Logica
             if (string.IsNullOrWhiteSpace(cliente.Nombre) || string.IsNullOrWhiteSpace(cliente.Apellido))
                 throw new Exception("Nombre y apellido son obligatorios.");
 
-            return manejoCliente.Editar(cliente);
+            return clienteDatos.editarCliente(cliente);
         }
 
     }

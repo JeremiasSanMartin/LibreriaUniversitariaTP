@@ -8,7 +8,7 @@ using DAL;
 
 namespace Persistencia
 {
-    internal class EditorialDatos
+    public class EditorialDatos
     {
 
         public DataTable obtenerDatosEditoriales()

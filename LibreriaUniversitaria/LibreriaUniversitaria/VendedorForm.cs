@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
-using Logica;
-using Persistencia;
+using Logica;   
 
 
 namespace Presentacion
@@ -25,15 +24,19 @@ namespace Presentacion
             { "Clientes", "Clientes de Libreria Universitaria." },
             { "Ventas", " " },
         };
-        private Venta ventaActual;
-        private VentaLogica ventaLogica = new VentaLogica();
-        private LibroDatos libroDatos = new LibroDatos();
-        private List<Libro> listaLibrosOriginal;
+        private Venta venta_actual;
+        private VentaLogica venta_logica = new VentaLogica();
+        private LibroLogica libro_logica = new LibroLogica();
+        private ClienteLogica cliente_logica = new ClienteLogica(); 
+        private List<Libro> lista_libros_original;
+        private int vendedor_id = 0;
+       
         
 
 
 
-        public VendedorForm()
+
+        public VendedorForm(int id)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -47,33 +50,42 @@ namespace Presentacion
             dataGrid_clientes.Hide();
             panel_nuevaVenta.Hide();
             btn_nuevoCliente.Hide();
+            vendedor_id = id;
             
         }
-        private void cargarLibros()
-        {
-            listaLibrosOriginal = libroDatos.obtenerDatosLibros();
 
-            if (listaLibrosOriginal.Count == 0)
+    private void cargarLibros()
+        {
+            lista_libros_original = libro_logica.obtenerDatosLibros();
+
+            if (lista_libros_original.Count == 0)
             {
                 MessageBox.Show("No se encontraron libros disponibles.", "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             dataGrid_libros.AutoGenerateColumns = false;
-            dataGrid_libros.DataSource = listaLibrosOriginal;
+            dataGrid_libros.DataSource = lista_libros_original;
 
             dataGrid_libros.Columns["precio"].DefaultCellStyle.Format = "C2";
         }
         private void inicializarVenta()
         {
-            ventaActual = new Venta
+            venta_actual = new Venta
             {
-                Detalles = new List<DetalleVenta>(),
-                Cliente_Asociado = ventaLogica.obtenerClientePrueba()
+                Detalles = new List<DetalleVenta>()
             };
 
+            venta_logica.reiniciarContadorDetalles();
+            dataGrid_libros.Visible = false;
+            txtBox_busquedaLibro.Visible = false;
+            lbl_aviso.Visible = true;
+
             dataGrid_factura.DataSource = null;
-            label2.Text = "TOTAL: $0.00";
+            lbl_total.Text = "Subtotal: $0\n" +
+                "Descuento (0%): -$0\n" +
+                "Total a pagar: $0";
+            
         }
 
 
@@ -163,11 +175,57 @@ namespace Presentacion
             btn_nuevoCliente.Hide();
         }
 
+        private void btn_busquedaCliente_Click(object sender, EventArgs e)
+        {
+            string dni = txtBox_busquedaCliente.Text.Trim();
+            if (string.IsNullOrEmpty(dni) || dni == "DNI del cliente")
+            {
+                MessageBox.Show("Ingrese un DNI válido", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Cliente cliente = cliente_logica.buscarClientePorDNI(dni); 
+            if (cliente == null)
+            {
+                MessageBox.Show("Cliente inexistente. Pruebe con otro DNI o agregue el Cliente al sistema", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!cliente.Activo)
+            {
+                MessageBox.Show("Cliente inactivo. No es posible asociarlo a la venta.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            venta_actual.Cliente_Asociado = cliente;
+            float descuento = cliente.Descuento * 100;
+            MessageBox.Show($"Cliente {cliente.Nombre} {cliente.Apellido} asociado a la venta, le corresponde {descuento}% de descuento", "Cliente asociado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            dataGrid_libros.Visible = true;
+            txtBox_busquedaLibro.Visible = true;
+            lbl_aviso.Visible = false;
+        }
+
         private void dataGrid_libros_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && dataGrid_libros.Columns[e.ColumnIndex].Name == "agregar")
             {
+                //guardamos el libro que se va a utilizar para modificar el catalogo 
                 Libro libro = (Libro)dataGrid_libros.Rows[e.RowIndex].DataBoundItem;
+
+                //copia para guardar el libro que se va a utilizar para guardar el detalle de la venta
+                Libro libro_detalle = new Libro
+                {
+                    ID = libro.ID,
+                    Titulo = libro.Titulo,
+                    Precio = libro.Precio,
+                    Stock_actual = libro.Stock_actual, 
+                    Editorial = libro.Editorial,
+                    Autor = libro.Autor,
+                    Stock_minimo = libro.Stock_minimo,
+                };
+
+               
+
 
                 string input = Microsoft.VisualBasic.Interaction.InputBox(
                     $"📚 {libro.Titulo}\nStock disponible: {libro.Stock_actual}\n\nIngresá la cantidad:",
@@ -177,19 +235,34 @@ namespace Presentacion
                 {
                     try
                     {
-                        ventaLogica.agregarDetalle(ventaActual, libro, cantidad);
+                        venta_logica.agregarDetalle(venta_actual, libro_detalle, cantidad);
+                        libro.Stock_actual -= cantidad;
 
                         dataGrid_factura.AutoGenerateColumns = false;
                         dataGrid_factura.DataSource = null;
-                        dataGrid_factura.DataSource = ventaActual.Detalles;
+                        dataGrid_factura.DataSource = venta_actual.Detalles;
 
-                        float total = ventaActual.Detalles.Sum(d => d.Cantidad * d.Precio_Unitario);
-                        label2.Text = $"TOTAL: ${total:0.00}";
+                        float subtotal = venta_actual.Detalles.Sum(d => d.Cantidad * d.Precio_Unitario);
+                        float descuento = venta_actual.Cliente_Asociado?.Descuento ?? 0;
+                        float descuento_monto = subtotal * descuento;
+                        float total_final = subtotal - descuento_monto;
+                        float descuento_porcentaje = descuento * 100;
+
+                        lbl_total.Text = $"Subtotal: ${subtotal:0.00}\n" +
+                                         $"Descuento ({(int)descuento_porcentaje}%): -${descuento_monto:0.00}\n" +
+                                         $"Total a pagar: ${total_final:0.00}";
+                        dataGrid_libros.Refresh();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                }
+                else
+                {
+
+                    MessageBox.Show("Cantidad invalida. Debe ser un entero positivo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
             }
         }
@@ -201,7 +274,7 @@ namespace Presentacion
 
             List<Libro> filtrados = new List<Libro>();
 
-            foreach (Libro libro in listaLibrosOriginal)
+            foreach (Libro libro in lista_libros_original)
             {
                 string titulo = libro.Titulo?.ToLower();
                 string autor = libro.Autor?.ToLower();
@@ -258,6 +331,43 @@ namespace Presentacion
                 txtBox_busquedaCliente.ForeColor = Color.Gray;
              
             }
+        }
+
+        private void btn_finalizarVenta_Click(object sender, EventArgs e)
+        {
+            if (venta_actual.Cliente_Asociado == null)
+            {
+                MessageBox.Show("Debe asociar un cliente a la venta.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (venta_actual.Detalles == null || venta_actual.Detalles.Count == 0)
+            {
+                MessageBox.Show("Se debe agregar al menos un libro a la factura para realizar una venta", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string resultado = venta_logica.generarVenta(venta_actual.Cliente_Asociado, venta_actual.Detalles, vendedor_id);
+            if (resultado == "OK")
+            {
+                MessageBox.Show("Venta realizada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                inicializarVenta();
+                cargarLibros();
+                txtBox_busquedaCliente.Text = "DNI del cliente";
+                txtBox_busquedaCliente.ForeColor = Color.Gray;
+
+            }
+            else
+            {
+                MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_cancelarVenta_Click(object sender, EventArgs e)
+        {
+            inicializarVenta();
+            cargarLibros(); // Esto restaura el stock original
+            dataGrid_factura.DataSource = null;
+            lbl_total.Text = "TOTAL: $0.00";
         }
 
         private void pctBox_salir_Click(object sender, EventArgs e)

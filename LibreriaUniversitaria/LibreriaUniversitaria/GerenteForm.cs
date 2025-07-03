@@ -151,7 +151,7 @@ namespace Presentacion
             try
             {
                 string texto = txtBox_busquedaReporte.Text.Trim();
-                var lista = _reporteLogica.RecuperarDetalles(texto);
+                var lista = _reporteLogica.recuperarDetalles(texto);
 
                 if (lista == null || lista.Count == 0)
                 {
@@ -175,7 +175,7 @@ namespace Presentacion
         private void CargarDatos()
         {
             //utiliza RecupearDetalles sin pasar parametros para obtener los datos de los reportes
-            var lista = _reporteLogica.RecuperarDetalles();
+            var lista = _reporteLogica.recuperarDetalles();
             dataGrid_reportes.Columns.Clear(); // Limpiar columnas
             dataGrid_reportes.AutoGenerateColumns = true;
             dataGrid_reportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -210,7 +210,7 @@ namespace Presentacion
                 }
 
                 //recupera los reportes por el rango de fechas ingresado
-                var lista = _reporteLogica.RecuperarPorFechas(desde, hasta);
+                var lista = _reporteLogica.recuperarPorFechas(desde, hasta);
 
                 if (lista.Count == 0)
                 {

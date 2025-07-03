@@ -12,7 +12,7 @@ namespace Logica
     {
         Persistencia.UsuarioDatos unLogin = new Persistencia.UsuarioDatos();
 
-        public bool loguearse(string nombreUsuario, string contraseña, out string rol) //El out string rol es para devolver el rol del usuario, como parametro de salida
+        public bool loguearse(string nombreUsuario, string contraseña, out string rol, out int id) //El out string rol es para devolver el rol del usuario, como parametro de salida
         {
             DataTable dt = unLogin.obtenerDatosUsuarioLogin(nombreUsuario, contraseña);
 
@@ -22,11 +22,13 @@ namespace Logica
                 {
                     // Devuelve el rol si la validación es correcta
                     rol = fila["rol"].ToString();
+                    id = (int)fila["id"];
                     return true; // Retorna true si el usuario y la contraseña son correctos
                 }
             }
             // Devuelve null si no se encontró el usuario o la contraseña
             rol = null;
+            id = 0;
             return false;
         }
     }
