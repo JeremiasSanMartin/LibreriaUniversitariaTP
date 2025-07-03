@@ -13,9 +13,9 @@ namespace Persistencia
     public class ReporteDatos
     {
         //recupera los reportes por vendedor o si no se pasa ningun parametro, recupera todos los reportes
-        public List<ReporteDetalleVenta> recuperarDetallesPorVendedor(string nombreVendedor = null)
+        public List<ReporteVendedor> recuperarDetallesPorVendedor(string nombreVendedor = null)
         {
-            List<ReporteDetalleVenta> lista = new List<ReporteDetalleVenta>();
+            List<ReporteVendedor> lista = new List<ReporteVendedor>();
             Conexion conexion = new Conexion();
 
             //si hay un parametro, usa crear parametro sobre esto
@@ -37,8 +37,9 @@ namespace Persistencia
                 string producto = fila["producto"].ToString();
                 int cantidad = Convert.ToInt32(fila["cantidad"]);
                 decimal precio = Convert.ToDecimal(fila["precio_unitario"]);
+                decimal subtotal = Convert.ToDecimal(fila["subtotal"]);
 
-                lista.Add(new ReporteDetalleVenta(vendedor, cliente, fecha, producto, cantidad, precio));
+                lista.Add(new ReporteVendedor(vendedor, cliente, fecha, producto, cantidad, precio, subtotal));
             }
 
             return lista;

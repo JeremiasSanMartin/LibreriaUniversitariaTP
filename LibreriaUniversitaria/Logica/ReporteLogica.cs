@@ -13,7 +13,7 @@ namespace Logica
         private ReporteDatos _reporteDatos = new ReporteDatos();
 
         //permite null porque si no se pasa parametro obtiene todos los reportes, y si se pasa un vendedor, obtiene los reportes de ese vendedor   
-        public List<ReporteDetalleVenta> recuperarDetalles(string vendedor = null)
+        public List<ReporteVendedor> recuperarDetalles(string vendedor = null)
         {
             try { 
                 return _reporteDatos.recuperarDetallesPorVendedor(vendedor);
