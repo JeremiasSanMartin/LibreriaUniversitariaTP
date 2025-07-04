@@ -21,7 +21,7 @@ namespace Logica
 
         public DataTable obtenerDataTableLibros()
         {
-            // Llama al método de la capa de persistencia para obtener los libros con stock bajo
+            // Llama al método de la capa de persistencia para obtener los libros en una DataTable
             return stockLibrosDatos.obtenerDataTableLibros();
 
         }

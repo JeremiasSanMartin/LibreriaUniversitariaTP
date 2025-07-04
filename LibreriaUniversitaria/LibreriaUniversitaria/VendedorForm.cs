@@ -20,7 +20,7 @@ namespace Presentacion
         private int menu_cerrado = 60;
         Dictionary<string, string> mensajes = new Dictionary<string, string>
         {
-            { "Inicio", "¡Bienvenido/a, (nombre y apellido)!" },
+            { "Inicio", "¡Bienvenido/a!" },
             { "Clientes", "Clientes de Libreria Universitaria." },
             { "Ventas", " " },
         };
@@ -40,21 +40,23 @@ namespace Presentacion
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            dataGrid_clientes.Rows.Add("1", "Pepe", "Perez", "11111111", "unmail@gmail.com", "Calle 123", "1122334455", "Si");
             panel_menu.Width = menu_cerrado;
             dataGrid_clientes.Location = new Point(90, 68);
             dataGrid_clientes.Size = new Size(771, 508);
-            btn_nuevoCliente.Location = new Point(90, 582);
+            btn_mostrarPanelAgregar.Location = new Point(90, 582);
             panel_nuevaVenta.Location = new Point(84, 76);
             panel_nuevaVenta.Size = new Size(780, 543);
             dataGrid_clientes.Hide();
             panel_nuevaVenta.Hide();
-            btn_nuevoCliente.Hide();
+            btn_mostrarPanelAgregar.Hide();
             vendedor_id = id;
-            
+            cargarClientes();
+
+
+
         }
 
-    private void cargarLibros()
+        private void cargarLibros()
         {
             lista_libros_original = libro_logica.obtenerDatosLibros();
 
@@ -68,6 +70,17 @@ namespace Presentacion
             dataGrid_libros.DataSource = lista_libros_original;
 
             dataGrid_libros.Columns["precio"].DefaultCellStyle.Format = "C2";
+        }
+        private void cargarClientes()
+        {
+            var lista = cliente_logica.obtenerTodosLosClientes();
+            dataGrid_clientes.DataSource = null;
+            dataGrid_clientes.DataSource = lista;
+            dataGrid_clientes.Columns["Descuento"].Visible = false;
+            dataGrid_clientes.Columns["Tipo_ID"].Visible = false;
+            // Ocultá las columnas que no querés mostrar
+            dataGrid_clientes.Columns["ID"].Visible = false;
+            dataGrid_clientes.Columns["Activo"].Visible = false;
         }
         private void inicializarVenta()
         {
@@ -88,7 +101,73 @@ namespace Presentacion
             
         }
 
+        private void inicializarPanelAgregarCliente()
+        {
+            panel_agregarCliente.Visible = true;
+            dataGrid_clientes.Hide();
 
+            cmb_rolCliente.Items.Clear();
+            cargarRolesCliente(); 
+
+     
+            SetPlaceholder(txtBox_nombreCliente, "Nombre");
+            SetPlaceholder(txtBox_apellidoCliente, "Apellido");
+            SetPlaceholder(txtBox_dniCliente, "DNI");
+            SetPlaceholder(txtBox_telefonoCliente, "Teléfono");
+            SetPlaceholder(txtBox_direccionCliente, "Dirección");
+            SetPlaceholder(txtBox_emailCliente, "Email");
+
+            cmb_rolCliente.SelectedIndex = -1;
+        }
+        private void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = Color.Gray;
+
+            textBox.Enter += (s, e) =>
+            {
+                if (textBox.Text == placeholder)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = Color.Black;
+                }
+            };
+
+            textBox.Leave += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholder;
+                    textBox.ForeColor = Color.Gray;
+                }
+            };
+        }
+
+        private void cargarRolesCliente()
+        {
+            var tabla_roles = cliente_logica.obtenerRoles();
+            cmb_rolCliente.DataSource = tabla_roles;
+            cmb_rolCliente.DisplayMember = "nombre";
+            cmb_rolCliente.ValueMember = "id";       
+        }
+        private void inactivarClienteDesdeFila(int rowIndex)
+        {
+            var cliente = (Cliente)dataGrid_clientes.Rows[rowIndex].DataBoundItem;
+
+            var confirmacion = MessageBox.Show(
+                $"¿Estás seguro de que querés inactivar al cliente {cliente.Nombre} {cliente.Apellido}?",
+                "Confirmar inactivación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                cliente_logica.inactivarCliente(cliente.ID); // Lógica
+                MessageBox.Show("Cliente inactivado correctamente.");
+                cargarClientes();
+            }
+        }
 
 
         private void timer_animacionMenu_Tick(object sender, EventArgs e)
@@ -98,7 +177,7 @@ namespace Presentacion
 
                 dataGrid_clientes.Location = new Point(198, 95);
                 dataGrid_clientes.Size = new Size(663, 481);
-                btn_nuevoCliente.Location = new Point(198, 582);
+                btn_mostrarPanelAgregar.Location = new Point(198, 582);
                 panel_nuevaVenta.Location = new Point(198, 60);
                 panel_nuevaVenta.Size = new Size(666, 559);
                 panel_menu.Width += 5;
@@ -123,7 +202,7 @@ namespace Presentacion
                     colapsado = true;
                     dataGrid_clientes.Location = new Point(90, 68);
                     dataGrid_clientes.Size = new Size(771, 508);
-                    btn_nuevoCliente.Location = new Point(90, 582);
+                    btn_mostrarPanelAgregar.Location = new Point(90, 582);
                     panel_nuevaVenta.Location = new Point(84, 76);
                     panel_nuevaVenta.Size = new Size(780, 543);
                 }
@@ -153,26 +232,27 @@ namespace Presentacion
             panel_nuevaVenta.Hide();
             lbl_bienvenida.Text = mensajes["Clientes"];
             dataGrid_clientes.Show();
-            btn_nuevoCliente.Show();
-
+            btn_mostrarPanelAgregar.Show();
+            cargarClientes();
         }
 
         private void btn_nuevaVenta_Click(object sender, EventArgs e)
         {
             dataGrid_clientes.Hide();
-            btn_nuevoCliente.Hide();
+            btn_mostrarPanelAgregar.Hide();
             lbl_bienvenida.Text = mensajes["Ventas"];
             panel_nuevaVenta.Show();
             cargarLibros();
             inicializarVenta();
         }
 
+
         private void btn_Inicio_Click(object sender, EventArgs e)
         {
             lbl_bienvenida.Text = mensajes["Inicio"];
             dataGrid_clientes.Hide();
             panel_nuevaVenta.Hide();
-            btn_nuevoCliente.Hide();
+            btn_mostrarPanelAgregar.Hide();
         }
 
         private void btn_busquedaCliente_Click(object sender, EventArgs e)
@@ -378,6 +458,47 @@ namespace Presentacion
         private void pctBox_minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_mostrarPanelAgregar_Click(object sender, EventArgs e)
+        {
+            inicializarPanelAgregarCliente();
+        }
+
+        private void btn_guardarCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validación previa (opcional pero recomendable)
+                if (cliente_logica.buscarClientePorDNI(txtBox_dniCliente.Text.Trim()) != null)
+                {
+                    MessageBox.Show("Ya existe un cliente con ese DNI.");
+                    return;
+                }
+
+                // Paso 2: Crear el cliente y asignar el tipo desde el ComboBox
+                Cliente nuevo_cliente = new Cliente
+                {
+                    Nombre = txtBox_nombreCliente.Text.Trim(),
+                    Apellido = txtBox_apellidoCliente.Text.Trim(),
+                    DNI = txtBox_dniCliente.Text.Trim(),
+                    Telefono = txtBox_telefonoCliente.Text.Trim(),
+                    Direccion = txtBox_direccionCliente.Text.Trim(),
+                    Email = txtBox_emailCliente.Text.Trim(),
+                    Tipo = cmb_rolCliente.Text, // 👈 Este es el paso 2
+                    Activo = true
+                };
+
+                cliente_logica.agregarCliente(nuevo_cliente);
+
+                MessageBox.Show("Cliente agregado correctamente.");
+                panel_agregarCliente.Visible = false;
+                // cargarClientes(); // si tenés un listado para refrescar
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar cliente:\n{ex.Message}\n{ex.InnerException?.Message}");
+            }
         }
 
     }
