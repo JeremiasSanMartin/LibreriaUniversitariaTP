@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades (BE)", "Entidades
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia (DAL)", "Persistencia\Persistencia (DAL).csproj", "{03B63BAF-9210-4942-B694-5324BEAB429B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaTest", "LibreriaTest\LibreriaTest.csproj", "{4AE05DE9-EBC9-4E68-A996-BEEE670A06E3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{03B63BAF-9210-4942-B694-5324BEAB429B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03B63BAF-9210-4942-B694-5324BEAB429B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03B63BAF-9210-4942-B694-5324BEAB429B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4AE05DE9-EBC9-4E68-A996-BEEE670A06E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AE05DE9-EBC9-4E68-A996-BEEE670A06E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AE05DE9-EBC9-4E68-A996-BEEE670A06E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AE05DE9-EBC9-4E68-A996-BEEE670A06E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

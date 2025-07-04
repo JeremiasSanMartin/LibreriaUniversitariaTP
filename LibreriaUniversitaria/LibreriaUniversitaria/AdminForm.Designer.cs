@@ -57,7 +57,6 @@
             this.timer_carrusel = new System.Windows.Forms.Timer(this.components);
             this.panel_crearUsuario = new System.Windows.Forms.Panel();
             this.txtBox_DNI = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_crearUsuario = new System.Windows.Forms.Button();
             this.cBox_rolCrear = new System.Windows.Forms.ComboBox();
             this.txtBox_contrasenaCrear = new System.Windows.Forms.TextBox();
@@ -367,7 +366,6 @@
             // 
             this.panel_crearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(55)))), ((int)(((byte)(125)))));
             this.panel_crearUsuario.Controls.Add(this.txtBox_DNI);
-            this.panel_crearUsuario.Controls.Add(this.label1);
             this.panel_crearUsuario.Controls.Add(this.btn_crearUsuario);
             this.panel_crearUsuario.Controls.Add(this.cBox_rolCrear);
             this.panel_crearUsuario.Controls.Add(this.txtBox_contrasenaCrear);
@@ -393,17 +391,6 @@
             this.txtBox_DNI.Size = new System.Drawing.Size(177, 40);
             this.txtBox_DNI.TabIndex = 19;
             this.txtBox_DNI.Text = "DNI de usuario";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(153, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 24);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "SOLO VISTA";
             // 
             // btn_crearUsuario
             // 
@@ -596,7 +583,6 @@
         private System.Windows.Forms.TextBox txtBox_usuarioCrear;
         private System.Windows.Forms.TextBox txtBox_apellidoCrear;
         private System.Windows.Forms.Label lbl_creaUsuario;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_crearUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

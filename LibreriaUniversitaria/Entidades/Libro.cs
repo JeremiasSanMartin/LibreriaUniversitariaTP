@@ -66,7 +66,7 @@ namespace Entidades
 			set { editorial = value; }
 		}
 
-		private string nombreEditorial;
+		private string nombre_editorial;
 
 		public string NombreEditorial
 		{

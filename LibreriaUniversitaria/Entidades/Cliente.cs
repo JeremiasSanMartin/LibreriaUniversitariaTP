@@ -99,13 +99,13 @@ namespace Entidades
                 switch (Tipo)
                 {
                     case "Estudiante":
-                        return 1;   
+                        return 5;   
                     case "Profesor":
-                        return 2;  
+                        return 6;  
                     case "Personal":
-                        return 3; 
+                        return 7; 
                     default:
-                        return 4; 
+                        return 8; 
 
                 }
             }

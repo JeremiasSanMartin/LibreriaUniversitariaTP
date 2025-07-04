@@ -25,7 +25,7 @@ namespace Presentacion
         //diccionario con mensajes para mostrar en cada seccion 
         Dictionary<string, string> mensajes = new Dictionary<string, string>
         {
-         { "Inicio", "¡Bienvenido/a, (nombre y apellido)!" },
+         { "Inicio", "¡Bienvenido/a!" },
          { "Usuarios", "Usuarios del Sistema" },
          { "NuevoUsuario", " " },
         };

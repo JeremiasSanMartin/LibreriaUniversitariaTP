@@ -15,7 +15,7 @@ namespace Logica
 
         public int agregarCliente(Cliente cliente)
         {
-            // Validaciones básicas
+            
             if (string.IsNullOrWhiteSpace(cliente.Nombre))
                 throw new Exception("El nombre del cliente es obligatorio.");
 
@@ -25,11 +25,11 @@ namespace Logica
             if (string.IsNullOrWhiteSpace(cliente.DNI))
                 throw new Exception("El DNI del cliente es obligatorio.");
 
-            // Validación opcional de email
+           
             if (!string.IsNullOrWhiteSpace(cliente.Email) && !cliente.Email.Contains("@"))
                 throw new Exception("El email ingresado no es válido.");
 
-            // Si todo está bien, lo insertamos usando el SP a través de la DAL
+     
             try
             {
                 return clienteDatos.insertarCliente(cliente);
@@ -38,6 +38,10 @@ namespace Logica
             {
                 throw new Exception("Ocurrió un error al intentar agregar el cliente.", ex);
             }
+        }
+        public DataTable obtenerRoles()
+        {
+            return clienteDatos.obtenerRoles();
         }
 
         public DataTable buscarClientePorNombre(string nombre)
@@ -53,14 +57,15 @@ namespace Logica
             return clienteDatos.obtenerClientePorDNI(dni);
         }
 
-        public int inactivarCliente(int idCliente)
+
+        public List<Cliente> obtenerTodosLosClientes()
         {
-            if (idCliente <= 0)
-                throw new ArgumentException("ID de cliente inválido.");
-
-            return clienteDatos.inactivarCliente(idCliente);
+            return clienteDatos.obtenerClientes();
         }
-
+        public void inactivarCliente(int id)
+        {
+            clienteDatos.inactivarCliente(id); 
+        }
         public int editarCliente(Cliente cliente)
         {
             if (cliente.ID <= 0)

@@ -22,7 +22,7 @@ namespace Presentacion
         private int menu_cerrado = 60;
         Dictionary<string, string> mensajes = new Dictionary<string, string>
     {
-        { "Inicio", "¡Bienvenido/a, (nombre y apellido)!" },
+        { "Inicio", "¡Bienvenido/a!" },
         { "Stock", "Lista de stock de Libreria Universitaria" },
         { "Editoriales", "Contactos de editoriales " },
     };

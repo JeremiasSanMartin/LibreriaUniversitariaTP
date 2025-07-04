@@ -14,6 +14,35 @@ namespace Persistencia
     {
         private Conexion conexion = new Conexion();
 
+        public List<Cliente> obtenerClientes()
+        {
+            List<Cliente> lista = new List<Cliente>();
+
+            DataTable tabla = conexion.leerPorStoreProcedure("obtenerClientes");
+
+            foreach (DataRow row in tabla.Rows)
+            {
+                Cliente cliente = new Cliente
+                {
+                    ID = Convert.ToInt32(row["id"]),
+                    Nombre = row["nombre"].ToString(),
+                    Apellido = row["apellido"].ToString(),
+                    DNI = row["dni"].ToString(),
+                    Email = row["email"].ToString(),
+                    Direccion = row["direccion"].ToString(),
+                    Telefono = row["telefono"].ToString(),
+                    Tipo = row["rol_nombre"].ToString(),
+                    Activo = Convert.ToBoolean(row["activo"])
+                };
+
+                lista.Add(cliente);
+            }
+
+            return lista;
+        }
+
+
+
         public int insertarCliente(Cliente cliente)
         {
            
@@ -27,7 +56,6 @@ namespace Persistencia
                   conexion.crearParametro("@direccion", cliente.Direccion ?? string.Empty),
                   conexion.crearParametro("@email", cliente.Email ?? string.Empty),
                   conexion.crearParametro("@rol_cliente_id", cliente.Tipo_ID),
-                  conexion.crearParametro("@activo", cliente.Activo)
             };
 
             try
@@ -106,6 +134,13 @@ namespace Persistencia
 
             return conexion.escribirPorStoreProcedure("editarCliente", parametros);
         }
+
+
+        public DataTable obtenerRoles()
+        {
+            return conexion.leerPorStoreProcedure("obtenerRolesCliente");
+        }
+
     }
 
 
