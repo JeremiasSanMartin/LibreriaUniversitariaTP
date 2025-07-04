@@ -23,10 +23,18 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Archivos de compilación
+bin/
+obj/
+
 # .NET Core
 project.lock.json
 project.fragment.lock.json
 artifacts/
+.vs/
+*.log
+.idea/
+.vscode/
 
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
@@ -35,6 +43,9 @@ ScaffoldingReadMe.txt
 *.nupkg
 # NuGet Symbol Packages
 *.snupkg
+*.user
+*.suo
+*.publish.xml
 
 # Others
 ~$*
@@ -52,3 +63,41 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Archivos de Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Archivos de base de datos local
+*.mdf
+*.ldf
+
+# Archivos temporales
+~$*
+*.tmp
+*.temp
+
+# Archivos de auto-generación de Visual Studio
+Generated_Code/
+ipch/
+*.dbmdl
+
+# Build folders
+bin/
+obj/
+TestResults/
+
+# Visual Studio user-specific files
+.vs/
+*.user
+*.suo
+
+# NuGet
+*.nupkg
+packages/
+
+# Logs and temp
+*.log
+*.cache

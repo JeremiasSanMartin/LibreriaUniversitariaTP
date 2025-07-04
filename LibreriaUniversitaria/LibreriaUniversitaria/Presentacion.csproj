@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A1552D7-2E4F-420C-B04C-3FC6651B26EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LibreriaUniversitaria</RootNamespace>
+    <AssemblyName>LibreriaUniversitaria</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GumroadLicensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GumroadLicensing.1.0.3\lib\net40\GumroadLicensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NavigationMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kimtoo.NavigationMenu.1.0.2\lib\net40\NavigationMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotecarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BibliotecarioForm.Designer.cs">
+      <DependentUpon>BibliotecarioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GerenteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GerenteForm.Designer.cs">
+      <DependentUpon>GerenteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VendedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendedorForm.Designer.cs">
+      <DependentUpon>VendedorForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BibliotecarioForm.resx">
+      <DependentUpon>BibliotecarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GerenteForm.resx">
+      <DependentUpon>GerenteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendedorForm.resx">
+      <DependentUpon>VendedorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple Login Page Website Desktop Prototype %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple Login Page Website Desktop Prototype %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple Login Page Website Desktop Prototype %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple Login Page Website Desktop Prototype %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Simple Login Page Website Desktop Prototype %2816%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desplegar %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactivar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agg %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cierrasesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicio %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrusel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrusel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\libreria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linea-blanca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactivar-rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactivar-rojo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addverde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editorial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\librostock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades %28BE%29.csproj">
+      <Project>{1dbc297e-9b2b-49b3-9085-b860c7d70c31}</Project>
+      <Name>Entidades %28BE%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logica\Logica %28BLL%29.csproj">
+      <Project>{2591f114-14be-40b4-a4aa-684294a9d5b9}</Project>
+      <Name>Logica %28BLL%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia %28DAL%29.csproj">
+      <Project>{03b63baf-9210-4942-b694-5324beab429b}</Project>
+      <Name>Persistencia %28DAL%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
